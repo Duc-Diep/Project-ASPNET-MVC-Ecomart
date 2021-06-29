@@ -35,7 +35,7 @@
                 <div class="header-media-group">
                     <button class="header-user">
                         <img src="~/wwwroot/images/user.png" alt="user" />
-                    </button><a href="index.html">
+                    </button><a href="@Url.Action("Index","Home")">
                         <img src="https://ecomartvietnam.vn/wp-content/uploads/2017/08/logo.png" alt="logo" />
                     </a><button class="header-src">
                         <i class="fas fa-search"></i>
@@ -43,7 +43,7 @@
                 </div>
                 <a href="index.html" class="header-logo">
                     <img src="https://ecomartvietnam.vn/wp-content/uploads/2017/08/logo.png" alt="logo" />
-                </a><a href="login.html"
+                </a><a href="@Url.Action("Login","Profile")"
                        class="header-widget" title="My Account"><img src="~/wwwroot/images/user.png" alt="user" /><span>Đăng nhập</span></a>
                 <form class="header-form">
                     <input type="text" placeholder="Tìm kiếm..." /><button>
