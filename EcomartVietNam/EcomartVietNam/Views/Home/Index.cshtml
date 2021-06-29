@@ -1,0 +1,688 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+<section class="home-index-slider slider-arrow slider-dots">
+    <div class="banner-part banner-1">
+        <div class="container">
+            <img style="width: 100%;" src="https://ecomartvietnam.vn/wp-content/uploads/2020/09/eco-mart-viet-nam-1.jpg"
+                 alt="">
+        </div>
+    </div>
+    <div class="banner-part banner-2">
+        <div class="container">
+            <img style="width: 100%;"
+                 src="https://ecomartvietnam.vn/wp-content/uploads/2020/09/eco-mart-ra-mat-combo-thuc-pham.jpg" alt="">
+        </div>
+    </div>
+</section>
+<section class="section suggest-part">
+    <div class="container">
+        <ul class="suggest-slider slider-arrow">
+            <li>
+                <a class="suggest-card" href="@Url.Action("Index","Category")">
+                    <img src="~/wwwroot/images/suggest/01.jpg" alt="suggest" />
+                    <h5>thịt cá trứng <span>34 sản phẩm</span></h5>
+                </a>
+            </li>
+            <li>
+                <a class="suggest-card" href="#">
+                    <img src="~/wwwroot/images/suggest/01.jpg" alt="suggest" />
+                    <h5>rau củ quả <span>34 sản phẩm</span></h5>
+                </a>
+            </li>
+            <li>
+                <a class="suggest-card" href="#">
+                    <img src="~/wwwroot/images/suggest/01.jpg" alt="suggest" />
+                    <h5>thực phẩm khô <span>34 sản phẩm</span></h5>
+                </a>
+            </li>
+            <li>
+                <a class="suggest-card" href="#">
+                    <img src="~/wwwroot/images/suggest/01.jpg" alt="suggest" />
+                    <h5>các loại nấm <span>34 sản phẩm</span></h5>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="section recent-part">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>THỊT - CÁ - TRỨNG</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+            <div class="col">
+                <div class="product-card">
+                    <div class="product-media">
+                        <!-- <div class="product-label">
+                            <label class="label-text sale">sale</label>
+                          </div> -->
+                        <button class="product-wish wish"></button><a class="product-image" href="product.html">
+                            <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/09/XUONG-ONG-MEAT-DELI-01-768x625-1.jpg"
+                                 alt="product" />
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h6 class="product-name">
+                            <a href="product.html">Xương ống heo Meat Deli</a>
+                        </h6>
+                        <!-- <h6 class="product-price">
+                            <del>$34</del><span>$28<small>/piece</small></span>
+                          </h6> -->
+                        <h6 class="product-price">
+                            <span>159.900₫<small>/kg</small></span>
+                        </h6>
+                        <button class="product-add" title="Thêm vào giỏ">
+                            <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                        </button>
+                        <!-- <div class="product-action">
+                            <button class="action-minus" title="Quantity Minus">
+                              <i class="icofont-minus"></i></button
+                            ><input
+                              class="action-input"
+                              title="Quantity Number"
+                              type="text"
+                              name="quantity"
+                              value="1"
+                            /><button class="action-plus" title="Quantity Plus">
+                              <i class="icofont-plus"></i>
+                            </button>
+                          </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="product-card">
+                    <div class="product-media">
+                        <!-- <div class="product-label">
+                            <label class="label-text sale">sale</label>
+                          </div> -->
+                        <button class="product-wish wish"></button><a class="product-image" href="product.html">
+                            <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/09/XUONG-ONG-MEAT-DELI-01-768x625-1.jpg"
+                                 alt="product" />
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h6 class="product-name">
+                            <a href="product.html">Xương ống heo Meat Deli</a>
+                        </h6>
+                        <!-- <h6 class="product-price">
+                            <del>$34</del><span>$28<small>/piece</small></span>
+                          </h6> -->
+                        <h6 class="product-price">
+                            <span>159.900₫<small>/kg</small></span>
+                        </h6>
+                        <button class="product-add" title="Thêm vào giỏ">
+                            <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                        </button>
+                        <!-- <div class="product-action">
+                            <button class="action-minus" title="Quantity Minus">
+                              <i class="icofont-minus"></i></button
+                            ><input
+                              class="action-input"
+                              title="Quantity Number"
+                              type="text"
+                              name="quantity"
+                              value="1"
+                            /><button class="action-plus" title="Quantity Plus">
+                              <i class="icofont-plus"></i>
+                            </button>
+                          </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="product-card">
+                    <div class="product-media">
+                        <!-- <div class="product-label">
+                            <label class="label-text sale">sale</label>
+                          </div> -->
+                        <button class="product-wish wish"></button><a class="product-image" href="product.html">
+                            <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/09/XUONG-ONG-MEAT-DELI-01-768x625-1.jpg"
+                                 alt="product" />
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h6 class="product-name">
+                            <a href="product.html">Xương ống heo Meat Deli</a>
+                        </h6>
+                        <!-- <h6 class="product-price">
+                            <del>$34</del><span>$28<small>/piece</small></span>
+                          </h6> -->
+                        <h6 class="product-price">
+                            <span>159.900₫<small>/kg</small></span>
+                        </h6>
+                        <button class="product-add" title="Thêm vào giỏ">
+                            <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                        </button>
+                        <!-- <div class="product-action">
+                            <button class="action-minus" title="Quantity Minus">
+                              <i class="icofont-minus"></i></button
+                            ><input
+                              class="action-input"
+                              title="Quantity Number"
+                              type="text"
+                              name="quantity"
+                              value="1"
+                            /><button class="action-plus" title="Quantity Plus">
+                              <i class="icofont-plus"></i>
+                            </button>
+                          </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="product-card">
+                    <div class="product-media">
+                        <!-- <div class="product-label">
+                            <label class="label-text sale">sale</label>
+                          </div> -->
+                        <button class="product-wish wish"></button><a class="product-image" href="product.html">
+                            <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/09/XUONG-ONG-MEAT-DELI-01-768x625-1.jpg"
+                                 alt="product" />
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h6 class="product-name">
+                            <a href="product.html">Xương ống heo Meat Deli</a>
+                        </h6>
+                        <!-- <h6 class="product-price">
+                            <del>$34</del><span>$28<small>/piece</small></span>
+                          </h6> -->
+                        <h6 class="product-price">
+                            <span>159.900₫<small>/kg</small></span>
+                        </h6>
+                        <button class="product-add" title="Thêm vào giỏ">
+                            <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                        </button>
+                        <!-- <div class="product-action">
+                            <button class="action-minus" title="Quantity Minus">
+                              <i class="icofont-minus"></i></button
+                            ><input
+                              class="action-input"
+                              title="Quantity Number"
+                              type="text"
+                              name="quantity"
+                              value="1"
+                            /><button class="action-plus" title="Quantity Plus">
+                              <i class="icofont-plus"></i>
+                            </button>
+                          </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="product-card">
+                    <div class="product-media">
+                        <!-- <div class="product-label">
+                            <label class="label-text sale">sale</label>
+                          </div> -->
+                        <button class="product-wish wish"></button><a class="product-image" href="product.html">
+                            <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/09/XUONG-ONG-MEAT-DELI-01-768x625-1.jpg"
+                                 alt="product" />
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h6 class="product-name">
+                            <a href="product.html">Xương ống heo Meat Deli</a>
+                        </h6>
+                        <!-- <h6 class="product-price">
+                            <del>$34</del><span>$28<small>/piece</small></span>
+                          </h6> -->
+                        <h6 class="product-price">
+                            <span>159.900₫<small>/kg</small></span>
+                        </h6>
+                        <button class="product-add" title="Thêm vào giỏ">
+                            <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                        </button>
+                        <!-- <div class="product-action">
+                            <button class="action-minus" title="Quantity Minus">
+                              <i class="icofont-minus"></i></button
+                            ><input
+                              class="action-input"
+                              title="Quantity Number"
+                              type="text"
+                              name="quantity"
+                              value="1"
+                            /><button class="action-plus" title="Quantity Plus">
+                              <i class="icofont-plus"></i>
+                            </button>
+                          </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="product-card">
+                    <div class="product-media">
+                        <!-- <div class="product-label">
+                            <label class="label-text sale">sale</label>
+                          </div> -->
+                        <button class="product-wish wish"></button><a class="product-image" href="product.html">
+                            <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/09/XUONG-ONG-MEAT-DELI-01-768x625-1.jpg"
+                                 alt="product" />
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h6 class="product-name">
+                            <a href="product.html">Xương ống heo Meat Deli</a>
+                        </h6>
+                        <!-- <h6 class="product-price">
+                            <del>$34</del><span>$28<small>/piece</small></span>
+                          </h6> -->
+                        <h6 class="product-price">
+                            <span>159.900₫<small>/kg</small></span>
+                        </h6>
+                        <button class="product-add" title="Thêm vào giỏ">
+                            <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                        </button>
+                        <!-- <div class="product-action">
+                            <button class="action-minus" title="Quantity Minus">
+                              <i class="icofont-minus"></i></button
+                            ><input
+                              class="action-input"
+                              title="Quantity Number"
+                              type="text"
+                              name="quantity"
+                              value="1"
+                            /><button class="action-plus" title="Quantity Plus">
+                              <i class="icofont-plus"></i>
+                            </button>
+                          </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="product-card">
+                    <div class="product-media">
+                        <!-- <div class="product-label">
+                            <label class="label-text sale">sale</label>
+                          </div> -->
+                        <button class="product-wish wish"></button><a class="product-image" href="product.html">
+                            <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/09/XUONG-ONG-MEAT-DELI-01-768x625-1.jpg"
+                                 alt="product" />
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h6 class="product-name">
+                            <a href="product.html">Xương ống heo Meat Deli</a>
+                        </h6>
+                        <!-- <h6 class="product-price">
+                            <del>$34</del><span>$28<small>/piece</small></span>
+                          </h6> -->
+                        <h6 class="product-price">
+                            <span>159.900₫<small>/kg</small></span>
+                        </h6>
+                        <button class="product-add" title="Thêm vào giỏ">
+                            <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                        </button>
+                        <!-- <div class="product-action">
+                            <button class="action-minus" title="Quantity Minus">
+                              <i class="icofont-minus"></i></button
+                            ><input
+                              class="action-input"
+                              title="Quantity Number"
+                              type="text"
+                              name="quantity"
+                              value="1"
+                            /><button class="action-plus" title="Quantity Plus">
+                              <i class="icofont-plus"></i>
+                            </button>
+                          </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="product-card">
+                    <div class="product-media">
+                        <!-- <div class="product-label">
+                            <label class="label-text sale">sale</label>
+                          </div> -->
+                        <button class="product-wish wish"></button><a class="product-image" href="product.html">
+                            <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/09/XUONG-ONG-MEAT-DELI-01-768x625-1.jpg"
+                                 alt="product" />
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h6 class="product-name">
+                            <a href="product.html">Xương ống heo Meat Deli</a>
+                        </h6>
+                        <!-- <h6 class="product-price">
+                            <del>$34</del><span>$28<small>/piece</small></span>
+                          </h6> -->
+                        <h6 class="product-price">
+                            <span>159.900₫<small>/kg</small></span>
+                        </h6>
+                        <button class="product-add" title="Thêm vào giỏ">
+                            <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                        </button>
+                        <!-- <div class="product-action">
+                            <button class="action-minus" title="Quantity Minus">
+                              <i class="icofont-minus"></i></button
+                            ><input
+                              class="action-input"
+                              title="Quantity Number"
+                              type="text"
+                              name="quantity"
+                              value="1"
+                            /><button class="action-plus" title="Quantity Plus">
+                              <i class="icofont-plus"></i>
+                            </button>
+                          </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="product-card">
+                    <div class="product-media">
+                        <!-- <div class="product-label">
+                            <label class="label-text sale">sale</label>
+                          </div> -->
+                        <button class="product-wish wish"></button><a class="product-image" href="product.html">
+                            <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/09/XUONG-ONG-MEAT-DELI-01-768x625-1.jpg"
+                                 alt="product" />
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h6 class="product-name">
+                            <a href="product.html">Xương ống heo Meat Deli</a>
+                        </h6>
+                        <!-- <h6 class="product-price">
+                            <del>$34</del><span>$28<small>/piece</small></span>
+                          </h6> -->
+                        <h6 class="product-price">
+                            <span>159.900₫<small>/kg</small></span>
+                        </h6>
+                        <button class="product-add" title="Thêm vào giỏ">
+                            <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                        </button>
+                        <!-- <div class="product-action">
+                            <button class="action-minus" title="Quantity Minus">
+                              <i class="icofont-minus"></i></button
+                            ><input
+                              class="action-input"
+                              title="Quantity Number"
+                              type="text"
+                              name="quantity"
+                              value="1"
+                            /><button class="action-plus" title="Quantity Plus">
+                              <i class="icofont-plus"></i>
+                            </button>
+                          </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="product-card">
+                    <div class="product-media">
+                        <!-- <div class="product-label">
+                            <label class="label-text sale">sale</label>
+                          </div> -->
+                        <button class="product-wish wish"></button><a class="product-image" href="product.html">
+                            <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/09/XUONG-ONG-MEAT-DELI-01-768x625-1.jpg"
+                                 alt="product" />
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h6 class="product-name">
+                            <a href="product.html">Xương ống heo Meat Deli</a>
+                        </h6>
+                        <!-- <h6 class="product-price">
+                            <del>$34</del><span>$28<small>/piece</small></span>
+                          </h6> -->
+                        <h6 class="product-price">
+                            <span>159.900₫<small>/kg</small></span>
+                        </h6>
+                        <button class="product-add" title="Thêm vào giỏ">
+                            <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                        </button>
+                        <!-- <div class="product-action">
+                            <button class="action-minus" title="Quantity Minus">
+                              <i class="icofont-minus"></i></button
+                            ><input
+                              class="action-input"
+                              title="Quantity Number"
+                              type="text"
+                              name="quantity"
+                              value="1"
+                            /><button class="action-plus" title="Quantity Plus">
+                              <i class="icofont-plus"></i>
+                            </button>
+                          </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-btn-25">
+                    <a href="category.html" class="btn btn-outline"><i class="fas fa-eye"></i><span>xem thêm</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section newitem-part">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section-heading">
+                    <h2>sản phẩm mới đăng</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ul class="new-slider slider-arrow">
+                    <li>
+                        <div class="product-card">
+                            <div class="product-media">
+                                <div class="product-label">
+                                    <label class="label-text new">new</label>
+                                </div>
+                                <a class="product-image" href="product.html">
+                                    <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/05/thit-dui-heo-meat-deli.jpg"
+                                         alt="product" />
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h6 class="product-name">
+                                    <a href="product.html">Thịt đùi heo Meat Deli</a>
+                                </h6>
+                                <h6 class="product-price">
+                                    <span>159.900₫</span>
+                                </h6>
+                                <button class="product-add" title="Thêm vào giỏ">
+                                    <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                                </button>
+                                <div class="product-action">
+                                    <button class="action-minus" title="Quantity Minus">
+                                        <i class="icofont-minus"></i>
+                                    </button><input class="action-input" title="Quantity Number"
+                                                    type="text" name="quantity" value="1" /><button class="action-plus" title="Quantity Plus">
+                                        <i class="icofont-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-media">
+                                <div class="product-label">
+                                    <label class="label-text new">new</label>
+                                </div>
+                                <a class="product-image" href="product.html">
+                                    <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/05/thit-dui-heo-meat-deli.jpg"
+                                         alt="product" />
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h6 class="product-name">
+                                    <a href="product.html">Thịt đùi heo Meat Deli</a>
+                                </h6>
+                                <h6 class="product-price">
+                                    <span>159.900₫</span>
+                                </h6>
+                                <button class="product-add" title="Thêm vào giỏ">
+                                    <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                                </button>
+                                <div class="product-action">
+                                    <button class="action-minus" title="Quantity Minus">
+                                        <i class="icofont-minus"></i>
+                                    </button><input class="action-input" title="Quantity Number"
+                                                    type="text" name="quantity" value="1" /><button class="action-plus" title="Quantity Plus">
+                                        <i class="icofont-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-media">
+                                <div class="product-label">
+                                    <label class="label-text new">new</label>
+                                </div>
+                                <a class="product-image" href="product.html">
+                                    <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/05/thit-dui-heo-meat-deli.jpg"
+                                         alt="product" />
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h6 class="product-name">
+                                    <a href="product.html">Thịt đùi heo Meat Deli</a>
+                                </h6>
+                                <h6 class="product-price">
+                                    <span>159.900₫</span>
+                                </h6>
+                                <button class="product-add" title="Thêm vào giỏ">
+                                    <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                                </button>
+                                <div class="product-action">
+                                    <button class="action-minus" title="Quantity Minus">
+                                        <i class="icofont-minus"></i>
+                                    </button><input class="action-input" title="Quantity Number"
+                                                    type="text" name="quantity" value="1" /><button class="action-plus" title="Quantity Plus">
+                                        <i class="icofont-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-media">
+                                <div class="product-label">
+                                    <label class="label-text new">new</label>
+                                </div>
+                                <a class="product-image" href="product.html">
+                                    <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/05/thit-dui-heo-meat-deli.jpg"
+                                         alt="product" />
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h6 class="product-name">
+                                    <a href="product.html">Thịt đùi heo Meat Deli</a>
+                                </h6>
+                                <h6 class="product-price">
+                                    <span>159.900₫</span>
+                                </h6>
+                                <button class="product-add" title="Thêm vào giỏ">
+                                    <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                                </button>
+                                <div class="product-action">
+                                    <button class="action-minus" title="Quantity Minus">
+                                        <i class="icofont-minus"></i>
+                                    </button><input class="action-input" title="Quantity Number"
+                                                    type="text" name="quantity" value="1" /><button class="action-plus" title="Quantity Plus">
+                                        <i class="icofont-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-media">
+                                <div class="product-label">
+                                    <label class="label-text new">new</label>
+                                </div>
+                                <a class="product-image" href="product.html">
+                                    <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/05/thit-dui-heo-meat-deli.jpg"
+                                         alt="product" />
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h6 class="product-name">
+                                    <a href="product.html">Thịt đùi heo Meat Deli</a>
+                                </h6>
+                                <h6 class="product-price">
+                                    <span>159.900₫</span>
+                                </h6>
+                                <button class="product-add" title="Thêm vào giỏ">
+                                    <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                                </button>
+                                <div class="product-action">
+                                    <button class="action-minus" title="Quantity Minus">
+                                        <i class="icofont-minus"></i>
+                                    </button><input class="action-input" title="Quantity Number"
+                                                    type="text" name="quantity" value="1" /><button class="action-plus" title="Quantity Plus">
+                                        <i class="icofont-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product-card">
+                            <div class="product-media">
+                                <div class="product-label">
+                                    <label class="label-text new">new</label>
+                                </div>
+                                <a class="product-image" href="product.html">
+                                    <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/05/thit-dui-heo-meat-deli.jpg"
+                                         alt="product" />
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h6 class="product-name">
+                                    <a href="product.html">Thịt đùi heo Meat Deli</a>
+                                </h6>
+                                <h6 class="product-price">
+                                    <span>159.900₫</span>
+                                </h6>
+                                <button class="product-add" title="Thêm vào giỏ">
+                                    <i class="fas fa-shopping-basket"></i><span>mua hàng</span>
+                                </button>
+                                <div class="product-action">
+                                    <button class="action-minus" title="Quantity Minus">
+                                        <i class="icofont-minus"></i>
+                                    </button><input class="action-input" title="Quantity Number"
+                                                    type="text" name="quantity" value="1" /><button class="action-plus" title="Quantity Plus">
+                                        <i class="icofont-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="section-btn-25">
+                    <a href="category.html" class="btn btn-outline"><i class="fas fa-eye"></i><span>xem thêm</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

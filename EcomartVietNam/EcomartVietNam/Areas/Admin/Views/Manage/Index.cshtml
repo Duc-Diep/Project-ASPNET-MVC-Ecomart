@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content container-fluid">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="page-title">Xin chào Admin!</h3>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Header -->
+
+    <div class="row">
+        <div class="col-xl-3 col-sm-6 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dash-widget-header">
+                        <span class="dash-widget-icon bg-primary">
+                            <i class="far fa-user"></i>
+                        </span>
+                        <div class="dash-widget-info">
+                            <h3>429</h3>
+                            <h6 class="text-muted">Người dùng</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dash-widget-header">
+                        <span class="dash-widget-icon bg-primary">
+                            <i class="fas fa-user-shield"></i>
+                        </span>
+                        <div class="dash-widget-info">
+                            <h3>148</h3>
+                            <h6 class="text-muted">Sản phẩm</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dash-widget-header">
+                        <span class="dash-widget-icon bg-primary">
+                            <i class="fas fa-qrcode"></i>
+                        </span>
+                        <div class="dash-widget-info">
+                            <h3>124</h3>
+                            <h6 class="text-muted">Dịch vụ</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="dash-widget-header">
+                        <span class="dash-widget-icon bg-primary">
+                            <i class="far fa-credit-card"></i>
+                        </span>
+                        <div class="dash-widget-info">
+                            <h3>$11378</h3>
+                            <h6 class="text-muted">Doanh thu</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 d-flex">
+            <!-- Recent Bookings -->
+            <div class="card card-table flex-fill">
+                <div class="card-header">
+                    <h4 class="card-title">Đơn hàng gần đây</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-center">
+                            <thead>
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Service</th>
+                                    <th>Status</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-nowrap">
+                                        <img class="avatar-xs rounded-circle"
+                                             src="~/Areas/Asset/img/customer/user-05.jpg"
+                                             alt="User Image" />
+                                        Annette Silva
+                                    </td>
+                                    <td class="text-nowrap">9 Sep 2020</td>
+                                    <td>Car Repair Services</td>
+                                    <td>
+                                        <span class="badge bg-danger inv-badge">Pending</span>
+                                    </td>
+                                    <td>
+                                        <div class="font-weight-600">$50</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- /Recent Bookings -->
+        </div>
+        <div class="col-md-6 d-flex">
+            <!-- Payments -->
+            <div class="card card-table flex-fill">
+                <div class="card-header">
+                    <h4 class="card-title">Tài khoản mua nhiều</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-center">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>User</th>
+                                    <th>Provider</th>
+                                    <th>Service</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>15 Sep 2020</td>
+                                    <td>
+                                        <span class="table-avatar">
+                                            <a href="#" class="avatar avatar-xs mr-2">
+                                                <img class="avatar-img rounded-circle"
+                                                     alt=""
+                                                     src="~/Areas/Asset/img/customer/user-02.jpg" />
+                                            </a>
+                                            <a href="javascript:void(0);">Nancy Olson</a>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="table-avatar">
+                                            <a href="#" class="avatar avatar-xs mr-2">
+                                                <img class="avatar-img rounded-circle"
+                                                     alt=""
+                                                     src="~/Areas/Asset/img/provider/provider-02.jpg" />
+                                            </a>
+                                            <a href="javascript:void(0);">Matthew Garcia</a>
+                                        </span>
+                                    </td>
+                                    <td>Car Repair Services</td>
+                                    <td>$50</td>
+                                    <td>
+                                        <span class="badge badge-dark">Pending</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Payments -->
+        </div>
+    </div>
+</div>
+

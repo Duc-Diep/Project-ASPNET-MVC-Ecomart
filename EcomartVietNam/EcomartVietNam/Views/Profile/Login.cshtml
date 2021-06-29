@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+}
+@section title{
+    Đăng nhập
+}
+@section subtitle{
+    Nhập đúng thông tin để đăng nhập
+}
+<form class="user-form" action="@Url.Action("Index","Home")">
+    <div class="form-group">
+        <input type="email" class="form-control" placeholder="Nhập địa chỉ email" />
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control" placeholder="Nhập mật khẩu" />
+    </div>
+    <div class="form-button">
+        <button  type="submit">Đăng nhập</button>
+    </div>
+</form>
+                   
+<div class="user-form-remind">
+    <p>
+        Bạn chưa có tài khoản?<a href="@Url.Action("Register","Profile")">Đăng ký</a>
+    </p>
+</div>

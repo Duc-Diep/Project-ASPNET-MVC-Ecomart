@@ -1,0 +1,391 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="author" content="mironcoder" />
+    <meta name="email" content="mironcoder@gmail.com" />
+    <meta name="profile" content="https://themeforest.net/user/mironcoder" />
+    <meta name="template" content="Organe" />
+    <meta name="title" content="Organe - Organic Food HTML Template" />
+    <meta name="keywords"
+          content="organe, organic, food, shop, ecommerce, store, html, agriculture, vegetable, organic food, organic product, organic farm, organic life, organic shop, food store" />
+    <title>Eco Mart Siêu Thị Cho Mọi Nhà - Thực Phẩm Sạch</title>
+
+    <link rel="icon" href="~/wwwroot/images/favicon.png" />
+    <link rel="stylesheet" href="~/wwwroot/fonts/flaticon/flaticon.css" />
+    <link rel="stylesheet" href="~/wwwroot/fonts/icofont/icofont.min.css" />
+    <link rel="stylesheet" href="~/wwwroot/fonts/fontawesome/fontawesome.min.css" />
+    <link rel="stylesheet" href="~/wwwroot/css/vendor/nice-select.min.css" />
+    <link rel="stylesheet" href="~/wwwroot/css/vendor/venobox.min.css" />
+    <link rel="stylesheet" href="~/wwwroot/css/vendor/slick.min.css" />
+    <link rel="stylesheet" href="~/wwwroot/css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/wwwroot/css/custom/main.css" />
+    <link rel="stylesheet" href="~/wwwroot/css/custom/index.css" />     
+    @RenderSection("addcss",required:false)
+</head>
+
+<body>
+    <div class="backdrop"></div>
+    <section class="header-part">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-media-group">
+                    <button class="header-user">
+                        <img src="~/wwwroot/images/user.png" alt="user" />
+                    </button><a href="index.html">
+                        <img src="https://ecomartvietnam.vn/wp-content/uploads/2017/08/logo.png" alt="logo" />
+                    </a><button class="header-src">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <a href="index.html" class="header-logo">
+                    <img src="https://ecomartvietnam.vn/wp-content/uploads/2017/08/logo.png" alt="logo" />
+                </a><a href="login.html"
+                       class="header-widget" title="My Account"><img src="~/wwwroot/images/user.png" alt="user" /><span>Đăng nhập</span></a>
+                <form class="header-form">
+                    <input type="text" placeholder="Tìm kiếm..." /><button>
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                <div class="header-widget-group">
+                    <button class="header-widget header-cart" title="Cartlist">
+                        <i class="fas fa-shopping-basket"></i><sup>9+</sup><span>Tổng<small>120.000đ</small></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Start menu pc -->
+    <nav class="navbar-part">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="navbar-content">
+                        <ul class="navbar-list">
+                            <li class="navbar-item dropdown">
+                                <a class="navbar-link" href="#">trang chủ</a>
+                            </li>
+                            <li class="navbar-item dropdown">
+                                <a class="navbar-link dropdown-arrow" href="#">danh mục sản phẩm</a>
+                                <ul class="dropdown-position-list">
+                                    <li><a href="@Url.Action("Index","Category")">combo tiện lợi</a></li>
+                                    <li><a href="@Url.Action("Index","Category")">thịt - cá - trứng</a></li>
+                                    <li><a href="@Url.Action("Index","Category")">rau củ quả</a></li>
+                                    <li><a href="@Url.Action("Index","Category")">thực phẩm khô</a></li>
+                                    <li><a href="@Url.Action("Index","Category")">các loại nấm</a></li>
+                                </ul>
+                            </li>
+                            <li class="navbar-item dropdown">
+                                <a class="navbar-link" href="#">khuyến mãi</a>
+                            </li>
+                            <li class="navbar-item dropdown">
+                                <a class="navbar-link" href="#">hệ thống cửa hàng</a>
+                            </li>
+                        </ul>
+                        <div class="navbar-info-group">
+                            <div class="navbar-info">
+                                <i class="icofont-ui-touch-phone"></i>
+                                <p><small>hotline</small><span>0976.658.183</span></p>
+                            </div>
+                            <div class="navbar-info">
+                                <i class="icofont-ui-email"></i>
+                                <p><small>email</small><span>contact@ecomartvietnam.vn</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- End menu pc -->
+    <!-- Start cart sidebar -->
+    <aside class="cart-sidebar">
+        <div class="cart-header">
+            <div class="cart-total">
+                <i class="fas fa-shopping-basket"></i><span>Tổng số lượng (2)</span>
+            </div>
+            <button class="cart-close"><i class="icofont-close"></i></button>
+        </div>
+        <ul class="cart-list">
+            <li class="cart-item">
+                <div class="cart-media">
+                    <a href="#">
+                        <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/05/mong-gio-heo-meat-deli.jpg"
+                             alt="product" />
+                    </a><button class="cart-delete">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                </div>
+                <div class="cart-info-group">
+                    <div class="cart-info">
+                        <h6><a href="product-single.html">Móng Giò heo Meat Deli (kg)</a></h6>
+                        <p>191.900₫</p>
+                    </div>
+                    <div class="cart-action-group">
+                        <div class="product-action">
+                            <button class="action-minus" title="Quantity Minus">
+                                <i class="icofont-minus"></i>
+                            </button><input class="action-input" title="Quantity Number" type="text"
+                                            name="quantity" value="1" /><button class="action-plus" title="Quantity Plus">
+                                <i class="icofont-plus"></i>
+                            </button>
+                        </div>
+                        <h6>191.900₫</h6>
+                    </div>
+                </div>
+            </li>
+            <li class="cart-item">
+                <div class="cart-media">
+                    <a href="#">
+                        <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/05/chan-gio-rut-xuong-meat-deli.jpg"
+                             alt="product" />
+                    </a><button class="cart-delete">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                </div>
+                <div class="cart-info-group">
+                    <div class="cart-info">
+                        <h6><a href="product-single.html">Chân giò heo Rút xương Meat Deli (kg)</a></h6>
+                        <p>191.900₫</p>
+                    </div>
+                    <div class="cart-action-group">
+                        <div class="product-action">
+                            <button class="action-minus" title="Quantity Minus">
+                                <i class="icofont-minus"></i>
+                            </button><input class="action-input" title="Quantity Number" type="text"
+                                            name="quantity" value="1" /><button class="action-plus" title="Quantity Plus">
+                                <i class="icofont-plus"></i>
+                            </button>
+                        </div>
+                        <h6>191.900₫</h6>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="cart-footer">
+            <button class="coupon-btn">Bạn có mã giảm giá?</button>
+            <form class="coupon-form">
+                <input type="text" placeholder="Nhập mã giảm giá của bạn." /><button type="submit">
+                    <span>Áp dụng</span>
+                </button>
+            </form>
+            <a class="cart-checkout-btn" href="checkout.html">
+                <span class="checkout-label">Thanh toán</span><span class="checkout-price">191.900₫</span>
+            </a>
+        </div>
+    </aside>
+    <!-- End cart sidebar -->
+    <!-- Start menu mobile -->
+    <aside class="nav-sidebar">
+        <div class="nav-header">
+            <a href="#"><img src="https://ecomartvietnam.vn/wp-content/uploads/2017/08/logo.png" alt="logo" /></a><button class="nav-close">
+                <i class="icofont-close"></i>
+            </button>
+        </div>
+        <div class="nav-content">
+            <div class="nav-btn">
+                <a href="login.html" class="btn btn-inline"><i class="fa fa-unlock-alt"></i><span>đăng nhập</span></a>
+            </div>
+            <ul class="nav-list">
+                <li>
+                    <a class="nav-link" href="#"><i class="icofont-home"></i>Trang chủ</a>
+                </li>
+                <li>
+                    <a class="nav-link dropdown-link" href="#"><i class="icofont-page"></i>danh mục sản phẩm</a>
+                    <ul class="dropdown-list">
+                        <li><a href="product-tab.html">combo tiện lợi</a></li>
+                        <li>
+                            <a href="product-grid.html">thịt - cá - trứng<span class="menu-badge">hot</span></a>
+                        </li>
+                        <li>
+                            <a href="product-video.html">rau củ quả<span class="menu-badge">hot</span></a>
+                        </li>
+                        <li><a href="product.html">thực phẩm khô</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="nav-link cart-btn">
+                        <i class="fas fa-shopping-basket"></i><span>giỏ hàng</span><sup>9+</sup>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="contact.html"><i class="icofont-contacts"></i>liên hệ</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="login.html"><i class="icofont-logout"></i>đăng xuất</a>
+                </li>
+            </ul>
+            <div class="nav-info-group">
+                <div class="nav-info">
+                    <i class="icofont-ui-touch-phone"></i>
+                    <p><small>liên hệ</small><span>0976.658.183</span></p>
+                </div>
+                <div class="nav-info">
+                    <i class="icofont-ui-email"></i>
+                    <p><small>email</small><span>contact@ecomartvietnam.vn</span></p>
+                </div>
+            </div>
+            <div class="nav-footer">
+                <p>Bản quyền thuộc về nhóm 2 ASP.NET</p>
+            </div>
+        </div>
+    </aside>
+    <!-- End menu mobile -->
+
+    @RenderBody()
+    <!-- Start footer -->
+    <section class="intro-part">
+        <div class="container">
+            <div class="row intro-content">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="intro-wrap">
+                        <div class="intro-icon"><i class="fas fa-truck"></i></div>
+                        <div class="intro-content">
+                            <h5>miễn phí giao hàng</h5>
+                            <p>Cho đơn hàng từ 200.000 trở lên. (Áp dụng nội thành Hà Nội)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="intro-wrap">
+                        <div class="intro-icon"><i class="fas fa-sync-alt"></i></div>
+                        <div class="intro-content">
+                            <h5>Hoàn tiền 100%</h5>
+                            <p>Đổi trả hoàn tiền 100% không cần lý do</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="intro-wrap">
+                        <div class="intro-icon"><i class="fas fa-headset"></i></div>
+                        <div class="intro-content">
+                            <h5>hỗ trợ 24/7</h5>
+                            <p>Đội ngũ hỗ trợ giải quyết vấn đề 24/7</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="intro-wrap">
+                        <div class="intro-icon"><i class="fas fa-lock"></i></div>
+                        <div class="intro-content">
+                            <h5>Thanh toán nhanh</h5>
+                            <p>Hỗ trợ các phương thức thanh toán an toàn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-part">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-xl-3">
+                    <div class="footer-widget">
+                        <a class="footer-logo" href="#">
+                            <img src="https://ecomartvietnam.vn/wp-content/uploads/2017/08/logo.png"
+                                 alt="logo" />
+                        </a>
+                        <p class="footer-desc">
+                            Eco Mart là thương hiệu chuyên cung cấp các thực phẩm sạch tươi
+                            ngon đến mọi nhà. Hiện nay chuỗi cửa hàng Eco Mart đã xuất hiện
+                            tại nhiều nơi tại các khu dân cư đông đúc tại Hà Nội.
+                        </p>
+                        <ul class="footer-social">
+                            <li><a class="icofont-facebook" href="#"></a></li>
+                            <li><a class="icofont-twitter" href="#"></a></li>
+                            <li><a class="icofont-linkedin" href="#"></a></li>
+                            <li><a class="icofont-instagram" href="#"></a></li>
+                            <li><a class="icofont-pinterest" href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="footer-widget contact">
+                        <h3 class="footer-title">liên hệ</h3>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="icofont-ui-email"></i>
+                                <p>
+                                    <span>contact@ecomartvietnam.vn</span>
+                                </p>
+                            </li>
+                            <li>
+                                <i class="icofont-ui-touch-phone"></i>
+                                <p>
+                                    <span>0976.658.183</span>
+                                </p>
+                            </li>
+                            <li>
+                                <i class="icofont-location-pin"></i>
+                                <p>Head Office: 12 Khuất Duy Tiến, Thanh Xuân, Hà Nội.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="footer-widget">
+                        <h3 class="footer-title">hướng dẫn & hỗ trợ</h3>
+                        <div class="footer-links">
+                            <ul>
+                                <li><a href="#">FAQs</a></li>
+                                <li><a href="#">Hướng dẫn mua hàng</a></li>
+                                <li><a href="#">Chính sách đổi trả</a></li>
+                                <li><a href="#">Giới thiệu</a></li>
+                                <li><a href="#">Hệ thống siêu thị</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="footer-widget">
+                        <h3 class="footer-title">Download App</h3>
+                        <p class="footer-desc">
+                            Ứng dụng Eco Mart đã có trên Google Play & App Store. Tải ứng
+                            dụng ngay!
+                        </p>
+                        <div class="footer-app">
+                            <a href="#"><img src="~/wwwroot/images/google-store.png" alt="google" /></a><a href="#">
+                                <img src="~/wwwroot/images/app-store.png" alt="app" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-bottom">
+                        <p class="footer-copytext">
+                            &copy; Bản quyền thuộc về nhóm 2 ASP.NET
+                        </p>
+                        <div class="footer-card">
+                            <a href="#"><img src="~/wwwroot/images/payment/jpg/01.jpg" alt="payment" /></a><a href="#">
+                                <img src="~/wwwroot/images/payment/jpg/02.jpg" alt="payment" />
+                            </a><a href="#">
+                                <img src="~/wwwroot/images/payment/jpg/03.jpg"
+                                     alt="payment" />
+                            </a><a href="#"><img src="~/wwwroot/images/payment/jpg/04.jpg" alt="payment" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/wwwroot/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/wwwroot/js/vendor/popper.min.js"></script>
+    <script src="~/wwwroot/js/vendor/bootstrap.min.js"></script>
+    <script src="~/wwwroot/js/vendor/nice-select.min.js"></script>
+    <script src="~/wwwroot/js/vendor/venobox.min.js"></script>
+    <script src="~/wwwroot/js/vendor/countdown.min.js"></script>
+    <script src="~/wwwroot/js/vendor/slick.min.js"></script>
+    <script src="~/wwwroot/js/custom/nice-select.js"></script>
+    <script src="~/wwwroot/js/custom/countdown.js"></script>
+    <script src="~/wwwroot/js/custom/accordion.js"></script>
+    <script src="~/wwwroot/js/custom/venobox.js"></script>
+    <script src="~/wwwroot/js/custom/slick.js"></script>
+    <script src="~/wwwroot/js/custom/main.js"></script>
+</body>
+
+</html>
