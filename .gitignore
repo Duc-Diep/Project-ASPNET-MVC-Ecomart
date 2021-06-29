@@ -1,0 +1,8 @@
+*.suo
+*.cache
+/EcomartVietNam/.vs/EcomartVietNam/config/applicationhost.config
+/EcomartVietNam/EcomartVietNam/bin/EcomartVietNam.dll
+/EcomartVietNam/EcomartVietNam/bin/EcomartVietNam.pdb
+/EcomartVietNam/EcomartVietNam/obj/Debug/EcomartVietNam.csproj.FileListAbsolute.txt
+/EcomartVietNam/EcomartVietNam/obj/Debug/EcomartVietNam.dll
+/EcomartVietNam/EcomartVietNam/obj/Debug/EcomartVietNam.pdb
