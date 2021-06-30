@@ -504,7 +504,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\ManageOrder\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -516,6 +515,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Areas\Admin\Views\ManageOrder\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageOrder\Details.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_LayoutClient.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />

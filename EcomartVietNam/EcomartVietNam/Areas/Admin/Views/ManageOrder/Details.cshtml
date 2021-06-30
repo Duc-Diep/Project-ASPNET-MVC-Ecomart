@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content container-fluid">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="row">
+            <div class="col">
+                <h3 class="page-title">Chi tiết đơn hàng #1321</h3>
+            </div>
+            <div class="col-auto text-right">
+                <a class="btn btn-primary add-button ml-3">
+                    <i class="fas fa-print"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Header -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p><b>Người mua: </b> <span>Nguyễn Văn A</span></p>
+                            <p><b>Địa chỉ: </b> <span>Mộc Châu, Sơn La</span></p>
+                            <p><b>Số điện thoại: </b> <span>0984223333</span></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p><b>Mã đơn hàng: </b> <span>#1312</span></p>
+                            <p><b>Ngày tạo: </b> <span>29/06/2021</span></p>
+                            <p><b>Trạng thái: </b> <span>Đã giao</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-center mb-0">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Tổng tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <img class="rounded service-img mr-1"
+                                             src="assets/img/sub-category/sub-category-01.jpg"
+                                             alt="" />
+                                        Thịt giò heo
+                                    </td>
+                                    <td>30.000đ</td>
+                                    <td>123</td>
+                                    <td>330.000đ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-3">
+                            <p><b>Tổng: </b> <span>300.000đ</span></p>
+                            <p><b>Giảm giá: </b> <span>10%</span></p>
+                            <p><b>Thành tiền: </b> <span>300.000đ</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

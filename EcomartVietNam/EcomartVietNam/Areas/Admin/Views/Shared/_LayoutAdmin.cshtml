@@ -100,6 +100,13 @@
                                 <span>Quản lý sản phẩm</span>
                             </a>
                         </li>
+                        <li class="@(HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()=="ManageOrder" ? "active":"")">
+                            <a href="@Url.Action("Index","ManageOrder")">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>Quản lý đơn hàng</span>
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
             </div>

@@ -14,7 +14,14 @@ namespace EcomartVietNam.Areas.Admin.Controllers
             return View();
         }
         // GET: Admin/ManageOrder/id
-        public ActionResult Index(int ID)
+        [HttpGet]
+        public ActionResult Details()
+        {
+            return View();
+        }
+        
+        [HttpPost]
+        public ActionResult Details(int ID)
         {
             return View();
         }
