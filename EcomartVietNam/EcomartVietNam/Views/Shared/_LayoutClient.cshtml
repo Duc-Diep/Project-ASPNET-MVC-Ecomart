@@ -51,9 +51,9 @@
                     </button>
                 </form>
                 <div class="header-widget-group">
-                    <button class="header-widget header-cart" title="Cartlist">
+                    <a class="header-widget header-cart" title="Cartlist" href="/Checkout">
                         <i class="fas fa-shopping-basket"></i><sup>9+</sup><span>Tổng<small>120.000đ</small></span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -101,83 +101,7 @@
         </div>
     </nav>
     <!-- End menu pc -->
-    <!-- Start cart sidebar -->
-    <aside class="cart-sidebar">
-        <div class="cart-header">
-            <div class="cart-total">
-                <i class="fas fa-shopping-basket"></i><span>Tổng số lượng (2)</span>
-            </div>
-            <button class="cart-close"><i class="icofont-close"></i></button>
-        </div>
-        <ul class="cart-list">
-            <li class="cart-item">
-                <div class="cart-media">
-                    <a href="#">
-                        <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/05/mong-gio-heo-meat-deli.jpg"
-                             alt="product" />
-                    </a><button class="cart-delete">
-                        <i class="far fa-trash-alt"></i>
-                    </button>
-                </div>
-                <div class="cart-info-group">
-                    <div class="cart-info">
-                        <h6><a href="@Url.Action("Index","Product")">Móng Giò heo Meat Deli (kg)</a></h6>
-                        <p>191.900₫</p>
-                    </div>
-                    <div class="cart-action-group">
-                        <div class="product-action">
-                            <button class="action-minus" title="Quantity Minus">
-                                <i class="icofont-minus"></i>
-                            </button><input class="action-input" title="Quantity Number" type="text"
-                                            name="quantity" value="1" /><button class="action-plus" title="Quantity Plus">
-                                <i class="icofont-plus"></i>
-                            </button>
-                        </div>
-                        <h6>191.900₫</h6>
-                    </div>
-                </div>
-            </li>
-            <li class="cart-item">
-                <div class="cart-media">
-                    <a href="#">
-                        <img src="https://ecomartvietnam.vn/wp-content/uploads/2020/05/chan-gio-rut-xuong-meat-deli.jpg"
-                             alt="product" />
-                    </a><button class="cart-delete">
-                        <i class="far fa-trash-alt"></i>
-                    </button>
-                </div>
-                <div class="cart-info-group">
-                    <div class="cart-info">
-                        <h6><a href="@Url.Action("Index","Product")">Chân giò heo Rút xương Meat Deli (kg)</a></h6>
-                        <p>191.900₫</p>
-                    </div>
-                    <div class="cart-action-group">
-                        <div class="product-action">
-                            <button class="action-minus" title="Quantity Minus">
-                                <i class="icofont-minus"></i>
-                            </button><input class="action-input" title="Quantity Number" type="text"
-                                            name="quantity" value="1" /><button class="action-plus" title="Quantity Plus">
-                                <i class="icofont-plus"></i>
-                            </button>
-                        </div>
-                        <h6>191.900₫</h6>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <div class="cart-footer">
-            <button class="coupon-btn">Bạn có mã giảm giá?</button>
-            <form class="coupon-form">
-                <input type="text" placeholder="Nhập mã giảm giá của bạn." /><button type="submit">
-                    <span>Áp dụng</span>
-                </button>
-            </form>
-            <a class="cart-checkout-btn" href="@Url.Action("Index","Invoice")">
-                <span class="checkout-label">Thanh toán</span><span class="checkout-price">191.900₫</span>
-            </a>
-        </div>
-    </aside>
-    <!-- End cart sidebar -->
+
     <!-- Start menu mobile -->
     <aside class="nav-sidebar">
         <div class="nav-header">
@@ -207,7 +131,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="nav-link cart-btn">
+                    <a class="nav-link cart-btn" href="/Checkout">
                         <i class="fas fa-shopping-basket"></i><span>giỏ hàng</span><sup>9+</sup>
                     </a>
                 </li>
