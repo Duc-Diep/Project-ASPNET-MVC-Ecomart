@@ -38,7 +38,7 @@
         <!-- Header -->
         <div class="header">
             <div class="header-left">
-                <a href="index.html" class="logo logo-small">
+                <a href="@Url.Action("Index","Manage")" class="logo logo-small">
                     <img src="~/Areas/Asset/img/logo-icon.png"
                          alt="Logo"
                          width="30"
@@ -104,6 +104,12 @@
                             <a href="@Url.Action("Index","ManageOrder")">
                                 <i class="fas fa-shopping-cart"></i>
                                 <span>Quản lý đơn hàng</span>
+                            </a>
+                        </li>
+                        <li class="@(HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()=="Account" ? "active":"")">
+                            <a href="@Url.Action("Index","Account")">
+                                <i class="fas fa-user"></i>
+                                <span>Quản lý tài khoản </span>
                             </a>
                         </li>
 

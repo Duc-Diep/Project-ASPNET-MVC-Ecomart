@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@section addcss{
+    <!-- Datepicker CSS -->
+    <link rel="stylesheet" href="~/Areas/Asset/css/bootstrap-datetimepicker.min.css" />
+
+    <!-- Datatables CSS -->
+    <link rel="stylesheet"
+          href="~/Areas/Asset/plugins/datatables/datatables.min.css" />
+}
+<div class="content container-fluid">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="row">
+            <div class="col">
+                <h3 class="page-title">Quản lý tài khoản</h3>
+            </div>
+            <div class="col-auto text-right">
+                <a href="@Url.Action("Create","Account")"
+                   class="btn btn-primary add-button ml-3">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Header -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-center mb-0 datatable">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Email</th>
+                                    <th>SĐT</th>
+                                    <th>Mật khẩu</th>
+                                    <th>Tên</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Quyền</th>
+                                    <th>Ngày tạo</th>
+                                    <th class="text-right">Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>abc@gmail.com</td>
+                                    <td>0989282848</td>
+                                    <td>******</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Đại học CNHN</td>
+                                    <td>user</td>
+                                    <td>21/06/2021</td>
+                                    <td class="text-right">
+                                        <a href="@Url.Action("Update","Account")"
+                                           class="btn btn-sm bg-success-light mr-2">
+                                            <i class="far fa-edit mr-1"></i> Sửa
+                                        </a>
+                                        <a data-id="40"
+                                           href="javascript:void(0);"
+                                           class="
+                                btn btn-sm
+                                bg-danger-light
+                                mr-2
+                                delete_review_comment
+                              "
+                                           data-toggle="modal"
+                                           data-target="#exampleModal">
+                                            <i class="far fa-trash-alt mr-1"></i> Xoá
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>abc@gmail.com</td>
+                                    <td>0989282848</td>
+                                    <td>******</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Đại học CNHN</td>
+                                    <td>admin</td>
+                                    <td>21/06/2021</td>
+                                    <td class="text-right">
+                                        <a href="@Url.Action("Update","Account")"
+                                           class="btn btn-sm bg-success-light mr-2">
+                                            <i class="far fa-edit mr-1"></i> Sửa
+                                        </a>
+                                        <a data-id="40"
+                                           href="javascript:void(0);"
+                                           class="
+                                btn btn-sm
+                                bg-danger-light
+                                mr-2
+                                delete_review_comment
+                              "
+                                           data-toggle="modal"
+                                           data-target="#exampleModal">
+                                            <i class="far fa-trash-alt mr-1"></i> Xoá
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>abc@gmail.com</td>
+                                    <td>0989282848</td>
+                                    <td>******</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Đại học CNHN</td>
+                                    <td>user</td>
+                                    <td>21/06/2021</td>
+                                    <td class="text-right">
+                                        <a href="@Url.Action("Update","Account")"
+                                           class="btn btn-sm bg-success-light mr-2">
+                                            <i class="far fa-edit mr-1"></i> Sửa
+                                        </a>
+                                        <a data-id="40"
+                                           href="javascript:void(0);"
+                                           class="
+                                btn btn-sm
+                                bg-danger-light
+                                mr-2
+                                delete_review_comment
+                              ">
+                                            <i class="far fa-trash-alt mr-1"></i> Xoá
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade"
+     id="exampleModal"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Xác nhận?</h5>
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">Bạn có muốn xoá bản ghi này?</div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal">
+                    Không
+                </button>
+                <button type="button" class="btn btn-primary">Đồng ý</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
