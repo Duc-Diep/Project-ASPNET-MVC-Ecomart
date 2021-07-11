@@ -1,7 +1,10 @@
-﻿
+﻿@model IEnumerable<EcomartVietNam.Models.Order>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    var stt = 1;
+
 }
 
 @section addcss{
@@ -91,33 +94,32 @@
                                 </tr>
                             </thead>
                             <tbody class="text-center">
-                                <tr>
-                                    <td>1</td>
-                                    <td>#1312312</td>
-                                    <td>Nguyễn Văn A</td>
-                                    <td>30.000đ</td>
-                                    <td>29/06/2021</td>
-                                    <td>
-                                        <div class="form-group mt-3">
-                                            <select class="form-control">
-                                                <option>Chờ xác nhận</option>
-                                                <option>Đã xác nhận</option>
-                                                <option>Đang giao</option>
-                                                <option>Đã giao</option>
-                                                <option>Huỷ</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-sm bg-success-light mr-2">
-                                            Cập nhật
-                                        </a>
-                                        <a class="btn btn-sm bg-success-light mr-2"
-                                           href="@Url.Action("Details","ManageOrder")">
-                                            Chi tiết
-                                        </a>
-                                    </td>
-                                </tr>
+                                @foreach (var item in Model)
+                                {
+                                    
+                                    <tr>
+                                        <td>@stt++</td>
+                                        <td>@Html.DisplayFor(modelItem => item.order_id)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.user_id)</td>
+                                        <td>0đ</td>
+                                        <td>@Html.DisplayFor(modelItem => item.created_at)</td>
+                                        <td>
+                                            <div class="form-group mt-3">
+                                                @Html.DropDownListFor(modelItem => item.status, new SelectList(ViewBag.Status))
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-sm bg-success-light mr-2">
+                                                Cập nhật
+                                            </a>
+                                            <a class="btn btn-sm bg-success-light mr-2"
+                                               href="@Url.Action("Details","ManageOrder")">
+                                                Chi tiết
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+
                             </tbody>
                         </table>
                     </div>

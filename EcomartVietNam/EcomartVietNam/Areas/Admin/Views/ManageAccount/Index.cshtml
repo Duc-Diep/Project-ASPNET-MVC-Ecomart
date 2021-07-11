@@ -1,4 +1,5 @@
-﻿@model IEnumerable<EcomartVietNam.Models.Category>
+﻿@model IEnumerable<EcomartVietNam.Models.User>
+
 @{
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
@@ -11,23 +12,15 @@
     <link rel="stylesheet"
           href="~/Areas/Asset/plugins/datatables/datatables.min.css" />
 }
-
-
-
 <div class="content container-fluid">
     <!-- Page Header -->
     <div class="page-header">
         <div class="row">
             <div class="col">
-                <h3 class="page-title">Quản lý danh mục</h3>
+                <h3 class="page-title">Quản lý tài khoản</h3>
             </div>
             <div class="col-auto text-right">
-                <a class="btn btn-white filter-btn"
-                   href="javascript:void(0);"
-                   id="filter_search">
-                    <i class="fas fa-filter"></i>
-                </a>
-                <a href="@Url.Action("Create","Managecategory") "
+                <a href="@Url.Action("Create","ManageAccount")"
                    class="btn btn-primary add-button ml-3">
                     <i class="fas fa-plus"></i>
                 </a>
@@ -35,52 +28,6 @@
         </div>
     </div>
     <!-- /Page Header -->
-    <!-- Search Filter -->
-    <div class="card filter-card" id="filter_inputs">
-        <div class="card-body pb-0">
-            <form action="#" method="post">
-                <div class="row filter-row">
-                    <div class="col-sm-6 col-md-3">
-                        <div class="form-group">
-                            <label>Danh mục</label>
-                            <select class="form-control select">
-                                <option>Chọn danh mục</option>
-                                <option>Thịt - Cá - Trứng</option>
-                                <option>Rau Củ Quả</option>
-                                <option>Thực Phẩm Khô</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="form-group">
-                            <label>Từ ngày</label>
-                            <div class="cal-icon">
-                                <input class="form-control datetimepicker"
-                                       type="text" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="form-group">
-                            <label>Đến ngày</label>
-                            <div class="cal-icon">
-                                <input class="form-control datetimepicker"
-                                       type="text" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="form-group">
-                            <button class="btn btn-primary btn-block" type="submit">
-                                Lọc
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- /Search Filter -->
 
     <div class="row">
         <div class="col-md-12">
@@ -91,7 +38,12 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Tên danh mục</th>
+                                    <th>Email</th>
+                                    <th>SĐT</th>
+                                    <th>Mật khẩu</th>
+                                    <th>Tên</th>
+                                    @*<th>Địa chỉ</th>*@
+                                    <th>Quyền</th>
                                     <th>Ngày tạo</th>
                                     <th class="text-right">Hành động</th>
                                 </tr>
@@ -99,23 +51,29 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
+
                                     <tr>
-                                        <td>@Html.DisplayFor(modelItem => item.category_id)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.category_name)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.user_id)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.email)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.phone_number)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.password)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.full_name)</td>
+                                        @*<td>@Html.DisplayFor(modelItem => item.address)</td>*@
+                                        <td>@Html.DisplayFor(modelItem => item.role)</td>
                                         <td>@Html.DisplayFor(modelItem => item.created_at)</td>
                                         <td class="text-right">
-                                            <a href="@Url.Action("Update","ManageCategory",new { id=item.category_id })"
+                                            <a href="@Url.Action("Update","ManageAccount",new { id=item.user_id })"
                                                class="btn btn-sm bg-success-light mr-2">
                                                 <i class="far fa-edit mr-1"></i> Sửa
                                             </a>
                                             <a data-id="40"
                                                href="javascript:void(0);"
                                                class="
-                                                btn btn-sm
-                                                bg-danger-light
-                                                mr-2
-                                                delete_review_comment
-                                                "
+                                btn btn-sm
+                                bg-danger-light
+                                mr-2
+                                delete_review_comment
+                              "
                                                data-toggle="modal"
                                                data-target="#exampleModal">
                                                 <i class="far fa-trash-alt mr-1"></i> Xoá
@@ -123,6 +81,7 @@
                                         </td>
                                     </tr>
                                 }
+                               
                             </tbody>
                         </table>
                     </div>
@@ -131,7 +90,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- Modal -->
 <div class="modal fade"
@@ -158,8 +116,11 @@
                         data-dismiss="modal">
                     Không
                 </button>
-                <button type="submit" class="btn btn-primary">Đồng ý</button>
+                <button type="button" class="btn btn-primary">Đồng ý</button>
             </div>
         </div>
     </div>
 </div>
+
+
+

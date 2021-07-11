@@ -106,8 +106,8 @@
                                 <span>Quản lý đơn hàng</span>
                             </a>
                         </li>
-                        <li class="@(HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()=="Account" ? "active":"")">
-                            <a href="@Url.Action("Index","Account")">
+                        <li class="@(HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()=="ManageAccount" ? "active":"")">
+                            <a href="@Url.Action("Index","ManageAccount")">
                                 <i class="fas fa-user"></i>
                                 <span>Quản lý tài khoản </span>
                             </a>

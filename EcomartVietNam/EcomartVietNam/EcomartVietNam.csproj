@@ -129,7 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ManageAccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageController.cs" />
@@ -517,6 +517,26 @@
     <Content Include="wwwroot\fonts\fontawesome\fa-solid-900d41d.eot" />
     <Content Include="wwwroot\fonts\icofont\icofont.woff" />
     <Content Include="wwwroot\fonts\icofont\icofont.woff2" />
+    <Content Include="wwwroot\product\images\afc-tao-bien.jpg" />
+    <Content Include="wwwroot\product\images\ba-chi-gac-bep.jpg" />
+    <Content Include="wwwroot\product\images\ba-roi-heo-meat-deli.jpg" />
+    <Content Include="wwwroot\product\images\banh-an-sang-milo.jpg" />
+    <Content Include="wwwroot\product\images\bap-bo-uc.jpg" />
+    <Content Include="wwwroot\product\images\bi-do-nhat.jpg" />
+    <Content Include="wwwroot\product\images\cai-ngot-fvf.jpg" />
+    <Content Include="wwwroot\product\images\chuoi-say-deo.jpg" />
+    <Content Include="wwwroot\product\images\du-du-say-deo.jpg" />
+    <Content Include="wwwroot\product\images\dua-hau-co-hat.jpg" />
+    <Content Include="wwwroot\product\images\kiwi-vang.jpg" />
+    <Content Include="wwwroot\product\images\lap-suon-gac-bep.jpg" />
+    <Content Include="wwwroot\product\images\nam-dong-trung-ha-thao.jpg" />
+    <Content Include="wwwroot\product\images\nam-dui-ga.jpg" />
+    <Content Include="wwwroot\product\images\nam-mo-tuoi.jpg" />
+    <Content Include="wwwroot\product\images\nam-so-trang.jpg" />
+    <Content Include="wwwroot\product\images\nam-so-yen.jpg" />
+    <Content Include="wwwroot\product\images\nhan-long-hung-yen.jpg" />
+    <Content Include="wwwroot\product\images\thit-trau-gac-bep.jpg" />
+    <Content Include="wwwroot\product\images\vai-thieu-say.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -533,9 +553,11 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Areas\Admin\Views\ManageOrder\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ManageOrder\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Account\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Account\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Account\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageAccount\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageAccount\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageAccount\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\DisplayTemplates\Role.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\DisplayTemplates\Password.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_LayoutClient.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />

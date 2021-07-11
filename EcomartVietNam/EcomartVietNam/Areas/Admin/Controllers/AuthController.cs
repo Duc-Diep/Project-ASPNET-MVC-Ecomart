@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EcomartVietNam.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace EcomartVietNam.Areas.Admin.Controllers
 {
     public class AuthController : Controller
     {
+        EcomartStoreDB db = new EcomartStoreDB();
+
         // GET: Admin/Auth
         public ActionResult Index()
         {

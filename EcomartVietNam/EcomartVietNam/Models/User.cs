@@ -27,6 +27,8 @@ namespace EcomartVietNam.Models
 
         [Required]
         [StringLength(200)]
+        [DataType(DataType.Password)]
+        [UIHint("Password")]
         public string password { get; set; }
 
         [StringLength(50)]
@@ -34,7 +36,7 @@ namespace EcomartVietNam.Models
 
         [StringLength(100)]
         public string address { get; set; }
-
+        [UIHint("Role")]
         public int role { get; set; }
 
         public DateTime? created_at { get; set; }

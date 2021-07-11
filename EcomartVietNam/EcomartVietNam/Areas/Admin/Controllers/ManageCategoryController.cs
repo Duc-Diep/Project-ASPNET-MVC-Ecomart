@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EcomartVietNam.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,12 @@ namespace EcomartVietNam.Areas.Admin.Controllers
 {
     public class ManageCategoryController : Controller
     {
+        EcomartStoreDB db = new EcomartStoreDB();
         // GET: Admin/ManageCategory
         public ActionResult Index()
         {
-            return View();
+            var categories = db.Categories.ToList();
+            return View(categories);
         }
         // GET: Admin/ManageCategory/Create
         public ActionResult Create()
