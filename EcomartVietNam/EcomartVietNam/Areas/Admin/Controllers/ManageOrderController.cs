@@ -14,6 +14,10 @@ namespace EcomartVietNam.Areas.Admin.Controllers
         // GET: Admin/ManageOrder
         public ActionResult Index()
         {
+            if (Session["user"] == null)
+            {
+                return Redirect("/Admin/Auth/Login");
+            }
 
             var order = db.Orders.Join(db.Users, o => o.user_id, u => u.user_id, (o, u) => new
             {

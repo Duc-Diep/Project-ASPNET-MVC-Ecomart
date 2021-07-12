@@ -20,6 +20,7 @@ namespace EcomartVietNam.Models
 
         [Required]
         [StringLength(100)]
+        [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}")]
         public string email { get; set; }
 
         [StringLength(11)]
@@ -30,6 +31,12 @@ namespace EcomartVietNam.Models
         [DataType(DataType.Password)]
         [UIHint("Password")]
         public string password { get; set; }
+
+        [NotMapped]
+        [Required]
+        [Compare("password")]
+        public string confirm_password { get; set; }
+
 
         [StringLength(50)]
         public string full_name { get; set; }

@@ -13,6 +13,10 @@ namespace EcomartVietNam.Areas.Admin.Controllers
         // GET: Admin/Account
         public ActionResult Index()
         {
+            if (Session["user"] == null)
+            {
+                return Redirect("/Admin/Auth/Login");
+            }
             var account = db.Users.ToList();
             return View(account);
         }
