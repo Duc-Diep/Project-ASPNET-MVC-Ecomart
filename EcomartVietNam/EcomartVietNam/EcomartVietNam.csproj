@@ -145,6 +145,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Custom_order.cs" />
     <Compile Include="Models\EcomartStoreDB.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Order_detail.cs" />

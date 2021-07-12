@@ -23,24 +23,52 @@ namespace EcomartVietNam.Areas.Admin.Controllers
             {
                 order_id = o.order.order_id,
                 user_id = o.user.full_name,
+                status = o.order.status,
                 created_at = o.order.created_at
+            }).Join(db.Order_detail, x => x.order_id, od => od.order_id, (x, od) => new { 
+                ele = x,
+                order_detail = od
+            }).GroupBy(x => new {
+                order_id = x.ele.order_id,
+                user_id = x.ele.user_id,
+                status = x.ele.status,
+                created_at = x.ele.created_at
+            })
+            .Select(e => new { 
+                order_id = e.Key.order_id,
+                user_id = e.Key.user_id,
+                status = e.Key.status,
+                created_at = e.Key.created_at,
+                amount = e.Sum(v => v.order_detail.quantity * v.order_detail.price)
             }).ToList();
-            //var result = (from od in db.Orders
-            //             join us in db.Users on od.user_id equals us.user_id
-            //             join odt in db.Order_detail on od.order_id equals odt.order_id
-            //             group od by new { od.order_id, us.full_name, odt.quantity, odt.price } into g
-            //             select new
-            //             {
-            //                 oder_id = g.Key.order_id,
-            //                 user_id = g.Key.full_name,
 
-            //             }).OrderByDescending(a=>a.oder_id) ;
             List<string> status = new List<string>
             {
                 "Đã giao",  "Đang giao",  "Đã hủy"
             };
             ViewBag.Status = status;
-            return View(order);
+            List<Custom_order> list = new List<Custom_order>();
+            foreach (var item in order)
+            {
+                Custom_order c = new Custom_order();
+                c.order_id = item.order_id;
+                c.user_id = item.user_id;
+                if(item.status == 1)
+                {
+                    c.status = "Đang giao";
+                } else if(item.status == 2)
+                {
+                    c.status = "Đã giao";
+                } else
+                {
+                    c.status = "Huỷ";
+                }
+                c.amount = decimal.Parse(item.amount.ToString());
+                c.created_at = DateTime.Parse(item.created_at.ToString());
+
+                list.Add(c);
+            }
+            return View(list);
         }
         // GET: Admin/ManageOrder/id
         [HttpGet]
