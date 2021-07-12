@@ -11,6 +11,7 @@ namespace EcomartVietNam.Controllers
         // GET: Invoice
         public ActionResult Index()
         {
+            ViewBag.Account = Session["user"] == null ? null : Session["FullName"].ToString();
             return View();
         }
 

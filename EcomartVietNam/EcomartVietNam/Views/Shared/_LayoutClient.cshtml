@@ -43,8 +43,23 @@
                 </div>
                 <a href="@Url.Action("Index","Home")" class="header-logo">
                     <img src="https://ecomartvietnam.vn/wp-content/uploads/2017/08/logo.png" alt="logo" />
-                </a><a href="@Url.Action("Login","Profile")"
-                       class="header-widget" title="My Account"><img src="~/wwwroot/images/user.png" alt="user" /><span>Đăng nhập</span></a>
+                </a>
+
+                @if (ViewBag.Account == null)
+                {
+                    <a href="@Url.Action("Login","Profile")"
+                       class="header-widget" title="My Account">
+                        <img src="~/wwwroot/images/user.png" alt="user" /><span>Đăng nhập</span>
+                    </a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Index","Profile")"
+                       class="header-widget" title="My Account">
+                        <img src="~/wwwroot/images/user.png" alt="user" /><span>@ViewBag.Account</span>
+                    </a>
+                    
+                }
                 <form class="header-form">
                     <input type="text" placeholder="Tìm kiếm..." /><button>
                         <i class="fas fa-search"></i>

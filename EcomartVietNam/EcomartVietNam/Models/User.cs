@@ -1,4 +1,4 @@
-namespace EcomartVietNam.Models
+﻿namespace EcomartVietNam.Models
 {
     using System;
     using System.Collections.Generic;
@@ -18,27 +18,31 @@ namespace EcomartVietNam.Models
         [Key]
         public int user_id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Email không được để trống!")]
         [StringLength(100)]
-        [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}")]
+        [DataType(DataType.EmailAddress)]
         public string email { get; set; }
 
         [StringLength(11)]
         public string phone_number { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Mật khẩu không được để trống!")]
         [StringLength(200)]
         [DataType(DataType.Password)]
         [UIHint("Password")]
+        [MinLength(6, ErrorMessage = "Mật khẩu tối thiểu 6 ký tự.")]
         public string password { get; set; }
 
         [NotMapped]
-        [Required]
-        [Compare("password")]
+        [Required(ErrorMessage = "Mật khẩu nhập lại không được để trống!")]
+        [Compare("password", ErrorMessage = "Mật khẩu không khớp.")]
+        [DataType(DataType.Password)]
+        [MinLength(6, ErrorMessage = "Mật khẩu tối thiểu 6 ký tự.")]
         public string confirm_password { get; set; }
 
 
         [StringLength(50)]
+        [Required(ErrorMessage = "Tên không được để trống!")]
         public string full_name { get; set; }
 
         [StringLength(100)]
