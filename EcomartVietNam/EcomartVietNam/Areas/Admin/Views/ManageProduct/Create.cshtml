@@ -1,11 +1,12 @@
-﻿
+﻿@model EcomartVietNam.Models.Product
+
 @{
     ViewBag.Title = "Create";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-@section addscript{
-
+@section Scripts {
+    
     <script src="~/Areas/Asset/js/ckeditor.js"></script>
     <script>
         ClassicEditor.create(document.querySelector(".editor"), {
@@ -44,6 +45,7 @@
                 console.warn("Build id: 6gev7fkzarkd-nohdljl880ze");
                 console.error(error);
             });
+        @Scripts.Render("~/bundles/jqueryval")
     </script>
 }
 <div class="content container-fluid">
@@ -62,47 +64,53 @@
             <div class="card">
                 <div class="card-body">
                     <!-- Form -->
-                    <form action="@Url.Action("Index","ManageProduct")">
+                    <form method="post" action="@Url.Action("Create","ManageProduct")" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken()
                         <div class="form-group">
                             <label>Tên sản phẩm</label>
-                            <input class="form-control" type="text" />
+                            @Html.EditorFor(model => model.product_name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.product_name, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
-                            <label>Ảnh đại diện</label>
-                            <input class="form-control" type="file" />
+                            <label class="col-md-4">Ảnh đại diện</label>
+                            <img id="output" class="img-rounded" width="200" height="200" src="~/wwwroot/product/images/no-image-news.png" alt="Ảnh" />
+                            <p class="text-center"><label for="ufile" style="cursor:pointer;">Chọn file ảnh</label></p>
+                            <input name="product_image" id="ufile" type="file" style="display:none;" onchange="loadFile(event)" />
                         </div>
                         <div class="form-group">
                             <label>Giá bán</label>
-                            <input class="form-control" type="number" />
+                            @Html.EditorFor(model => model.product_price, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.product_price, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
                             <label>Nguồn hàng:</label>
-                            <input class="form-control" type="text" />
+                            @Html.EditorFor(model => model.product_source, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.product_source, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
                             <label>Trọng lượng</label>
-                            <input class="form-control" type="text" />
+                            @Html.EditorFor(model => model.product_weight, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.product_weight, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
                             <label>Số lượng</label>
-                            <input class="form-control" type="text" />
+                            @Html.EditorFor(model => model.product_amount, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.product_amount, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
                             <label>Danh mục</label>
-                            <select class="form-control select">
-                                <option>Chọn danh mục</option>
-                                <option>Thịt - Cá - Trứng</option>
-                                <option>Rau Củ Quả</option>
-                                <option>Thực Phẩm Khô</option>
-                            </select>
+                            @Html.DropDownList("category_id", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.category_id, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
                             <label for="">Mô tả</label>
-                            <div class="centered">
-                                <div class="editor-container">
-                                    <div class="editor"></div>
-                                </div>
-                            </div>
+                            @*<div class="centered">
+                                    <div class="editor-container">
+                                        <div class="editor"></div>
+                                    </div>
+                                </div>*@
+                            @Html.EditorFor(model => model.product_description, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.product_description, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="mt-4">
@@ -120,9 +128,15 @@
 </div>
 
 
+@if (ViewBag.Error != null)
+{
+    <br />
+    <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
+}
 
-
-
-
-
-
+<script>
+    var loadFile = function (event) {
+        var image = document.getElementById("output");
+        image.src = URL.createObjectURL(event.target.files[0])
+    }
+</script>

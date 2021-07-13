@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<EcomartVietNam.Models.Category>
 @{
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    var index = 0;
 }
 
 @section addcss{
@@ -22,12 +23,7 @@
                 <h3 class="page-title">Quản lý danh mục</h3>
             </div>
             <div class="col-auto text-right">
-                <a class="btn btn-white filter-btn"
-                   href="javascript:void(0);"
-                   id="filter_search">
-                    <i class="fas fa-filter"></i>
-                </a>
-                <a href="@Url.Action("Create","Managecategory") "
+                <a href="@Url.Action("Create","Managecategory")"
                    class="btn btn-primary add-button ml-3">
                     <i class="fas fa-plus"></i>
                 </a>
@@ -35,52 +31,7 @@
         </div>
     </div>
     <!-- /Page Header -->
-    <!-- Search Filter -->
-    <div class="card filter-card" id="filter_inputs">
-        <div class="card-body pb-0">
-            <form action="#" method="post">
-                <div class="row filter-row">
-                    <div class="col-sm-6 col-md-3">
-                        <div class="form-group">
-                            <label>Danh mục</label>
-                            <select class="form-control select">
-                                <option>Chọn danh mục</option>
-                                <option>Thịt - Cá - Trứng</option>
-                                <option>Rau Củ Quả</option>
-                                <option>Thực Phẩm Khô</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="form-group">
-                            <label>Từ ngày</label>
-                            <div class="cal-icon">
-                                <input class="form-control datetimepicker"
-                                       type="text" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="form-group">
-                            <label>Đến ngày</label>
-                            <div class="cal-icon">
-                                <input class="form-control datetimepicker"
-                                       type="text" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="form-group">
-                            <button class="btn btn-primary btn-block" type="submit">
-                                Lọc
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- /Search Filter -->
+    
 
     <div class="row">
         <div class="col-md-12">
@@ -90,9 +41,9 @@
                         <table class="table table-hover table-center mb-0 datatable">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>Mã</th>
                                     <th>Tên danh mục</th>
-                                    <th>Ngày tạo</th>
+                                    <th>Ngày chỉnh sửa</th>
                                     <th class="text-right">Hành động</th>
                                 </tr>
                             </thead>
@@ -102,7 +53,7 @@
                                     <tr>
                                         <td>@Html.DisplayFor(modelItem => item.category_id)</td>
                                         <td>@Html.DisplayFor(modelItem => item.category_name)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.created_at)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.updated_at)</td>
                                         <td class="text-right">
                                             <a href="@Url.Action("Update","ManageCategory",new { id=item.category_id })"
                                                class="btn btn-sm bg-success-light mr-2">

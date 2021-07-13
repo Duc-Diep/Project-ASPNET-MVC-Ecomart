@@ -48,6 +48,7 @@
         [StringLength(100)]
         public string address { get; set; }
         [UIHint("Role")]
+        
         public int role { get; set; }
 
         public DateTime? created_at { get; set; }

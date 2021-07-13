@@ -1,6 +1,7 @@
 ﻿using EcomartVietNam.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,6 +11,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
     public class ManageOrderController : Controller
     {
         EcomartStoreDB db = new EcomartStoreDB();
+        static List<Custom_order> list;
 
         // GET: Admin/ManageOrder
         public ActionResult Index()
@@ -51,7 +53,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
                 "Đã giao",  "Đang giao",  "Đã hủy"
             };
             ViewBag.Status = status;
-            List<Custom_order> list = new List<Custom_order>();
+            list = new List<Custom_order>();
             foreach (var item in order)
             {
                 Custom_order c = new Custom_order();
@@ -75,15 +77,46 @@ namespace EcomartVietNam.Areas.Admin.Controllers
             return View(list);
         }
         // GET: Admin/ManageOrder/id
-        [HttpGet]
-        public ActionResult Details()
-        {
-            return View();
-        }
+        //public ActionResult Details()
+        //{
+        //    return View();
+        //}
 
-        [HttpPost]
-        public ActionResult Details(int ID)
+        public ActionResult Details(int id)
         {
+            Order order = db.Orders.Find(id);
+            User user = db.Users.Find(order.user_id);
+            List<Order_detail> productsInOrder = db.Order_detail.Where(p => p.order_id == id).ToList();
+            List<Product> listProduct = new List<Product>();
+            foreach (var item in productsInOrder)
+            {
+                Product pr = db.Products.Where(p => p.product_id == item.product_id).SingleOrDefault();
+                listProduct.Add(pr);
+            }
+            ViewBag.User = user;
+            ViewBag.Order = order;
+            if (order.status == 1)
+            {
+                ViewBag.Status = "Đang giao";
+            }
+            else if (order.status == 2)
+            {
+                ViewBag.Status = "Đã giao";
+            }
+            else
+            {
+                ViewBag.Status = "Huỷ";
+            }
+            ViewBag.Products = productsInOrder;
+            ViewBag.ProductInfo = listProduct;
+            foreach (var item in list)
+            {
+                if (item.order_id==id)
+                {
+                    ViewBag.Total = string.Format(new CultureInfo("vi-VN"), "{0:#,##0}", item.amount) + " vnđ";
+                }
+            }
+            
             return View();
         }
     }

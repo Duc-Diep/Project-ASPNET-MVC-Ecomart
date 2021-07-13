@@ -9,7 +9,7 @@
     <div class="page-header">
         <div class="row">
             <div class="col">
-                <h3 class="page-title">Chi tiết đơn hàng #1321</h3>
+                <h3 class="page-title">Chi tiết đơn hàng #@ViewBag.Order.order_id</h3>
             </div>
             <div class="col-auto text-right">
                 <a class="btn btn-primary add-button ml-3">
@@ -26,14 +26,14 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-9">
-                            <p><b>Người mua: </b> <span>Nguyễn Văn A</span></p>
-                            <p><b>Địa chỉ: </b> <span>Mộc Châu, Sơn La</span></p>
-                            <p><b>Số điện thoại: </b> <span>0984223333</span></p>
+                            <p><b>Người mua: </b> <span>@ViewBag.User.full_name</span></p>
+                            <p><b>Địa chỉ: </b> <span>@ViewBag.User.address</span></p>
+                            <p><b>Số điện thoại: </b> <span>@ViewBag.User.phone_number</span></p>
                         </div>
                         <div class="col-md-3">
-                            <p><b>Mã đơn hàng: </b> <span>#1312</span></p>
-                            <p><b>Ngày tạo: </b> <span>29/06/2021</span></p>
-                            <p><b>Trạng thái: </b> <span>Đã giao</span></p>
+                            <p><b>Mã đơn hàng: </b> <span>@ViewBag.Order.order_id</span></p>
+                            <p><b>Ngày tạo: </b> <span>@ViewBag.Order.created_at</span></p>
+                            <p><b>Trạng thái: </b> <span>@ViewBag.Status</span></p>
                         </div>
                     </div>
                 </div>
@@ -57,27 +57,30 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>
-                                        <img class="rounded service-img mr-1"
-                                             src="assets/img/sub-category/sub-category-01.jpg"
-                                             alt="" />
-                                        Thịt giò heo
-                                    </td>
-                                    <td>30.000đ</td>
-                                    <td>123</td>
-                                    <td>330.000đ</td>
-                                </tr>
+                                @for (int i=0;i< @ViewBag.Products.Count; i++)
+                                {
+                                    <tr>
+                                        <td>@ViewBag.Products[i].product_id</td>
+                                        <td>
+                                            @{ var ImagePath = "~/wwwroot/product/images/" + @ViewBag.ProductInfo[i].product_image;}
+                                            <img class="rounded service-img mr-1"
+                                                 src="@Url.Content(@ImagePath)"
+                                                 alt="" />
+                                            @ViewBag.ProductInfo[i].product_name
+                                        </td>
+                                        <td>@ViewBag.Products[i].price</td>
+                                        <td>@ViewBag.Products[i].quantity</td>
+                                        <td>@(@ViewBag.Products[i].price*@ViewBag.Products[i].quantity)</td>
+                                    </tr>
+                                }
+
                             </tbody>
                         </table>
                     </div>
                     <div class="row mt-5">
                         <div class="col-md-9"></div>
                         <div class="col-md-3">
-                            <p><b>Tổng: </b> <span>300.000đ</span></p>
-                            <p><b>Giảm giá: </b> <span>10%</span></p>
-                            <p><b>Thành tiền: </b> <span>300.000đ</span></p>
+                            <p><b>Thành tiền: </b> <span>@ViewBag.Total</span></p>
                         </div>
                     </div>
                 </div>

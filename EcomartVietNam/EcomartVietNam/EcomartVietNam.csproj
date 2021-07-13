@@ -549,6 +549,7 @@
     <Content Include="wwwroot\product\images\nam-so-trang.jpg" />
     <Content Include="wwwroot\product\images\nam-so-yen.jpg" />
     <Content Include="wwwroot\product\images\nhan-long-hung-yen.jpg" />
+    <Content Include="wwwroot\product\images\no-image-news.png" />
     <Content Include="wwwroot\product\images\thit-trau-gac-bep.jpg" />
     <Content Include="wwwroot\product\images\vai-thieu-say.jpg" />
   </ItemGroup>

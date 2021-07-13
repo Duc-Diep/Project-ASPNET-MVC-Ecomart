@@ -1,7 +1,9 @@
 ﻿using EcomartVietNam.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -25,15 +27,85 @@ namespace EcomartVietNam.Areas.Admin.Controllers
         {
             return View();
         }
-        // GET: Admin/ManageCategory/Update
-        public ActionResult Update()
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Category category)
         {
-            return View();
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Categories.Add(category);
+                    db.SaveChanges();
+
+                }
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+
+                ViewBag.Error = "Lỗi nhập dữ liệu " + ex.Message;
+                return View(category);
+            }
         }
-        
-        public ActionResult Delete()
+
+
+        // GET: Admin/ManageCategory/Update
+        public ActionResult Update(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Category category = db.Categories.Find(id);
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+            return View(category);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(Category catalogy)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Entry(catalogy).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = "Lỗi nhập dữ liệu " + ex.Message;
+                return View(catalogy);
+            }
+
+
+        }
+
+
+        [HttpPost]
+        public ActionResult Delete(string id)
+        {
+            Category category = db.Categories.Find(id);
+            try
+            {
+                db.Categories.Remove(category);
+                db.SaveChanges();
+                return View();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = "Không xóa được bản ghi này " + ex.Message;
+                return View();
+            }
+
         }
     }
 }

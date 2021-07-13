@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<EcomartVietNam.Models.Product>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
@@ -44,10 +44,10 @@
                     <div class="col-sm-6 col-md-3">
                         <div class="form-group">
                             <label>Tên sản phẩm</label>
-                            <input class="form-control" type="text" />
+                            <input class="form-control" type="text" name="SearchString" />
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    @*<div class="col-sm-6 col-md-3">
                         <div class="form-group">
                             <label>Từ ngày</label>
                             <div class="cal-icon">
@@ -64,7 +64,7 @@
                                        type="text" />
                             </div>
                         </div>
-                    </div>
+                    </div>*@
                     <div class="col-sm-6 col-md-3">
                         <div class="form-group">
                             <button class="btn btn-primary btn-block" type="submit">
@@ -95,37 +95,43 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>
-                                        <img class="rounded service-img mr-1"
-                                             src="~/Areas/Asset/img/sub-category/sub-category-01.jpg"
-                                             alt="" />
-                                        Thịt giò heo
-                                    </td>
-                                    <td>Thịt - Cá - Trứng</td>
-                                    <td>30.000đ</td>
-                                    <td>123</td>
-                                    <td class="text-right">
-                                        <a href="@Url.Action("Update","ManageProduct")"
-                                           class="btn btn-sm bg-success-light mr-2">
-                                            <i class="far fa-edit mr-1"></i>Sửa
-                                        </a>
-                                        <a data-id="40"
-                                           href="javascript:void(0);"
-                                           class="
+                                @foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.product_id)</td>
+                                        <td>
+
+                                            @{ var ImagePath = "~/wwwroot/product/images/" + item.product_image;}
+                                            <img class="rounded service-img mr-1"
+                                                 src="@Url.Content(@ImagePath)"
+                                                 alt="" />
+                                            @Html.DisplayFor(modelItem => item.product_name)
+                                        </td>
+                                        <td>@Html.DisplayFor(modelItem => item.Category.category_name)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.product_price)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.product_amount)</td>
+                                        <td class="text-right">
+                                            <a href="@Url.Action("Update","ManageProduct",new {id = item.product_id})"
+                                               class="btn btn-sm bg-success-light mr-2">
+                                                <i class="far fa-edit mr-1"></i>Sửa
+                                            </a>
+                                            <a data-id="40"
+                                               href="javascript:void(0);"
+                                               class="
                                                 btn btn-sm
                                                 bg-danger-light
                                                 mr-2
                                                 delete_review_comment
                                                 "
-                                            data-toggle="modal"
-                                            data-target="#exampleModal"
-                                           >
-                                            <i class="far fa-trash-alt mr-1"></i> Xoá
-                                        </a>
-                                    </td>
-                                </tr>
+                                               data-toggle="modal"
+                                               data-target="#exampleModal">
+                                                <i class="far fa-trash-alt mr-1"></i> Xoá
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+
                             </tbody>
                         </table>
                     </div>
