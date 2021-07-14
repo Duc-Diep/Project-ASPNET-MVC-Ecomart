@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EcomartVietNam.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,13 @@ namespace EcomartVietNam.Controllers
 {
     public class CheckoutController : Controller
     {
+        EcomartStoreDB db = new EcomartStoreDB();
         // GET: Checkout
         public ActionResult Index()
         {
-            ViewBag.Account = Session["user"] == null ? null : Session["FullName"].ToString();
+            ViewBag.Account = Session["client_id"] == null ? null : Session["client_name"].ToString();
+            var categories = db.Categories.ToList();
+            ViewBag.Categories = categories;
             return View();
         }
     }

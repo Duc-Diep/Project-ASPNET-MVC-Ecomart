@@ -12,7 +12,7 @@
     <meta name="title" content="Ecomart" />
     <meta name="keywords"
           content="organe, organic, food, shop, ecommerce, store, html, agriculture, vegetable, organic food, organic product, organic farm, organic life, organic shop, food store" />
-    <title>Eco Mart Siêu Thị Cho Mọi Nhà - Thực Phẩm Sạch</title>
+    <title>@ViewBag.Title - Ecomart</title>
 
     <link rel="icon" href="~/wwwroot/images/favicon.png" />
     <link rel="stylesheet" href="~/wwwroot/fonts/flaticon/flaticon.css" />
@@ -86,11 +86,10 @@
                             <li class="navbar-item dropdown">
                                 <a class="navbar-link dropdown-arrow" href="#">danh mục sản phẩm</a>
                                 <ul class="dropdown-position-list">
-                                    <li><a href="@Url.Action("Index","Category")">combo tiện lợi</a></li>
-                                    <li><a href="@Url.Action("Index","Category")">thịt - cá - trứng</a></li>
-                                    <li><a href="@Url.Action("Index","Category")">rau củ quả</a></li>
-                                    <li><a href="@Url.Action("Index","Category")">thực phẩm khô</a></li>
-                                    <li><a href="@Url.Action("Index","Category")">các loại nấm</a></li>
+                                    @foreach (var item in ViewBag.Categories)
+                                    {
+                                        <li><a href="@Url.Action("Detail","Category", new { id = item.category_id })">@item.category_name</a></li>
+                                    }
                                 </ul>
                             </li>
                             <li class="navbar-item dropdown">
