@@ -1,18 +1,27 @@
-﻿using System;
+﻿using EcomartVietNam.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace EcomartVietNam.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        EcomartStoreDB db = new EcomartStoreDB();
+        public ActionResult Index(int? page)
         {
-            ViewBag.Account = Session["user"] == null ? null : Session["FullName"].ToString();
+            ViewBag.Account = Session["client_id"] == null ? null : Session["client_name"].ToString();
+            var categories = db.Categories.ToList();
+            ViewBag.Categories = categories;
 
-            return View();
+            var products = db.Products.OrderByDescending(p => p.product_id);
+
+            int pageNumber = (page ?? 1);
+
+            return View(products.ToPagedList(pageNumber, 10));
         }
 
     }

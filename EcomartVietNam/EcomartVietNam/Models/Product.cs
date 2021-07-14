@@ -34,6 +34,7 @@ namespace EcomartVietNam.Models
         [Required]
         public string product_description { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:C0}")]
         public decimal product_price { get; set; }
 
         [StringLength(50)]

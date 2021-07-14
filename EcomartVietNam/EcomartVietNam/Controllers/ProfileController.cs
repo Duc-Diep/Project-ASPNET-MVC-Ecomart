@@ -15,11 +15,18 @@ namespace EcomartVietNam.Controllers
         // GET: Profile
         public ActionResult Index()
         {
-            if (Session["user"] == null)
+            if (Session["client_id"] == null)
             {
                 return Redirect("/Profile/Login");
             }
-            return View();
+            ViewBag.Account = Session["client_name"].ToString();
+            int id = int.Parse(Session["client_id"].ToString());
+            var categories = db.Categories.ToList();
+            ViewBag.Categories = categories;
+
+            var user = db.Users.Where(us => us.user_id == id).SingleOrDefault();
+
+            return View(user);
         }
 
         public ActionResult ChangePass()
@@ -28,7 +35,7 @@ namespace EcomartVietNam.Controllers
         }
         public ActionResult Login()
         {
-            if (Session["user"] == null)
+            if (Session["client_id"] == null)
             {
                 return View();
             }
@@ -49,8 +56,8 @@ namespace EcomartVietNam.Controllers
                 if (data.Count() > 0)
                 {
                     //add session
-                    Session["FullName"] = data.FirstOrDefault().full_name;
-                    Session["user"] = data.FirstOrDefault().user_id;
+                    Session["client_name"] = data.FirstOrDefault().full_name;
+                    Session["client_id"] = data.FirstOrDefault().user_id;
                     return Redirect("/");
                 }
                 else
@@ -64,7 +71,7 @@ namespace EcomartVietNam.Controllers
         }
         public ActionResult Register()
         {
-            if (Session["user"] == null)
+            if (Session["client_id"] == null)
             {
                 return View();
             }

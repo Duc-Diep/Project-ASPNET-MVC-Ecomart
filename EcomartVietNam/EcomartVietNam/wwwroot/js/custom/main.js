@@ -1,4 +1,4 @@
-$(window).on("scroll", function () {
+﻿$(window).on("scroll", function () {
   $(this).scrollTop() > 130
     ? $(".header-part").addClass("active")
     : $(".header-part").removeClass("active");
