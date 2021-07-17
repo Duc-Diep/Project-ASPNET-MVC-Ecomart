@@ -1,7 +1,7 @@
 ﻿@model EcomartVietNam.Models.User
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = Model.full_name;
     Layout = "~/Views/Shared/_LayoutClient.cshtml";
 }
 
@@ -27,7 +27,8 @@
                         <h4>Thông tin tài khoản</h4>
                         <a href="@Url.Action("ChangePass","Profile")">Đổi mật khẩu</a>
                     </div>
-                    <div class="account-content">
+                    <form action="@Url.Action("Update","Profile")" method="post" class="account-content">
+                        @Html.AntiForgeryToken()
                         <div class="row">
                             <div class="col-lg-2">
                                 <div class="profile-image">
@@ -38,16 +39,18 @@
                                 <div class="form-group">
                                     <label class="form-label">tên</label>
                                     <input class="form-control"
-                                            type="text"
-                                            value="@Model.full_name" />
+                                           type="text"
+                                           name="fullname"
+                                           value="@Model.full_name" />
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group">
                                     <label class="form-label">Email</label>
                                     <input class="form-control"
-                                            type="email"
-                                            value="@Model.email" />
+                                           type="email"
+                                           name="email"
+                                           value="@Model.email" />
                                 </div>
                             </div>
                             <div class="col-lg-2">
@@ -60,25 +63,27 @@
                                 <div class="form-group">
                                     <label class="form-label">Số điện thoại</label>
                                     <input class="form-control"
-                                            type="text"
-                                            value="@Model.phone_number" />
+                                           type="text"
+                                           name="phone"
+                                           value="@Model.phone_number" />
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group">
                                     <label class="form-label">Địa chỉ</label>
                                     <input class="form-control"
-                                            type="email"
-                                            value="@Model.address" />
+                                           type="text"
+                                           name="address"
+                                           value="@Model.address" />
                                 </div>
                             </div>
-                            <div class="col-lg-2">
-                                <div class="profile-btn">
-                                    <a href="#">Cập nhật</a>
-                                </div>
+                            <div class="col-lg-2 align-middle">
+                                <button class="btn btn-inline pt-2 pb-2 mt-4">
+                                    <span>cập nhật</span>
+                                </button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

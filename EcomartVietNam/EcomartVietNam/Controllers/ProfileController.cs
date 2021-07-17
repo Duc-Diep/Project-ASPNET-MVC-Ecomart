@@ -2,29 +2,22 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
 namespace EcomartVietNam.Controllers
 {
-    public class ProfileController : Controller
+    public class ProfileController : ProtectController
     {
         EcomartStoreDB db = new EcomartStoreDB();
         // GET: Profile
         public ActionResult Index()
         {
-            if (Session["client_id"] == null)
+            if (Session["user"] == null)
             {
                 return Redirect("/Profile/Login");
             }
-            ViewBag.Account = Session["client_name"].ToString();
-            int id = int.Parse(Session["client_id"].ToString());
-            var categories = db.Categories.ToList();
-            ViewBag.Categories = categories;
 
-            var user = db.Users.Where(us => us.user_id == id).SingleOrDefault();
 
             return View(user);
         }
@@ -33,9 +26,17 @@ namespace EcomartVietNam.Controllers
         {
             return View();
         }
+
+        [NotAuthorize]
+        public ActionResult Logout()
+        {
+            Session["user"] = null;
+            return Redirect("/");
+        }
+        [NotAuthorize]
         public ActionResult Login()
         {
-            if (Session["client_id"] == null)
+            if (Session["user"] == null)
             {
                 return View();
             }
@@ -44,6 +45,7 @@ namespace EcomartVietNam.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [NotAuthorize]
         public ActionResult Login(FormCollection frm)
         {
             if (ModelState.IsValid)
@@ -51,13 +53,12 @@ namespace EcomartVietNam.Controllers
                 string email = frm["email"];
                 string password = frm["password"];
 
-                string currentPass = EncodePassword(password);
-                var data = db.Users.Where(s => s.email.Equals(email) && s.password.Equals(currentPass)).ToList();
-                if (data.Count() > 0)
+                string currentPass = Helper.EncodePassword(password);
+                var user = db.Users.Where(s => s.email.Equals(email) && s.password.Equals(currentPass)).SingleOrDefault();
+                if (user != null)
                 {
                     //add session
-                    Session["client_name"] = data.FirstOrDefault().full_name;
-                    Session["client_id"] = data.FirstOrDefault().user_id;
+                    Session["user"] = user;
                     return Redirect("/");
                 }
                 else
@@ -69,9 +70,10 @@ namespace EcomartVietNam.Controllers
             ViewBag.error = "Đăng nhập thất bại";
             return View();
         }
+        [NotAuthorize]
         public ActionResult Register()
         {
-            if (Session["client_id"] == null)
+            if (Session["user"] == null)
             {
                 return View();
             }
@@ -80,6 +82,7 @@ namespace EcomartVietNam.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [NotAuthorize]
         public ActionResult Register(FormCollection frm)
         {
             try
@@ -108,7 +111,7 @@ namespace EcomartVietNam.Controllers
                     User u = new User();
                     u.full_name = full_name;
                     u.email = email;
-                    u.password = EncodePassword(password);
+                    u.password = Helper.EncodePassword(password);
                     u.role = 0;
                     db.Configuration.ValidateOnSaveEnabled = false;
                     db.Users.Add(u);
@@ -121,19 +124,6 @@ namespace EcomartVietNam.Controllers
                 ViewBag.Error = "Lỗi dữ liệu " + ex;
                 return View();
             }
-        }
-
-        public static string EncodePassword(string originalPassword)
-        {
-            Byte[] originalBytes;
-            Byte[] encodedBytes;
-            MD5 md5;
-
-            md5 = new MD5CryptoServiceProvider();
-            originalBytes = ASCIIEncoding.Default.GetBytes(originalPassword);
-            encodedBytes = md5.ComputeHash(originalBytes);
-
-            return BitConverter.ToString(encodedBytes);
         }
     }
 }

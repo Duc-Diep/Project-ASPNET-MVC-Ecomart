@@ -1492,8 +1492,11 @@ tbody tr td:last-child {
   color: var(--yellow);
 }
 .product-name {
-  margin-bottom: 3px;
-  text-transform: capitalize;
+    margin-bottom: 3px;
+    text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .product-name a {
   color: var(--sub-heading);
@@ -5165,7 +5168,6 @@ tbody tr td:last-child {
   margin-bottom: 25px;
 }
 .filter-short {
-  width: 225px;
   display: flex;
   align-items: center;
   justify-content: center;

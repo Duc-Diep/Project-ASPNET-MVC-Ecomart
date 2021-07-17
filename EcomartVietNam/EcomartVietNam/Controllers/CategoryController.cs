@@ -7,34 +7,59 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;
 
+
 namespace EcomartVietNam.Controllers
 {
     public class CategoryController : Controller
     {
         EcomartStoreDB db = new EcomartStoreDB();
         // GET: Category
-        public ActionResult Detail(int id, int? page)
+        public ActionResult Detail(int id, string order, decimal? fromPrice, decimal? toPrice, int? page)
         {
-            ViewBag.Account = Session["client_id"] == null ? null : Session["client_name"].ToString();
-            var categories = db.Categories.ToList();
-            ViewBag.Categories = categories;
-
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var category = db.Categories.Find(id);
-            ViewBag.Category = category;
-
-            var products = db.Products.Where(p => p.category_id == id).OrderByDescending(p => p.product_id);
-            int pageNumber = (page ?? 1);
-
-            return View(products.ToPagedList(pageNumber, 12));
-
             if (category == null)
             {
                 return HttpNotFound();
             }
+
+            var products = db.Products.Where(p => p.category_id == id).OrderByDescending(p => p.product_id);
+
+            if(order != null)
+                switch (order)
+                {
+                    case "desc":
+                        products = products.OrderByDescending(p => p.product_price);
+                        ViewBag.order = "desc";
+                        break;
+                    case "asc":
+                        products = products.OrderBy(p => p.product_price);
+                        ViewBag.order = "asc";
+                        break;
+                    default:
+                        ViewBag.order = "default";
+                        break;
+                }
+
+            if (fromPrice != null)
+            {
+                ViewBag.from = fromPrice;
+                products = (IOrderedQueryable<Product>)products.Where(p => p.product_price >= fromPrice);
+            }
+
+            if (toPrice != null)
+            {
+                ViewBag.to = toPrice;
+                products = (IOrderedQueryable<Product>)products.Where(p => p.product_price <= toPrice);
+            }
+
+            int pageNumber = (page ?? 1);
+            ViewBag.Category = category.category_name;
+
+            return View(products.ToPagedList(pageNumber, 8));
         }
     }
 }

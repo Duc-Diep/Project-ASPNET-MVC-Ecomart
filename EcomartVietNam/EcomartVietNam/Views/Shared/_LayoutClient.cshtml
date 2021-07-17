@@ -22,155 +22,19 @@
     <link rel="stylesheet" href="~/wwwroot/css/vendor/venobox.min.css" />
     <link rel="stylesheet" href="~/wwwroot/css/vendor/slick.min.css" />
     <link rel="stylesheet" href="~/wwwroot/css/vendor/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/wwwroot/css/custom/main.css" />
+    <link rel="stylesheet" href="~/wwwroot/css/custom/mainn.css" />
     <link rel="stylesheet" href="~/wwwroot/css/custom/index.css" />     
     @RenderSection("addcss",required:false)
 </head>
 
 <body>
     <div class="backdrop"></div>
-    <section class="header-part">
-        <div class="container">
-            <div class="header-content">
-                <div class="header-media-group">
-                    <button class="header-user">
-                        <img src="~/wwwroot/images/user.png" alt="user" />
-                    </button><a href="@Url.Action("Index","Home")">
-                        <img src="https://ecomartvietnam.vn/wp-content/uploads/2017/08/logo.png" alt="logo" />
-                    </a><button class="header-src">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-                <a href="@Url.Action("Index","Home")" class="header-logo">
-                    <img src="https://ecomartvietnam.vn/wp-content/uploads/2017/08/logo.png" alt="logo" />
-                </a>
-
-                @if (ViewBag.Account == null)
-                {
-                    <a href="@Url.Action("Login","Profile")"
-                       class="header-widget" title="My Account">
-                        <img src="~/wwwroot/images/user.png" alt="user" /><span>Đăng nhập</span>
-                    </a>
-                }
-                else
-                {
-                    <a href="@Url.Action("Index","Profile")"
-                       class="header-widget" title="My Account">
-                        <img src="~/wwwroot/images/user.png" alt="user" /><span>@ViewBag.Account</span>
-                    </a>
-                    
-                }
-                <form class="header-form">
-                    <input type="text" placeholder="Tìm kiếm..." /><button>
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
-                <div class="header-widget-group">
-                    <a class="header-widget header-cart" title="Cartlist" href="/Checkout">
-                        <i class="fas fa-shopping-basket"></i><sup>9+</sup><span>Tổng<small>120.000đ</small></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    @{ Html.RenderAction("_Header", "Base"); }
     <!-- Start menu pc -->
-    <nav class="navbar-part">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="navbar-content">
-                        <ul class="navbar-list">
-                            <li class="navbar-item dropdown">
-                                <a class="navbar-link" href="@Url.Action("Index","Home")">trang chủ</a>
-                            </li>
-                            <li class="navbar-item dropdown">
-                                <a class="navbar-link dropdown-arrow" href="#">danh mục sản phẩm</a>
-                                <ul class="dropdown-position-list">
-                                    @foreach (var item in ViewBag.Categories)
-                                    {
-                                        <li><a href="@Url.Action("Detail","Category", new { id = item.category_id })">@item.category_name</a></li>
-                                    }
-                                </ul>
-                            </li>
-                            <li class="navbar-item dropdown">
-                                <a class="navbar-link" href="#">khuyến mãi</a>
-                            </li>
-                            <li class="navbar-item dropdown">
-                                <a class="navbar-link" href="#">hệ thống cửa hàng</a>
-                            </li>
-                        </ul>
-                        <div class="navbar-info-group">
-                            <div class="navbar-info">
-                                <i class="icofont-ui-touch-phone"></i>
-                                <p><small>hotline</small><span>0976.658.183</span></p>
-                            </div>
-                            <div class="navbar-info">
-                                <i class="icofont-ui-email"></i>
-                                <p><small>email</small><span>contact@ecomartvietnam.vn</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @{ Html.RenderAction("_MenuPC", "Base"); }
     <!-- End menu pc -->
-
     <!-- Start menu mobile -->
-    <aside class="nav-sidebar">
-        <div class="nav-header">
-            <a href="#"><img src="https://ecomartvietnam.vn/wp-content/uploads/2017/08/logo.png" alt="logo" /></a><button class="nav-close">
-                <i class="icofont-close"></i>
-            </button>
-        </div>
-        <div class="nav-content">
-            <div class="nav-btn">
-                <a href="@Url.Action("Login","Profile")" class="btn btn-inline"><i class="fa fa-unlock-alt"></i><span>đăng nhập</span></a>
-            </div>
-            <ul class="nav-list">
-                <li>
-                    <a class="nav-link" href="#"><i class="icofont-home"></i>Trang chủ</a>
-                </li>
-                <li>
-                    <a class="nav-link dropdown-link" href="#"><i class="icofont-page"></i>danh mục sản phẩm</a>
-                    <ul class="dropdown-list">
-                        <li><a href="@Url.Action("Index","Category")">combo tiện lợi</a></li>
-                        <li>
-                            <a href="@Url.Action("Index","Category")">thịt - cá - trứng<span class="menu-badge">hot</span></a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index","Category")">rau củ quả<span class="menu-badge">hot</span></a>
-                        </li>
-                        <li><a href="@Url.Action("Index","Category")">thực phẩm khô</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="nav-link cart-btn" href="/Checkout">
-                        <i class="fas fa-shopping-basket"></i><span>giỏ hàng</span><sup>9+</sup>
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="contact.html"><i class="icofont-contacts"></i>liên hệ</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="@Url.Action("Login","Profile")"><i class="icofont-logout"></i>đăng xuất</a>
-                </li>
-            </ul>
-            <div class="nav-info-group">
-                <div class="nav-info">
-                    <i class="icofont-ui-touch-phone"></i>
-                    <p><small>liên hệ</small><span>0976.658.183</span></p>
-                </div>
-                <div class="nav-info">
-                    <i class="icofont-ui-email"></i>
-                    <p><small>email</small><span>contact@ecomartvietnam.vn</span></p>
-                </div>
-            </div>
-            <div class="nav-footer">
-                <p>Bản quyền thuộc về nhóm 2 ASP.NET</p>
-            </div>
-        </div>
-    </aside>
+    @{ Html.RenderAction("_MenuMobile", "Base"); }
     <!-- End menu mobile -->
 
     @RenderBody()

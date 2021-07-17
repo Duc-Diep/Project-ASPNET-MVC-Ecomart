@@ -141,15 +141,18 @@
     <Compile Include="Areas\Admin\Controllers\ManageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageOrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageProductController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\ProtectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Custom_order.cs" />
     <Compile Include="Models\EcomartStoreDB.cs" />
@@ -350,7 +353,7 @@
     <Content Include="wwwroot\css\custom\home-standard.css" />
     <Content Include="wwwroot\css\custom\index.css" />
     <Content Include="wwwroot\css\custom\invoice.css" />
-    <Content Include="wwwroot\css\custom\main.css" />
+    <Content Include="wwwroot\css\custom\mainn.css" />
     <Content Include="wwwroot\css\custom\orderlist.css" />
     <Content Include="wwwroot\css\custom\privacy.css" />
     <Content Include="wwwroot\css\custom\product-details.css" />
@@ -560,10 +563,18 @@
     <Content Include="wwwroot\product\images\no-image-news.png" />
     <Content Include="wwwroot\product\images\thit-trau-gac-bep.jpg" />
     <Content Include="wwwroot\product\images\vai-thieu-say.jpg" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_MenuPC.cshtml" />
+    <Content Include="Views\Shared\_MenuMobile.cshtml" />
+    <Content Include="Views\Shared\_BreadcrumbLevelOne.cshtml" />
+    <Content Include="Views\Shared\_BreadcrumbLevelTwo.cshtml" />
+    <Content Include="Views\Product\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\Protect\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

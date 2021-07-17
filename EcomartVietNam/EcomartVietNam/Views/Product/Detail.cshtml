@@ -8,32 +8,17 @@
 @section addcss{
     <link rel="stylesheet" href="~/wwwroot/css/custom/product-details.css" />
 }
-<section class="single-banner inner-section">
-    <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="#">Thịt - Cá - Trứng</a></li>
-                <li class="breadcrumb-item active" aria-current="page">@Model.product_name</li>
-            </ol>
-        </nav>
-    </div>
-</section>
+
+@{ Html.RenderAction("_BreadcrumbLevelTwo", "Base", new { id = ViewContext.RouteData.Values["id"].ToString() }); }
+
 <section class="inner-section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
-                <div class="details-gallery">
-                    <ul class="details-preview">
-                        <li>
-                            <img src="@Url.Content("~/wwwroot/product/images/" + @Model.product_image)"
-                                 alt="product" />
-                        </li>
-                    </ul>
-
-                </div>
+            <div class="col-lg-6 col-md-6 text-center">
+                <img height="100%" width="auto" src="@Url.Content("~/wwwroot/product/images/" + @Model.product_image)"
+                     alt="product" />
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6">
                 <div class="details-content">
                     <h3 class="details-name">
                         <a>@Model.product_name</a>
@@ -55,7 +40,7 @@
                         }
                         else
                         {
-                            <label class="details-label off">hết hàng</label> 
+                            <label class="details-label off">hết hàng</label>
                         }
                     </p>
                     <div class="details-add-group">

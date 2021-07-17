@@ -1,0 +1,14 @@
+﻿
+@model EcomartVietNam.Models.Category
+    
+<section class="inner-section single-banner">
+    <div class="container">
+        <h2 id="hdk-category-name">@Model.category_name</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                @Model.category_name
+            </li>
+        </ol>
+    </div>
+</section>

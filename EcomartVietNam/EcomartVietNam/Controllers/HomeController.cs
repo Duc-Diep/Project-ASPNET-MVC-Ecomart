@@ -13,13 +13,10 @@ namespace EcomartVietNam.Controllers
         EcomartStoreDB db = new EcomartStoreDB();
         public ActionResult Index(int? page)
         {
-            ViewBag.Account = Session["client_id"] == null ? null : Session["client_name"].ToString();
-            var categories = db.Categories.ToList();
-            ViewBag.Categories = categories;
-
             var products = db.Products.OrderByDescending(p => p.product_id);
 
             int pageNumber = (page ?? 1);
+
 
             return View(products.ToPagedList(pageNumber, 10));
         }

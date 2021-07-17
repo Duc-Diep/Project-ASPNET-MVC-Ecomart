@@ -13,7 +13,6 @@ namespace EcomartVietNam.Controllers
         // GET: Checkout
         public ActionResult Index()
         {
-            ViewBag.Account = Session["client_id"] == null ? null : Session["client_name"].ToString();
             var categories = db.Categories.ToList();
             ViewBag.Categories = categories;
             return View();
