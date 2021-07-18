@@ -15,10 +15,6 @@ namespace EcomartVietNam.Areas.Admin.Controllers
         // GET: Admin/ManageCategory
         public ActionResult Index()
         {
-            if (Session["user"] == null)
-            {
-                return Redirect("/Admin/Auth/Login");
-            }
             var categories = db.Categories.ToList();
             return View(categories);
         }
@@ -91,7 +87,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
 
 
         [HttpPost]
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int? id)
         {
             Category category = db.Categories.Find(id);
             try

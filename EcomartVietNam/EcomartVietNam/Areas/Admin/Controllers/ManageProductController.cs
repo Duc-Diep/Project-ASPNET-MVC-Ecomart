@@ -9,17 +9,13 @@ using System.Web.Mvc;
 
 namespace EcomartVietNam.Areas.Admin.Controllers
 {
-    public class ManageProductController : Controller
+    public class ManageProductController : ProtectAdminController
     {
         EcomartStoreDB db = new EcomartStoreDB();
 
         // GET: Admin/ManageProduct
         public ActionResult Index(string searchString)
         {
-            if (Session["user"] == null)
-            {
-                return Redirect("/Admin/Auth/Login");
-            }
             var products = db.Products.Select(p=>p);
             if (!string.IsNullOrEmpty(searchString))
             {
