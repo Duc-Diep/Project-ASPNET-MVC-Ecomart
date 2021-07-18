@@ -11,16 +11,12 @@ using System.Web.Mvc;
 
 namespace EcomartVietNam.Areas.Admin.Controllers
 {
-    public class ManageAccountController : Controller
+    public class ManageAccountController : ProtectAdminController
     {
         EcomartStoreDB db = new EcomartStoreDB();
         // GET: Admin/Account
         public ActionResult Index()
         {
-            if (Session["user"] == null)
-            {
-                return Redirect("/Admin/Auth/Login");
-            }
             var account = db.Users.ToList();
             return View(account);
         }

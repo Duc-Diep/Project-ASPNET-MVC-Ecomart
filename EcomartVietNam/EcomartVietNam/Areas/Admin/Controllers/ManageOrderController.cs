@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace EcomartVietNam.Areas.Admin.Controllers
 {
-    public class ManageOrderController : Controller
+    public class ManageOrderController : ProtectAdminController
     {
         EcomartStoreDB db = new EcomartStoreDB();
         static List<Custom_order> list;
@@ -16,11 +16,6 @@ namespace EcomartVietNam.Areas.Admin.Controllers
         // GET: Admin/ManageOrder
         public ActionResult Index()
         {
-            if (Session["user"] == null)
-            {
-                return Redirect("/Admin/Auth/Login");
-            }
-
             var order = db.Orders.Join(db.Users, o => o.user_id, u => u.user_id, (o, u) => new
             {
                 order = o,

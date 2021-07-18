@@ -8,17 +8,13 @@ using System.Web.Mvc;
 
 namespace EcomartVietNam.Areas.Admin.Controllers
 {
-    public class ManageController : Controller
+    public class ManageController : ProtectAdminController
     {
         EcomartStoreDB db = new EcomartStoreDB();
         // GET: Admin/Manage
         public ActionResult Index()
         {
-            if(Session["user"] == null)
-            {
-                return Redirect("/Admin/Auth/Login");
-            }
-
+            ViewBag.UserName = user.full_name;
             var numberUser = db.Users.Count();
             ViewBag.NumberUser = numberUser;
             var numberProduct = db.Products.Count();

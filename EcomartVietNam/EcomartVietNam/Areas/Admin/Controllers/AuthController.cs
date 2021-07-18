@@ -30,12 +30,11 @@ namespace EcomartVietNam.Areas.Admin.Controllers
             {
                 string email = frm["email"];
                 string password = frm["password"];
-                var data = db.Users.Where(s => s.email.Equals(email) && s.password.Equals(password)).ToList();
-                if (data.Count() > 0 && data.FirstOrDefault().role == 1)
+                User user = db.Users.Where(s => s.email.Equals(email) && s.password.Equals(password)).SingleOrDefault();
+                if (user != null && user.role == 1)
                 {
                     //add session
-                    Session["FullName"] = data.FirstOrDefault().full_name;
-                    Session["user"] = data.FirstOrDefault().user_id;
+                    Session["admin"] = user;
                     return Redirect("/Admin/Manage");
                 }
                 else

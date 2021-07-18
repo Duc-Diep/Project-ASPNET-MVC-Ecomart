@@ -23,7 +23,7 @@
                 <h3 class="page-title">Quản lý danh mục</h3>
             </div>
             <div class="col-auto text-right">
-                <a href="@Url.Action("Create","Managecategory")"
+                <a href="@Url.Action("Create", "Managecategory")"
                    class="btn btn-primary add-button ml-3">
                     <i class="fas fa-plus"></i>
                 </a>
@@ -55,7 +55,7 @@
                                         <td>@Html.DisplayFor(modelItem => item.category_name)</td>
                                         <td>@Html.DisplayFor(modelItem => item.updated_at)</td>
                                         <td class="text-right">
-                                            <a href="@Url.Action("Update","ManageCategory",new { id=item.category_id })"
+                                            <a href="@Url.Action("Update", "ManageCategory", new { id = item.category_id })"
                                                class="btn btn-sm bg-success-light mr-2">
                                                 <i class="far fa-edit mr-1"></i> Sửa
                                             </a>
@@ -67,8 +67,10 @@
                                                 mr-2
                                                 delete_review_comment
                                                 "
+                                               onclick="handleDelete(event,@item.category_id)"
                                                data-toggle="modal"
-                                               data-target="#exampleModal">
+                                               data-target="#exampleModal"
+                                               >
                                                 <i class="far fa-trash-alt mr-1"></i> Xoá
                                             </a>
                                         </td>
@@ -109,8 +111,17 @@
                         data-dismiss="modal">
                     Không
                 </button>
-                <button type="submit" class="btn btn-primary">Đồng ý</button>
+                <button formaction="@Url.Action("Delete", "ManageCategory",new { id = index})" type="submit" class="btn btn-primary">Đồng ý</button>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    function handleDelete(event, categoryId) {
+        event.preventDefault();
+        console.log("hi", categoryId);
+        @index = categoryId;
+    }
+
+</script>
