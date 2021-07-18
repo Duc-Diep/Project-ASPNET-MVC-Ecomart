@@ -36,7 +36,7 @@
                     </div>
                     <div class="user-form-card">
                         <div class="user-form-title">
-                            <h2>@RenderSection("title",required:true)</h2>
+                            <h2>@RenderSection("title", required: true)</h2>
                             <p>@RenderSection("subtitle", required: true)</p>
                         </div>
                         @RenderBody()
@@ -51,6 +51,7 @@
     <script src="~/wwwroot/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="~/wwwroot/js/vendor/popper.min.js"></script>
     <script src="~/wwwroot/js/vendor/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
 </body>
 <!-- Mirrored from mironmahmud.com/organe/assets/ltr/change-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Jun 2021 14:24:42 GMT -->
 

@@ -1,26 +1,43 @@
-﻿
+﻿@model EcomartVietNam.Models.User
 @{
     ViewBag.Title = "ChangePass";
     Layout = "~/Views/Shared/_LayoutAuth.cshtml";
 }
 
 @section title{
-        Đổi mật khẩu
-    }
+    Đổi mật khẩu
+}
 @section subtitle{
-        Nhập thông tin để đổi mật khẩu
+    Nhập thông tin để đổi mật khẩu
+}
+
+<form class="user-form" method="post" action="@Url.Action("ChangePass","Profile")">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <input type="password" name="old_password" class="form-control" placeholder="Mật khẩu cũ" />
+
+    </div>
+    <div class="form-group">
+        @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập mật khẩu mới" } })
+        @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.EditorFor(model => model.confirm_password, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập lại mật khẩu mới" } })
+        @Html.ValidationMessageFor(model => model.confirm_password, "", new { @class = "text-danger" })
+    </div>
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
+        <br />
     }
-<form class="user-form" action="@Url.Action("Index","Profile")">
-    <div class="form-group">
-        <input type="password" class="form-control" placeholder="Mật khẩu cũ" />
-    </div>
-    <div class="form-group">
-        <input type="password" class="form-control" placeholder="Mật khẩu mới" />
-    </div>
-    <div class="form-group">
-        <input type="password" class="form-control" placeholder="Nhập lại mật khẩu mới" />
-    </div>
     <div class="form-button">
-        <button  type="submit">Đổi mật khẩu</button>
+        <button type="submit">Đổi mật khẩu</button>
     </div>
 </form>
+
+@section Scripts {
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}

@@ -18,6 +18,11 @@
         </ol>
     </div>
 </section>
+@if (ViewBag.Infor != null)
+{
+    <br />
+    <div class="alert alert-info" role="alert">@ViewBag.Infor</div>
+}
 <section class="inner-section profile-part">
     <div class="container">
         <div class="row">
@@ -29,25 +34,29 @@
                     </div>
                     <form action="@Url.Action("Update","Profile")" method="post" class="account-content">
                         @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="row">
                             <div class="col-lg-2">
                                 <div class="profile-image">
                                     <a href="#"><img src="~/wwwroot/images/user.png" alt="user" /></a>
                                 </div>
                             </div>
+                            <div hidden="hidden"><input type="text" name="id" value="@Model.user_id" /></div>
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group">
                                     <label class="form-label">tên</label>
-                                    <input class="form-control"
+                                    @*<input class="form-control"
                                            type="text"
                                            name="fullname"
-                                           value="@Model.full_name" />
+                                           value="@Model.full_name" />*@
+                                    @Html.EditorFor(model => model.full_name, new { htmlAttributes = new { @class = "form-control", value = Model.full_name } })
+                                    @Html.ValidationMessageFor(model => model.full_name, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group">
                                     <label class="form-label">Email</label>
-                                    <input class="form-control"
+                                    <input readonly="readonly" class="form-control"
                                            type="email"
                                            name="email"
                                            value="@Model.email" />
@@ -62,19 +71,23 @@
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group">
                                     <label class="form-label">Số điện thoại</label>
-                                    <input class="form-control"
-                                           type="text"
+                                    @*<input class="form-control"
+                                           type="number"
                                            name="phone"
-                                           value="@Model.phone_number" />
+                                           value="@Model.phone_number" />*@
+                                    @Html.EditorFor(model => model.phone_number, new { htmlAttributes = new { @class = "form-control", value = Model.phone_number } })
+                                    @Html.ValidationMessageFor(model => model.phone_number, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group">
                                     <label class="form-label">Địa chỉ</label>
-                                    <input class="form-control"
+                                    @*<input class="form-control"
                                            type="text"
                                            name="address"
-                                           value="@Model.address" />
+                                           value="@Model.address" />*@
+                                    @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control", value = Model.address } })
+                                    @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-lg-2 align-middle">
@@ -89,3 +102,9 @@
         </div>
     </div>
 </section>
+
+@section Scripts {
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}

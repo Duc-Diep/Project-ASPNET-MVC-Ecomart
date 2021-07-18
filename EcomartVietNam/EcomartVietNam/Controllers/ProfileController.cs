@@ -1,6 +1,7 @@
 ﻿using EcomartVietNam.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,17 +14,70 @@ namespace EcomartVietNam.Controllers
         // GET: Profile
         public ActionResult Index()
         {
-            if (Session["user"] == null)
+            User oldUser = Session["user"] as User;
+            User newUser = db.Users.Where(us => us.email.Equals(oldUser.email)).FirstOrDefault();
+            Session["user"] = newUser;
+            return View(newUser);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(FormCollection frm)
+        {
+            string fullname = frm["full_name"];
+            string phone = frm["phone_number"];
+            string email = frm["email"];
+            string address = frm["address"];
+
+            User user = db.Users.Where(us => us.email == email).SingleOrDefault();
+            user.full_name = fullname;
+            user.phone_number = phone;
+            user.address = address;
+            if (user!=null)
             {
-                return Redirect("/Profile/Login");
+                db.Entry(user).State = EntityState.Modified;
+                db.Configuration.ValidateOnSaveEnabled = false;
+                db.SaveChanges();
+                ViewBag.Infor = "Cập nhật thành công";
             }
-
-
-            return View(user);
+            else
+            {
+                ViewBag.Infor = "Có lỗi xảy ra khi cập nhật";
+            }
+            
+            return View("Index",user);
         }
 
         public ActionResult ChangePass()
         {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangePass(FormCollection frm)
+        {
+            if (ModelState.IsValid)
+            {
+                User user = Session["user"] as User;
+                string old_password = frm["old_password"];
+                string new_password = frm["password"];
+                string confirm_password = frm["confirm_password"];
+                if (!Helper.EncodePassword(old_password).Equals(user.password))
+                {
+                    ViewBag.Error = "Mật khẩu cũ không đúng!";
+                    return View(frm);
+                }
+                User userEntity = db.Users.Where(us => us.email == user.email).SingleOrDefault();
+                userEntity.password = Helper.EncodePassword(new_password);
+                db.Entry(userEntity).State = EntityState.Modified;
+                db.Configuration.ValidateOnSaveEnabled = false;
+                db.SaveChanges();
+                ViewBag.Infor = "Đổi mật khẩu thành công";
+
+                return View("Index",userEntity);
+                    
+            }
+            ViewBag.Error = "Chưa validate!";
             return View();
         }
 
