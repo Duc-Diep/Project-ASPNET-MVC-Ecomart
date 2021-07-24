@@ -48,7 +48,10 @@
                                 <li><span>Tổng tiền</span><span id="hdk-total">0 vnđ</span></li>
                             </ul>
                         </div>
-                        <div class="checkout-proced"><a href="/Invoice" class="btn btn-inline">thanh toán</a></div>
+                        <form action="/Invoice/Index" method="post">
+                            <input hidden id="ids" name="ids" />
+                            <button type="submit" class="checkout-proced btn btn-inline">thanh toán</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -62,6 +65,7 @@
     <script>
         const fetchProduct = async () => {
             const productIds = localStorage.getItem("productIds");
+            document.getElementById("ids").value = productIds;
 
             const ids = productIds?.split(",");
 

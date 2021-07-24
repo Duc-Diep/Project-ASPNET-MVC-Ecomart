@@ -1,6 +1,7 @@
-﻿
+﻿@model IEnumerable<EcomartVietNam.Models.Order_detail>
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Chi tiết đơn hàng";
     Layout = "~/Views/Shared/_LayoutClient.cshtml";
 }
 
@@ -36,19 +37,19 @@
                         <ul class="invoice-details">
                             <li>
                                 <h6>Mã đơn</h6>
-                                <p>13123</p>
+                                <p>#@ViewBag.OrderId</p>
                             </li>
                             <li>
                                 <h6>Tổng số sản phẩm</h6>
-                                <p>6 sản phẩm</p>
+                                <p>@ViewBag.Quantity sản phẩm</p>
                             </li>
                             <li>
                                 <h6>Ngày đặt</h6>
-                                <p>29/06/2021</p>
+                                <p>@ViewBag.CreatedAt</p>
                             </li>
                             <li>
                                 <h6>Địa chỉ giao hàng</h6>
-                                <p>Minh Khai, Nam Từ Liêm.</p>
+                                <p>@ViewBag.Address</p>
                             </li>
                         </ul>
                     </div>
@@ -63,11 +64,11 @@
                         <ul class="invoice-details">
                             <li>
                                 <h6>Tổng tiền</h6>
-                                <p>123.111đ</p>
+                                <p>@ViewBag.Price vnđ</p>
                             </li>
                             <li>
                                 <h6>Giảm giá</h6>
-                                <p>123.111đ</p>
+                                <p>0 vnđ</p>
                             </li>
                             <li>
                                 <h6>Phương thức thanh toán</h6>
@@ -75,7 +76,7 @@
                             </li>
                             <li>
                                 <h6>Thành tiền</h6>
-                                <p>123.111đ</p>
+                                <p>@ViewBag.Price vnđ</p>
                             </li>
                         </ul>
                     </div>
@@ -94,40 +95,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="table-serial">
-                                    <h6>01</h6>
-                                </td>
-                                <td class="table-image">
-                                    <img src="~/wwwroot/images/product/01.jpg" alt="product" />
-                                </td>
-                                <td class="table-name">
-                                    <h6>Ớt chuông</h6>
-                                </td>
-                                <td class="table-price">
-                                    <h6>20.000đ<small>/kilo</small></h6>
-                                </td>
-                                <td class="table-quantity">
-                                    <h6>3</h6>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="table-serial">
-                                    <h6>02</h6>
-                                </td>
-                                <td class="table-image">
-                                    <img src="~/wwwroot/images/product/02.jpg" alt="product" />
-                                </td>
-                                <td class="table-name">
-                                    <h6>Cà rốt</h6>
-                                </td>
-                                <td class="table-price">
-                                    <h6>30.000đ<small>/kilo</small></h6>
-                                </td>
-                                <td class="table-quantity">
-                                    <h6>5</h6>
-                                </td>
-                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="table-serial">
+                                        <h6>01</h6>
+                                    </td>
+                                    <td class="table-image">
+                                        <img src="~/wwwroot/product/images/@item.Product.product_image" alt="product" />
+                                    </td>
+                                    <td class="table-name">
+                                        <h6>@item.Product.product_name</h6>
+                                    </td>
+                                    <td class="table-price">
+                                        <h6>@item.Product.product_price</h6>
+                                    </td>
+                                    <td class="table-quantity">
+                                        <h6>@item.quantity</h6>
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -143,3 +130,12 @@
         </div>
     </div>
 </section>
+
+<script>
+    const removeLocalStorage = () => {
+        localStorage.removeItem("productIds");
+        localStorage.removeItem("amount");
+    }
+
+    removeLocalStorage();
+</script>
