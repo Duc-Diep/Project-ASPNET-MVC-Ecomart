@@ -49,7 +49,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
 
 
         // GET: Admin/ManageCategory/Update
-        public ActionResult Update(int id)
+        public ActionResult Update(int? id)
         {
             if (id == null)
             {

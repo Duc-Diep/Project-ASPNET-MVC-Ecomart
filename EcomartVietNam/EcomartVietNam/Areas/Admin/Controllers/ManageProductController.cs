@@ -87,7 +87,6 @@ namespace EcomartVietNam.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    product.product_image = "";
                     var f = Request.Files["product_image"];
                     if (f != null && f.ContentLength > 0)
                     {
@@ -110,9 +109,24 @@ namespace EcomartVietNam.Areas.Admin.Controllers
 
 
         }
-        public ActionResult Delete()
+        [HttpPost]
+        public JsonResult Delete(int? id)
         {
-            return View();
+            Product product = db.Products.Find(id);
+            try
+            {
+                db.Products.Remove(product);
+                db.SaveChanges();
+                bool success = true;
+
+                return Json(success, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                bool success = false;
+                return Json(success, JsonRequestBehavior.AllowGet);
+            }
+
         }
     }
 }

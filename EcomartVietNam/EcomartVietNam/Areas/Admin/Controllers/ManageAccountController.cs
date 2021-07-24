@@ -62,7 +62,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
                     user.full_name = full_name;
                     user.phone_number = phone;
                     user.email = email;
-                    user.password = EncodePassword(password);
+                    user.password = Helper.EncodePassword(password);
                     user.address = address;
                     user.role = role.Equals("Quản trị")? 1 : 0;
                     db.Configuration.ValidateOnSaveEnabled = false;
@@ -124,7 +124,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
                     user.full_name = full_name;
                     user.phone_number = phone;
                     user.email = email;
-                    user.password = EncodePassword(password);
+                    user.password = Helper.EncodePassword(password);
                     user.address = address;
                     user.role = role.Equals("Quản trị") ? 1 : 0;
                     db.Configuration.ValidateOnSaveEnabled = false;
@@ -142,18 +142,33 @@ namespace EcomartVietNam.Areas.Admin.Controllers
 
         }
 
-
-        public static string EncodePassword(string originalPassword)
+        [HttpPost]
+        public JsonResult Delete(int? id)
         {
-            Byte[] originalBytes;
-            Byte[] encodedBytes;
-            MD5 md5;
+            bool success = false;
+            User currentUser = Session["admin"] as User;
+            if (currentUser.user_id==id)
+            {
+                 success = false;
+                return Json(success, JsonRequestBehavior.AllowGet);
+            }
+            User user = db.Users.Find(id);
+            try
+            {
+                db.Users.Remove(user);
+                db.SaveChanges();
+                 success = true;
 
-            md5 = new MD5CryptoServiceProvider();
-            originalBytes = ASCIIEncoding.Default.GetBytes(originalPassword);
-            encodedBytes = md5.ComputeHash(originalBytes);
+                return Json(success, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                 success = false;
+                return Json(success, JsonRequestBehavior.AllowGet);
+            }
 
-            return BitConverter.ToString(encodedBytes);
         }
+
+
     }
 }

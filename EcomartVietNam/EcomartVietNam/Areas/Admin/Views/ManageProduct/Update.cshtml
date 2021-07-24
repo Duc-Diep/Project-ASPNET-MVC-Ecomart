@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Update";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
-    var ImagePath = "~/wwwroot/product/images/";
+    var ImagePath = "~/wwwroot/product/images/"+Model.product_image;
 }
 
 @section Scripts {
@@ -81,6 +81,7 @@
                             <img id="output" class="img-rounded" width="200" height="200" src="@Url.Content(@ImagePath)" alt="Ảnh" />
                             <p class="text-center"><label for="ufile" style="cursor:pointer;">Chọn file ảnh</label></p>
                             <input name="product_image" id="ufile" type="file" style="display:none;" onchange="loadFile(event)" />
+                            @Html.HiddenFor(model => model.product_image)
                         </div>
                         <div class="form-group">
                             <label>Giá bán</label>
