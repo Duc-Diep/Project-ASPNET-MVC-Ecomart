@@ -76,5 +76,59 @@ namespace EcomartVietNam.Controllers
             ViewBag.Categories = db.Categories.OrderBy(c => c.category_id).ToList();
             return View(products.ToPagedList(page, 12));
         }
+        public JsonResult Index(int id)
+        {
+            if (id == null)
+            {
+                return Json("NOT_FOUND", JsonRequestBehavior.AllowGet);
+            }
+            var product = db.Products.Find(id);
+            if (product == null)
+            {
+                return Json("NOT_FOUND", JsonRequestBehavior.AllowGet);
+            }
+            return Json(
+                new { 
+                        id = product.product_id,
+                        name = product.product_name,
+                        price = product.product_price,
+                        quantity = product.product_amount,
+                        image = product.product_image
+                    }, 
+                JsonRequestBehavior.AllowGet
+                );
+        }
+        public JsonResult List(string ids)
+        {
+            if (ids == null)
+            {
+                return Json("NOT_FOUND", JsonRequestBehavior.AllowGet);
+            }
+            string[] listId = ids.Split(',');
+            var product = db.Products.Where(p => listId.Contains(p.product_id.ToString())).ToList();
+            if (product == null)
+            {
+                return Json("NOT_FOUND", JsonRequestBehavior.AllowGet);
+            }
+
+            List<object> list = new List<object>();
+
+            foreach (var item in product)
+            {
+                list.Add(new
+                {
+                    id = item.product_id,
+                    name = item.product_name,
+                    image = item.product_image,
+                    price = item.product_price,
+                    quantity = item.product_amount
+                });
+            }
+
+            return Json(
+                list,
+                JsonRequestBehavior.AllowGet
+                );
+        }
     }
 }

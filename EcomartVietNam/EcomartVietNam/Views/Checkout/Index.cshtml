@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Giỏ hàng";
     Layout = "~/Views/Shared/_LayoutClient.cshtml";
 }
 
@@ -25,7 +25,8 @@
                     <div class="account-title">
                         <h4>Đơn hàng của bạn</h4>
                     </div>
-                    <div class="account-content">
+                    <h1 id="noti">Không có sản phẩm trong giỏ hàng</h1>
+                    <div class="account-content" style="display: none" id="cart">
                         <div class="table-scroll">
                             <table class="table-list">
                                 <thead>
@@ -38,61 +39,13 @@
                                         <th scope="col">Hành động</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="table-serial">
-                                            <h6>01</h6>
-                                        </td>
-                                        <td class="table-image"><img src="~/wwwroot/images/product/01.jpg" alt="product"></td>
-                                        <td class="table-name">
-                                            <h6>Thịt ba chỉ</h6>
-                                        </td>
-                                        <td class="table-price">
-                                            <h6>20.000vnđ</h6>
-                                        </td>
-                                        <td class="table-quantity">
-                                            <div class="cart-action-group" style="justify-content: center">
-                                                <div class="product-action">
-                                                    <button class="action-minus" title="Quantity Minus">
-                                                        <i class="icofont-minus"></i>
-                                                    </button><input class="action-input" title="Quantity Number" type="text" name="quantity" value="1"><button class="action-plus" title="Quantity Plus">
-                                                        <i class="icofont-plus"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="table-action"><a class="view" href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a><a class="trash" href="#" title="Remove Wishlist"><i class="icofont-trash"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table-serial">
-                                            <h6>02</h6>
-                                        </td>
-                                        <td class="table-image"><img src="~/wwwroot/images/product/02.jpg" alt="product"></td>
-                                        <td class="table-name">
-                                            <h6>thịt chân gà</h6>
-                                        </td>
-                                        <td class="table-price">
-                                            <h6>20.000vnđ</h6>
-                                        </td>
-                                        <td class="table-quantity">
-                                            <div class="cart-action-group" style="justify-content: center">
-                                                <div class="product-action">
-                                                    <button class="action-minus" title="Quantity Minus">
-                                                        <i class="icofont-minus"></i>
-                                                    </button><input class="action-input" title="Quantity Number" type="text" name="quantity" value="1"><button class="action-plus" title="Quantity Plus">
-                                                        <i class="icofont-plus"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="table-action"><a class="view" href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#product-view"><i class="fas fa-eye"></i></a><a class="trash" href="#" title="Remove Wishlist"><i class="icofont-trash"></i></a></td>
-                                    </tr>
+                                <tbody id="list-product-cart">
                                 </tbody>
                             </table>
                         </div>
                         <div class="checkout-charge mt-5 mb-3">
                             <ul>
-                                <li><span>Tổng tiền</span><span>120.000 vnđ</span></li>
+                                <li><span>Tổng tiền</span><span id="hdk-total">0 vnđ</span></li>
                             </ul>
                         </div>
                         <div class="checkout-proced"><a href="/Invoice" class="btn btn-inline">thanh toán</a></div>
@@ -104,3 +57,121 @@
     </div>
 </section>
 
+
+@section scripts {
+    <script>
+        const fetchProduct = async () => {
+            const productIds = localStorage.getItem("productIds");
+
+            const ids = productIds?.split(",");
+
+            const response = await fetch(`/Product/List?ids=${ids?.toString()}`);
+            let data = await response.json();
+
+            data = data.map(item => {
+                const count = ids.filter(i => i == item.id).length;
+                return {
+                    ...item,
+                    currentQuantity: count
+                }
+            });
+
+            let element = "";
+            if (data.length) {
+                document.getElementById("cart").style.display = "block";
+                document.getElementById("noti").style.display = "none";
+                data.map((product, index) => {
+                    element +=
+                        `
+                        <tr>
+                            <td class="table-serial">
+                                <h6>${index + 1}</h6>
+                            </td>
+                            <td class="table-image"><img src="/wwwroot/product/images/${product.image}" alt="product"></td>
+                            <td class="table-name">
+                                <h6>${product.name}</h6>
+                            </td>
+                            <td class="table-price">
+                                <h6>${product.price} vnđ</h6>
+                            </td>
+                            <td class="table-quantity">
+                                <div class="cart-action-group" style="justify-content: center">
+                                    <div class="product-action">
+                                        <button class="action-minus" onclick="minus(${product.id})" title="Giảm">
+                                            <i class="icofont-minus"></i>
+                                        </button>
+                                            <input class="action-input" title="Số lượng" id="qty${product.id}" type="text" name="quantity" value="${product.currentQuantity}">
+                                        <button class="action-plus" onclick="plus(${product.id})" title="Tăng">
+                                            <i class="icofont-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="table-action">
+                                <a class="view" href="/Product/Detail/${product.id}">
+                                <i class="fas fa-eye"></i></a>
+                                <a class="trash" href="/Checkout" onclick="deleteInCart(${product.id},${product.price},${product.currentQuantity})"><i class="icofont-trash"></i></a></td>
+                        </tr>
+                    `;
+                })
+            }
+
+            document.getElementById("list-product-cart").innerHTML = element;
+            const amount = localStorage.getItem("amount");
+            if (amount)
+                document.getElementById("hdk-total").innerHTML = `${amount} đ`;
+        }
+
+        fetchProduct();
+
+        const deleteInCart = (id, price, quantity) => {
+            const productIds = localStorage.getItem("productIds").split(",");
+
+            const ids = productIds.filter(product => product != id);
+            localStorage.setItem("productIds", ids.toString());
+            let amount = Number(localStorage.getItem("amount"));
+            amount -= Number(price) * Number(quantity);
+            localStorage.setItem("amount", amount);
+            if (amount === 0) {
+                localStorage.removeItem("amount");
+            }
+        }
+
+        const plus = async (id) => {
+            const qty = document.getElementById(`qty${id}`).value;
+            const response = await fetch(`/Product/Index/${id}`);
+            const data = await response.json();
+            if (data !== "NOT_FOUND") {
+                if (data.quantity >= Number(qty) + 1) {
+                    document.getElementById(`qty${id}`).value = Number(qty) + 1;
+                    let productIds = localStorage.getItem("productIds");
+                    productIds += `,${id}`;
+
+                    localStorage.setItem("productIds", productIds);
+                    fetchCart(data, 'plus');
+                    fetchProduct();
+                }
+            }
+        }
+        const minus = async (id) => {
+            const qty = document.getElementById(`qty${id}`).value;
+            const response = await fetch(`/Product/Index/${id}`);
+            const data = await response.json();
+            if (data !== "NOT_FOUND") {
+                if (Number(qty) - 1 >= 1) {
+                    document.getElementById(`qty${id}`).value = Number(qty) - 1;
+                    let productIds = localStorage.getItem("productIds").split(",");
+                    const index = productIds.indexOf(id.toString());
+                    if (index > -1) {
+                        productIds.splice(index, 1);
+                    }
+
+                    localStorage.setItem("productIds", productIds.toString());
+                    fetchCart(data, 'minus')
+                    fetchProduct();
+                }
+            }
+        }
+
+    </script>
+}

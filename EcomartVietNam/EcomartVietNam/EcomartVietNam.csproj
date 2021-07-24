@@ -501,6 +501,7 @@
     <Content Include="wwwroot\images\user.png" />
     <Content Include="wwwroot\images\video.jpg" />
     <Content Include="wwwroot\js\custom\accordion.js" />
+    <Content Include="wwwroot\js\custom\cart.js" />
     <Content Include="wwwroot\js\custom\countdown.js" />
     <Content Include="wwwroot\js\custom\main.js" />
     <Content Include="wwwroot\js\custom\nice-select.js" />
