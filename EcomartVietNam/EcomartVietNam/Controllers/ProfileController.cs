@@ -17,6 +17,8 @@ namespace EcomartVietNam.Controllers
             User oldUser = Session["user"] as User;
             User newUser = db.Users.Where(us => us.email.Equals(oldUser.email)).FirstOrDefault();
             Session["user"] = newUser;
+            var errMsg = TempData["ErrorMessage"] as string;
+            ViewBag.Infor = errMsg;
             return View(newUser);
         }
 

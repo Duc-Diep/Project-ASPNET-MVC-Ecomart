@@ -20,14 +20,14 @@
             @if (Session["user"] == null)
             {
                 <a href="@Url.Action("Login","Profile")"
-                   class="header-widget" title="My Account">
+                   class="header-widget" title="Đăng nhập">
                     <img src="~/wwwroot/images/user.png" alt="user" /><span>Đăng nhập</span>
                 </a>
             }
             else
             {
                 <a href="@Url.Action("Index","Profile")"
-                   class="header-widget" title="My Account">
+                   class="header-widget" title="Tài khoản">
                     <img src="~/wwwroot/images/user.png" alt="user" /><span>@Model.full_name</span>
                 </a>
                 <div style="margin-left: 30px;">

@@ -327,6 +327,9 @@
     <Content Include="Areas\Admin\Views\ManageProduct\Update.cshtml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\filter.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

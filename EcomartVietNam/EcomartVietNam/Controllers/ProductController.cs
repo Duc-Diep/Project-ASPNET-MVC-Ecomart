@@ -15,9 +15,6 @@ namespace EcomartVietNam.Controllers
         // GET: Product
         public ActionResult Detail(int id)
         {
-            var categories = db.Categories.ToList();
-            ViewBag.Categories = categories;
-
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
