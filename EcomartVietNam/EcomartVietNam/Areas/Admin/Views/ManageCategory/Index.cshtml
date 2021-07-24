@@ -22,16 +22,26 @@
             <div class="col">
                 <h3 class="page-title">Quản lý danh mục</h3>
             </div>
-            <div class="col-auto text-right">
+            <div class="col-auto">
                 <a href="@Url.Action("Create", "Managecategory")"
-                   class="btn btn-primary add-button ml-3">
-                    <i class="fas fa-plus"></i>
+                   class="btn btn-primary ml-3">
+                    <i class="fas fa-plus"></i> Thêm danh mục
                 </a>
             </div>
         </div>
     </div>
     <!-- /Page Header -->
-    
+
+    <!-- Start alert -->
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div style="display: none" id="deletee" class="alert alert-danger text-center" role="alert"></div>
+        </div>
+        <div class="col-4"></div>
+
+    </div>
+    <!-- End alert -->
 
     <div class="row">
         <div class="col-md-12">
@@ -67,10 +77,8 @@
                                                 mr-2
                                                 delete_review_comment
                                                 "
-                                               onclick="handleDelete(event,@item.category_id)"
                                                data-toggle="modal"
-                                               data-target="#exampleModal"
-                                               >
+                                               data-target="#model-@item.category_id">
                                                 <i class="far fa-trash-alt mr-1"></i> Xoá
                                             </a>
                                         </td>
@@ -85,43 +93,60 @@
     </div>
 </div>
 
-
 <!-- Modal -->
-<div class="modal fade"
-     id="exampleModal"
-     tabindex="-1"
-     role="dialog"
-     aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Xác nhận?</h5>
-                <button type="button"
-                        class="close"
-                        data-dismiss="modal"
-                        aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">Bạn có muốn xoá bản ghi này?</div>
-            <div class="modal-footer">
-                <button type="button"
-                        class="btn btn-secondary"
-                        data-dismiss="modal">
-                    Không
-                </button>
-                <button formaction="@Url.Action("Delete", "ManageCategory",new { id = index})" type="submit" class="btn btn-primary">Đồng ý</button>
+@foreach (var item in Model)
+{
+    <div class="modal fade"
+         id="model-@item.category_id"
+         tabindex="-1"
+         role="dialog"
+         aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Xác nhận?</h5>
+                    <button type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">Bạn có muốn xoá bản ghi này?</div>
+                <div class="modal-footer">
+                    <button type="button"
+                            class="btn btn-secondary"
+                            data-dismiss="modal">
+                        Không
+                    </button>
+                    <button onclick="handleDelete(@item.category_id, `@item.category_name`)" type="button" class="btn btn-primary">Đồng ý</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+}
+
+
+
 
 <script>
-    function handleDelete(event, categoryId) {
-        event.preventDefault();
-        console.log("hi", categoryId);
-        @index = categoryId;
-    }
+    const handleDelete = async (id, name) => {
 
+        const response = await fetch(`/admin/Managecategory/Delete?id=${id}`, {
+            method: 'POST',
+        });
+
+        const data = await response.json();
+
+        if (data) {
+            window.location.reload();
+        } else {
+            console.log(data);
+            const element = document.getElementById("deletee");
+            element.innerHTML = `Lỗi khi xoá danh mục <b>${name}</b>`;
+            element.style.display = "block";
+            $(`#model-${id}`).modal("hide");
+        }
+    }
 </script>

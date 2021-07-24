@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace EcomartVietNam.Areas.Admin.Controllers
 {
-    public class ManageCategoryController : Controller
+    public class ManageCategoryController : ProtectAdminController
     {
         EcomartStoreDB db = new EcomartStoreDB();
         // GET: Admin/ManageCategory
@@ -87,19 +87,21 @@ namespace EcomartVietNam.Areas.Admin.Controllers
 
 
         [HttpPost]
-        public ActionResult Delete(int? id)
+        public JsonResult Delete(int? id)
         {
             Category category = db.Categories.Find(id);
             try
             {
                 db.Categories.Remove(category);
                 db.SaveChanges();
-                return View();
+                bool success = true;
+
+                return Json(success, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
-                ViewBag.Error = "Không xóa được bản ghi này " + ex.Message;
-                return View();
+                bool success = false;
+                return Json(success, JsonRequestBehavior.AllowGet);
             }
 
         }

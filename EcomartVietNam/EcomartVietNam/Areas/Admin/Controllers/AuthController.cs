@@ -30,7 +30,8 @@ namespace EcomartVietNam.Areas.Admin.Controllers
             {
                 string email = frm["email"];
                 string password = frm["password"];
-                User user = db.Users.Where(s => s.email.Equals(email) && s.password.Equals(password)).SingleOrDefault();
+                string currentPass = Helper.EncodePassword(password);
+                User user = db.Users.Where(s => s.email.Equals(email) && s.password.Equals(currentPass)).SingleOrDefault();
                 if (user != null && user.role == 1)
                 {
                     //add session

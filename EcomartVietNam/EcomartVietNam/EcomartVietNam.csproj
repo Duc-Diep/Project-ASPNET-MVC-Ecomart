@@ -257,7 +257,7 @@
     <Content Include="Areas\Asset\plugins\bootstrap\css\bootstrap.min.css" />
     <Content Include="Areas\Asset\plugins\bootstrap\js\bootstrap.min.js" />
     <Content Include="Areas\Asset\plugins\datatables\datatables.min.css" />
-    <Content Include="Areas\Asset\plugins\datatables\datatables.min.js" />
+    <Content Include="Areas\Asset\plugins\datatables\datatable.min.js" />
     <Content Include="Areas\Asset\plugins\datatables\jquery.dataTables.min.js" />
     <Content Include="Areas\Asset\plugins\fontawesome\css\all.min.css" />
     <Content Include="Areas\Asset\plugins\fontawesome\css\fontawesome.min.css" />
