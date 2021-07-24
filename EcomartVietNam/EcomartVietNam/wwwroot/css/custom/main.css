@@ -1493,7 +1493,7 @@ tbody tr td:last-child {
 }
 .product-name {
     margin-bottom: 3px;
-    text-transform: capitalize;
+    text-transform: none;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

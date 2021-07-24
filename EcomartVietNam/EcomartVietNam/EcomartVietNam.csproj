@@ -355,7 +355,7 @@
     <Content Include="wwwroot\css\custom\home-standard.css" />
     <Content Include="wwwroot\css\custom\index.css" />
     <Content Include="wwwroot\css\custom\invoice.css" />
-    <Content Include="wwwroot\css\custom\mainn.css" />
+    <Content Include="wwwroot\css\custom\main.css" />
     <Content Include="wwwroot\css\custom\orderlist.css" />
     <Content Include="wwwroot\css\custom\privacy.css" />
     <Content Include="wwwroot\css\custom\product-details.css" />
