@@ -78,6 +78,7 @@
                 return {
                     ...item,
                     price,
+                    currentPrice: item.price,
                     currentQuantity: count
                 }
             });
@@ -116,7 +117,7 @@
                             <td class="table-action">
                                 <a class="view" href="/Product/Detail/${product.id}">
                                 <i class="fas fa-eye"></i></a>
-                                <a class="trash" href="/Checkout" onclick="deleteInCart(${product.id},${product.price},${product.currentQuantity})"><i class="icofont-trash"></i></a></td>
+                                <a class="trash" href="/Checkout" onclick="deleteInCart(${product.id},${product.currentPrice},${product.currentQuantity})"><i class="icofont-trash"></i></a></td>
                         </tr>
                     `;
                 })
