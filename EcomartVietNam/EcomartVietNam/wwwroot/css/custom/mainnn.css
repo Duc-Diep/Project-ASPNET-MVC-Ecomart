@@ -731,9 +731,9 @@ button:focus {
 .page-item:last-child .page-link {
   border-radius: 50%;
 }
-.active {
-  color: var(--white);
-  background: var(--primary);
+.pagination .active {
+    color: var(--white);
+    background: var(--primary);
 }
 .page-link {
   width: 40px;
@@ -745,16 +745,19 @@ button:focus {
   border: none;
   padding: 0px;
 }
-    .page-link a {
-        color: var(--primary);
-    }
+.pagination .page-link a {
+    color: var(--primary);
+}
+.pagination .active a {
+    color: var(--white);
+}
 .page-link:hover {
   color: var(--white);
   background: var(--primary);
 }
-.page-link:hover a{
-  color: var(--white);
-  background: var(--primary);
+.pagination .page-link:hover a {
+    color: var(--white);
+    background: var(--primary);
 }
 .page-link:focus {
   box-shadow: none;
