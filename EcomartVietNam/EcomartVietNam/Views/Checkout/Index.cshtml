@@ -74,8 +74,10 @@
 
             data = data.map(item => {
                 const count = ids.filter(i => i == item.id).length;
+                const price = formatMoney(item.price.toString());
                 return {
                     ...item,
+                    price,
                     currentQuantity: count
                 }
             });

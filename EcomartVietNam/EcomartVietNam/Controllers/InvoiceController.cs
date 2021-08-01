@@ -15,6 +15,10 @@ namespace EcomartVietNam.Controllers
         public ActionResult Index(int id)
         {
             var order = db.Orders.Where(o => o.order_id == id && o.user_id == user.user_id).SingleOrDefault();
+            if(order == null)
+            {
+                return Redirect("/NotFound/Index");
+            }
             var quantity = db.Order_detail.Select(od => od)
                 .Where(od => od.order_id == id)
                 .Sum(od => od.quantity);

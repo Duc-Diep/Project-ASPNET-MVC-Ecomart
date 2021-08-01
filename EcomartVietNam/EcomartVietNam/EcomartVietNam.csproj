@@ -147,6 +147,7 @@
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoiceController.cs" />
+    <Compile Include="Controllers\NotFoundController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ProtectController.cs" />
@@ -578,6 +579,7 @@
     <Content Include="Views\Shared\_BreadcrumbLevelOne.cshtml" />
     <Content Include="Views\Shared\_BreadcrumbLevelTwo.cshtml" />
     <Content Include="Views\Product\Search.cshtml" />
+    <Content Include="Views\NotFound\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

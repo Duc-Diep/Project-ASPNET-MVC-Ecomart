@@ -17,12 +17,12 @@ namespace EcomartVietNam.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return Redirect("/NotFound/Index");
             }
             var product = db.Products.Find(id);
             if (product == null)
             {
-                return HttpNotFound();
+                return Redirect("/NotFound/Index");
             }
             return View(product);
         }

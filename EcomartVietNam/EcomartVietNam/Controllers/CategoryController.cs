@@ -18,12 +18,12 @@ namespace EcomartVietNam.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return Redirect("/NotFound/Index");
             }
             var category = db.Categories.Find(id);
             if (category == null)
             {
-                return HttpNotFound();
+                return Redirect("/NotFound/Index");
             }
 
             var products = db.Products.Where(p => p.category_id == id).OrderByDescending(p => p.product_id);

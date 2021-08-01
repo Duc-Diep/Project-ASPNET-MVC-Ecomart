@@ -64,7 +64,7 @@
                         <ul class="invoice-details">
                             <li>
                                 <h6>Tổng tiền</h6>
-                                <p>@ViewBag.Price vnđ</p>
+                                <p>@string.Format("{0:#,##}", ViewBag.Price) vnđ</p>
                             </li>
                             <li>
                                 <h6>Giảm giá</h6>
@@ -76,7 +76,7 @@
                             </li>
                             <li>
                                 <h6>Thành tiền</h6>
-                                <p>@ViewBag.Price vnđ</p>
+                                <p>@string.Format("{0:#,##}", ViewBag.Price) vnđ</p>
                             </li>
                         </ul>
                     </div>
@@ -108,7 +108,7 @@
                                         <h6>@item.Product.product_name</h6>
                                     </td>
                                     <td class="table-price">
-                                        <h6>@item.Product.product_price</h6>
+                                        <h6>@string.Format("{0:#,##}", item.Product.product_price) vnđ</h6>
                                     </td>
                                     <td class="table-quantity">
                                         <h6>@item.quantity</h6>
