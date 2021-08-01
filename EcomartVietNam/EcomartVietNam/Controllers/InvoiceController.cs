@@ -75,7 +75,7 @@ namespace EcomartVietNam.Controllers
                 Order order = new Order();
 
                 order.user_id = uid;
-                order.status = 0;
+                order.status = 1;
                 db.Orders.Add(order);
                 db.SaveChanges();
 

@@ -1,4 +1,9 @@
-﻿
+﻿function formatMoney(str) {
+    return str.split('').reverse().reduce((prev, next, index) => {
+        return ((index % 3) ? next : (next + ',')) + prev
+    })
+}
+
 const addToCart = async (id) => {
         const response = await fetch(`/Product/Index/${id}`);
         const data = await response.json();
@@ -30,7 +35,7 @@ const fetchCart = async (data, type) => {
     }
 
     if (amount) {
-        document.getElementById("total-amount").innerText = `${localStorage.getItem("amount")} vnđ`;
+        document.getElementById("total-amount").innerText = `${formatMoney(localStorage.getItem("amount"))} vnđ`;
     }
 
     const ids = productIds?.split(",");
@@ -42,4 +47,6 @@ const fetchCart = async (data, type) => {
 }
 
 fetchCart();
+
+
 

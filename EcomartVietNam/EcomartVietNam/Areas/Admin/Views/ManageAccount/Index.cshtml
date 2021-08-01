@@ -51,7 +51,7 @@
                                     <th>SĐT</th>
                                     <th>Mật khẩu</th>
                                     <th>Tên</th>
-                                    @*<th>Địa chỉ</th>*@
+                                    <th>Trạng thái</th>
                                     <th>Quyền</th>
                                     <th>Ngày tạo</th>
                                     <th class="text-right">Hành động</th>
@@ -67,7 +67,7 @@
                                         <td>@Html.DisplayFor(modelItem => item.phone_number)</td>
                                         <td>@Html.DisplayFor(modelItem => item.password)</td>
                                         <td>@Html.DisplayFor(modelItem => item.full_name)</td>
-                                        @*<td>@Html.DisplayFor(modelItem => item.address)</td>*@
+                                        <td>@Html.DisplayFor(modelItem => item.is_active)</td>
                                         <td>@Html.DisplayFor(modelItem => item.role)</td>
                                         <td>@Html.DisplayFor(modelItem => item.created_at)</td>
                                         <td class="text-right">
@@ -149,11 +149,8 @@
         if (data) {
             window.location.reload();
         } else {
-            console.log(data);
-            const element = document.getElementById("deletee");
-            element.innerHTML = `Tài khoản <b>${name}</b> đang được sử dụng, không thể xóa!`;
-            element.style.display = "block";
             $(`#model-${id}`).modal("hide");
+            toastr.error('Lỗi khi xoá tài khoản', 'Lỗi')
         }
     }
 </script>

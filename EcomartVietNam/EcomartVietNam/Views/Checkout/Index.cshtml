@@ -123,7 +123,7 @@
             document.getElementById("list-product-cart").innerHTML = element;
             const amount = localStorage.getItem("amount");
             if (amount)
-                document.getElementById("hdk-total").innerHTML = `${amount} đ`;
+                document.getElementById("hdk-total").innerHTML = `${formatMoney(amount)} vnđ`;
         }
 
         fetchProduct();

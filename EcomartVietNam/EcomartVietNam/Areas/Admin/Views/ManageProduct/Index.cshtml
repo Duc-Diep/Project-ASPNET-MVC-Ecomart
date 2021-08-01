@@ -200,11 +200,8 @@
         if (data) {
             window.location.reload();
         } else {
-            console.log(data);
-            const element = document.getElementById("deletee");
-            element.innerHTML = `Lỗi khi xoá sản phẩm <b>${name}</b>`;
-            element.style.display = "block";
             $(`#model-${id}`).modal("hide");
+            toastr.error('Lỗi khi xoá tài khoản', 'Lỗi')
         }
     }
 </script>

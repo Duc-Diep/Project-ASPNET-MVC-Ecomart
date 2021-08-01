@@ -169,6 +169,7 @@ namespace EcomartVietNam.Controllers
                     u.email = email;
                     u.password = Helper.EncodePassword(password);
                     u.role = 0;
+                    u.is_active = true;
                     db.Configuration.ValidateOnSaveEnabled = false;
                     db.Users.Add(u);
                     db.SaveChanges();

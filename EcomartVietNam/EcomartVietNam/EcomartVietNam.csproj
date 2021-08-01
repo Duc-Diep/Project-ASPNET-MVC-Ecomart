@@ -170,6 +170,7 @@
     <Content Include="Areas\Asset\css\bootstrap-datetimepicker.min.css" />
     <Content Include="Areas\Asset\css\bootstrap.min.html" />
     <Content Include="Areas\Asset\css\select2.min.css" />
+    <Content Include="Areas\Asset\css\toastr.css" />
     <Content Include="Areas\Asset\fonts\MaterialIcons-Regular.html" />
     <Content Include="Areas\Asset\img\category\category-01.jpg" />
     <Content Include="Areas\Asset\img\category\category-02.jpg" />
@@ -254,6 +255,7 @@
     <Content Include="Areas\Asset\js\popper.min.js" />
     <Content Include="Areas\Asset\js\script.html" />
     <Content Include="Areas\Asset\js\select2.min.js" />
+    <Content Include="Areas\Asset\js\toastr.js" />
     <Content Include="Areas\Asset\plugins\bootstrap\css\bootstrap.min.css" />
     <Content Include="Areas\Asset\plugins\bootstrap\js\bootstrap.min.js" />
     <Content Include="Areas\Asset\plugins\datatables\datatables.min.css" />
@@ -330,6 +332,7 @@
     <Content Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </Content>
+    <Content Include="Areas\Admin\Views\Shared\DisplayTemplates\Active.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\filter.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -504,7 +507,7 @@
     <Content Include="wwwroot\images\user.png" />
     <Content Include="wwwroot\images\video.jpg" />
     <Content Include="wwwroot\js\custom\accordion.js" />
-    <Content Include="wwwroot\js\custom\cart.js" />
+    <Content Include="wwwroot\js\custom\cartt.js" />
     <Content Include="wwwroot\js\custom\countdown.js" />
     <Content Include="wwwroot\js\custom\main.js" />
     <Content Include="wwwroot\js\custom\nice-select.js" />

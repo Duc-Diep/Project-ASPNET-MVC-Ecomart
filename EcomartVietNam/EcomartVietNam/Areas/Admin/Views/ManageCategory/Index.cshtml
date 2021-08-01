@@ -142,11 +142,8 @@
         if (data) {
             window.location.reload();
         } else {
-            console.log(data);
-            const element = document.getElementById("deletee");
-            element.innerHTML = `Lỗi khi xoá danh mục <b>${name}</b>`;
-            element.style.display = "block";
             $(`#model-${id}`).modal("hide");
+            toastr.error('Lỗi khi xoá danh mục', 'Lỗi')
         }
     }
 </script>

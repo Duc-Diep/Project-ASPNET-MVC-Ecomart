@@ -45,6 +45,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
                     string address = frm["address"];
                     string confirm_password = frm["confirm_password"];
                     string role = frm["role"];
+                    string is_active = frm["is_active"];
                     if (!password.Equals(confirm_password))
                     {
                         ViewBag.Error = "Mật khẩu không khớp.";
@@ -65,6 +66,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
                     user.password = Helper.EncodePassword(password);
                     user.address = address;
                     user.role = role.Equals("Quản trị")? 1 : 0;
+                    user.is_active = is_active == null ? false : true;
                     db.Configuration.ValidateOnSaveEnabled = false;
                     db.Users.Add(user);
                     db.SaveChanges();
@@ -109,6 +111,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
                     string address = frm["address"];
                     string confirm_password = frm["confirm_password"];
                     string role = frm["role"];
+                    string is_active = frm["is_active"];
                     if (!password.Equals(confirm_password))
                     {
                         ViewBag.Error = "Mật khẩu không khớp.";
@@ -127,6 +130,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
                     user.password = Helper.EncodePassword(password);
                     user.address = address;
                     user.role = role.Equals("Quản trị") ? 1 : 0;
+                    user.is_active = is_active == null ? false : true;
                     db.Configuration.ValidateOnSaveEnabled = false;
                     db.Entry(user).State = EntityState.Modified;
                     db.SaveChanges();
