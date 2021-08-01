@@ -731,7 +731,7 @@ button:focus {
 .page-item:last-child .page-link {
   border-radius: 50%;
 }
-.page-item .active {
+.active {
   color: var(--white);
   background: var(--primary);
 }
@@ -744,10 +744,15 @@ button:focus {
   font-weight: 400;
   border: none;
   padding: 0px;
-  color: var(--text);
-  background: var(--white);
 }
+    .page-link a {
+        color: var(--primary);
+    }
 .page-link:hover {
+  color: var(--white);
+  background: var(--primary);
+}
+.page-link:hover a{
   color: var(--white);
   background: var(--primary);
 }
