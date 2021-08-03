@@ -335,7 +335,7 @@
     </Content>
     <Content Include="Areas\Admin\Views\Shared\DisplayTemplates\Active.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\filter.js" />
+    <Content Include="Scripts\filterr.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -362,7 +362,7 @@
     <Content Include="wwwroot\css\custom\home-standard.css" />
     <Content Include="wwwroot\css\custom\index.css" />
     <Content Include="wwwroot\css\custom\invoice.css" />
-    <Content Include="wwwroot\css\custom\mainnn.css" />
+    <Content Include="wwwroot\css\custom\mainn.css" />
     <Content Include="wwwroot\css\custom\orderlist.css" />
     <Content Include="wwwroot\css\custom\privacy.css" />
     <Content Include="wwwroot\css\custom\product-details.css" />
@@ -580,13 +580,13 @@
     <Content Include="Views\Shared\_BreadcrumbLevelTwo.cshtml" />
     <Content Include="Views\Product\Search.cshtml" />
     <Content Include="Views\NotFound\Index.cshtml" />
+    <Content Include="Views\Shared\_ListOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\BaseAdmin\" />
     <Folder Include="Areas\Admin\Views\ProtectAdmin\" />
-    <Folder Include="Views\Base\" />
     <Folder Include="Views\Protect\" />
   </ItemGroup>
   <ItemGroup>

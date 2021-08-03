@@ -81,7 +81,6 @@ namespace EcomartVietNam.Controllers
                 order.user_id = uid;
                 order.status = 1;
                 db.Orders.Add(order);
-                db.SaveChanges();
 
                 for (int i = 0; i < idsInt.Count; i++)
                 {
@@ -93,6 +92,15 @@ namespace EcomartVietNam.Controllers
                         od.product_id = idsInt[i];
                         od.quantity = value;
                         Product product = products.Find(p => p.product_id == idsInt[i]);
+
+                        if(product.product_amount < value)
+                        {
+                            transaction.Rollback();
+                            TempData["ErrorMessage"] = "Số lượng sản phẩm " + product.product_name + " không hợp lệ";
+                            return RedirectToAction("Index", "Checkout");
+                        }
+
+                        product.product_amount = product.product_amount - value;
                         od.price = product.product_price;
                         db.Order_detail.Add(od);
                         dic.Remove(idsInt[i]);

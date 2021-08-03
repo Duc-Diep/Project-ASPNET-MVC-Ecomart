@@ -103,7 +103,6 @@ h2 {
   font-size: var(--h2size);
   line-height: var(--h2height);
   letter-spacing: -0.3px;
-  text-transform: capitalize;
 }
 h3 {
   font-size: var(--h3size);
@@ -125,7 +124,6 @@ input::placeholder,
 textarea::placeholder {
   font-size: 14px;
   color: var(--gray);
-  text-transform: capitalize;
 }
 input,
 button {
@@ -230,7 +228,6 @@ button:focus {
 .breadcrumb-item {
   font-size: 18px;
   padding: 0px !important;
-  text-transform: capitalize;
 }
 .breadcrumb-item a {
   color: var(--chalk);
@@ -376,7 +373,6 @@ button:focus {
   background: var(--white);
   position: relative;
   white-space: nowrap;
-  text-transform: capitalize;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
@@ -445,7 +441,6 @@ button:focus {
   color: var(--text);
   background: var(--white);
   white-space: nowrap;
-  text-transform: capitalize;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
@@ -491,7 +486,6 @@ button:focus {
   padding-bottom: 18px;
   margin-bottom: 20px;
   position: relative;
-  text-transform: capitalize;
   border-bottom: 1px solid var(--border);
 }
 .megamenu-title::before {
@@ -512,7 +506,6 @@ button:focus {
   padding: 5px 0px 5px 25px;
   color: var(--text);
   white-space: nowrap;
-  text-transform: capitalize;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
@@ -537,7 +530,6 @@ button:focus {
   margin-bottom: 20px;
 }
 .form-title h3 {
-  text-transform: capitalize;
 }
 .form-group {
   margin-bottom: 25px;
@@ -555,7 +547,6 @@ button:focus {
   font-weight: 500;
   margin: 0px 0px 7px 3px;
   white-space: nowrap;
-  text-transform: capitalize;
 }
 .form-control {
   width: 100%;
@@ -596,7 +587,6 @@ button:focus {
   padding: 0px 16px;
   letter-spacing: 0.3px;
   background-size: 12px 10px;
-  text-transform: capitalize;
   color: var(--text);
   cursor: pointer;
 }
@@ -913,7 +903,6 @@ button:focus {
   padding: 6px 0px;
   border-radius: 6px;
   text-align: center;
-  text-transform: capitalize;
   color: var(--heading);
   background: var(--border);
   text-shadow: var(-primary-tshadow);
@@ -979,7 +968,6 @@ thead tr th {
   font-weight: 500;
   white-space: nowrap;
   text-align: center;
-  text-transform: capitalize;
   padding: 12px 20px;
   color: var(--white);
   border-right: 1px solid var(--border);
@@ -1004,7 +992,6 @@ tbody tr td:last-child {
 }
 .table-name {
   white-space: nowrap;
-  text-transform: capitalize;
 }
 .table-image img {
   width: auto;
@@ -1025,7 +1012,6 @@ tbody tr td:last-child {
   text-align: left;
 }
 .table-desc p a {
-  text-transform: capitalize;
 }
 .table-desc p a:hover {
   text-decoration: underline;
@@ -1033,7 +1019,6 @@ tbody tr td:last-child {
 .table-vendor a {
   font-weight: 500;
   color: var(--heading);
-  text-transform: capitalize;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
@@ -1044,7 +1029,6 @@ tbody tr td:last-child {
   color: var(--primary);
 }
 .table-status h6 {
-  text-transform: capitalize;
 }
 .table-status .stock-in {
   color: var(--purple);
@@ -1217,7 +1201,6 @@ tbody tr td:last-child {
   line-height: 20px;
   white-space: nowrap;
   color: var(--heading);
-  text-transform: capitalize;
 }
 .order-track-item.active::before {
   background: var(--primary);
@@ -1291,7 +1274,6 @@ tbody tr td:last-child {
 .countdown-time small {
   font-size: 18px;
   font-weight: 500;
-  text-transform: capitalize;
 }
 @media (max-width: 575px) {
   .countdown-time {
@@ -1344,7 +1326,6 @@ tbody tr td:last-child {
   transform: translate(-50%, -50%);
   color: var(--white);
   font-weight: 400;
-  text-transform: capitalize;
   text-shadow: var(--primary-tshadow);
 }
 .suggest-card h5 span {
@@ -1406,7 +1387,6 @@ tbody tr td:last-child {
   margin-bottom: 5px;
   color: var(--white);
   text-align: center;
-  text-transform: capitalize;
 }
 .label-text.off {
   background: var(--red);
@@ -1635,7 +1615,6 @@ tbody tr td:last-child {
   margin-bottom: 5px;
   color: var(--white);
   text-align: center;
-  text-transform: capitalize;
 }
 .label-text.off {
   background: var(--red);
@@ -1731,7 +1710,6 @@ tbody tr td:last-child {
 }
 .feature-name {
   margin-bottom: 3px;
-  text-transform: capitalize;
 }
 .feature-name a {
   color: var(--sub-heading);
@@ -1841,7 +1819,6 @@ tbody tr td:last-child {
   padding: 5px 8px;
   line-height: 13px;
   border-radius: 3px;
-  text-transform: capitalize;
   color: var(--white);
 }
 .standard-label.off {
@@ -1898,7 +1875,6 @@ tbody tr td:last-child {
 }
 .standard-name {
   margin-bottom: 5px;
-  text-transform: capitalize;
 }
 .standard-name a {
   color: var(--sub-heading);
@@ -2175,7 +2151,6 @@ tbody tr td:last-child {
   padding: 0px 10px;
 }
 .category-meta h4 {
-  text-transform: capitalize;
   margin-bottom: 3px;
 }
 @media (max-width: 575px) {
@@ -2275,7 +2250,6 @@ tbody tr td:last-child {
   background: var(--white);
 }
 .brand-meta h4 {
-  text-transform: capitalize;
   margin-bottom: 3px;
 }
 @media (max-width: 575px) {
@@ -2311,7 +2285,6 @@ tbody tr td:last-child {
 }
 .choose-text h4 {
   margin-bottom: 10px;
-  text-transform: capitalize;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
@@ -2498,7 +2471,6 @@ tbody tr td:last-child {
   font-size: 15px;
   font-weight: 500;
   color: var(--primary);
-  text-transform: capitalize;
 }
 @media (min-width: 351px) and (max-width: 575px) {
   .offer-card {
@@ -2532,7 +2504,6 @@ tbody tr td:last-child {
   background: var(--primary);
 }
 .account-title h4 {
-  text-transform: capitalize;
 }
 .account-title button,
 .account-title a {
@@ -2543,7 +2514,6 @@ tbody tr td:last-child {
   letter-spacing: 0.3px;
   padding: 5px 15px;
   white-space: nowrap;
-  text-transform: capitalize;
   color: var(--primary);
   background: var(--green-chalk);
   text-shadow: var(--primary-tshadow);
@@ -2579,10 +2549,8 @@ tbody tr td:last-child {
 .profile-card h6 {
   color: var(--text);
   margin-bottom: 8px;
-  text-transform: capitalize;
 }
 .profile-card p {
-  text-transform: capitalize;
 }
 .profile-card ul {
   display: flex;
@@ -2658,7 +2626,6 @@ tbody tr td:last-child {
   font-size: 12px;
   line-height: 20px;
   margin-bottom: 5px;
-  text-transform: capitalize;
 }
 .payment-card p {
   color: var(--heading);
@@ -2677,7 +2644,6 @@ tbody tr td:last-child {
 .payment-card h5 {
   font-size: 14px;
   line-height: 22px;
-  text-transform: capitalize;
 }
 .payment-card button {
   position: absolute;
@@ -2761,7 +2727,6 @@ tbody tr td:last-child {
 }
 .contact-card h4 {
   margin-bottom: 18px;
-  text-transform: capitalize;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
@@ -2852,7 +2817,6 @@ tbody tr td:last-child {
   color: var(--white);
   letter-spacing: 0.3px;
   margin-bottom: 8px;
-  text-transform: capitalize;
   text-shadow: var(--primary-tshadow);
 }
 .branch-overlay p {
@@ -2861,7 +2825,6 @@ tbody tr td:last-child {
   letter-spacing: 0.3px;
   color: var(--white);
   opacity: 0;
-  text-transform: capitalize;
   text-shadow: var(--primary-tshadow);
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
@@ -2932,7 +2895,6 @@ tbody tr td:last-child {
   text-align: center;
 }
 .team-meta h5 {
-  text-transform: capitalize;
 }
 .team-meta h5 a {
   color: var(--heading);
@@ -2947,7 +2909,6 @@ tbody tr td:last-child {
 }
 .team-meta p {
   font-size: 15px;
-  text-transform: capitalize;
 }
 @media (max-width: 575px) {
   .team-card {
@@ -3008,7 +2969,6 @@ tbody tr td:last-child {
   color: var(--white);
   letter-spacing: 0.3px;
   white-space: nowrap;
-  text-transform: capitalize;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
@@ -3132,7 +3092,6 @@ tbody tr td:last-child {
   letter-spacing: 0.3px;
   white-space: nowrap;
   text-align: left;
-  text-transform: capitalize;
   color: var(--heading);
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
@@ -3166,7 +3125,6 @@ tbody tr td:last-child {
   font-size: 12px;
   margin-left: 15px;
   line-height: 20px;
-  text-transform: uppercase;
 }
 .header-form {
   width: 100%;
@@ -3299,7 +3257,6 @@ tbody tr td:last-child {
   padding: 22px 0px;
   font-weight: 500;
   color: var(--text);
-  text-transform: capitalize;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
@@ -3323,7 +3280,6 @@ tbody tr td:last-child {
 .navbar-focus-list li a {
   font-weight: 500;
   color: var(--text);
-  text-transform: capitalize;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
@@ -3361,7 +3317,6 @@ tbody tr td:last-child {
   line-height: 16px;
   display: block;
   text-align: left;
-  text-transform: capitalize;
 }
 .navbar-info p span {
   font-size: 15px;
@@ -3483,7 +3438,6 @@ tbody tr td:last-child {
 }
 .nav-name {
   margin-bottom: 18px;
-  text-transform: capitalize;
 }
 .nav-name a {
   color: var(--heading);
@@ -3532,7 +3486,6 @@ tbody tr td:last-child {
   padding: 12px 15px;
   border-radius: 8px;
   color: var(--text);
-  text-transform: capitalize;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
@@ -3580,7 +3533,6 @@ tbody tr td:last-child {
   line-height: 18px;
   display: block;
   text-align: left;
-  text-transform: capitalize;
 }
 .nav-info p span {
   font-size: 16px;
@@ -3633,7 +3585,6 @@ tbody tr td:last-child {
 .cart-total span {
   font-weight: 500;
   color: var(--primary);
-  text-transform: capitalize;
 }
 .cart-close {
   position: absolute;
@@ -3733,7 +3684,6 @@ tbody tr td:last-child {
 }
 .cart-info h6 {
   font-weight: 400;
-  text-transform: capitalize;
 }
 .cart-info h6 a {
   color: var(--heading);
@@ -3842,7 +3792,6 @@ tbody tr td:last-child {
   line-height: 30px;
   letter-spacing: 0.3px;
   text-align: center;
-  text-transform: capitalize;
   color: var(--white);
 }
 .checkout-price {
@@ -3912,7 +3861,6 @@ tbody tr td:last-child {
 }
 .category-title {
   color: var(--primary);
-  text-transform: capitalize;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -3962,7 +3910,6 @@ tbody tr td:last-child {
   font-weight: 400;
   padding: 12px 15px;
   color: var(--text);
-  text-transform: capitalize;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -4090,7 +4037,6 @@ tbody tr td:last-child {
   line-height: 13px;
   border-radius: 3px;
   text-align: center;
-  text-transform: capitalize;
   color: var(--white);
 }
 .view-label:last-child {
@@ -4118,7 +4064,6 @@ tbody tr td:last-child {
   font-size: 26px;
   line-height: 34px;
   margin-bottom: 5px;
-  text-transform: capitalize;
 }
 .view-name a {
   color: var(--heading);
@@ -4162,7 +4107,6 @@ tbody tr td:last-child {
 .view-rating a {
   margin-left: 8px;
   white-space: nowrap;
-  text-transform: capitalize;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
@@ -4189,7 +4133,6 @@ tbody tr td:last-child {
 .view-price span small {
   font-size: 14px;
   font-weight: 400;
-  text-transform: capitalize;
 }
 .view-desc {
   margin-bottom: 25px;
@@ -4208,7 +4151,6 @@ tbody tr td:last-child {
   font-weight: 500;
   margin-right: 15px;
   color: var(--heading);
-  text-transform: capitalize;
 }
 .view-tag-list {
   display: flex;
@@ -4224,7 +4166,6 @@ tbody tr td:last-child {
   padding: 8px 10px;
   border-radius: 5px;
   letter-spacing: 0.3px;
-  text-transform: capitalize;
   color: var(--text);
   background: var(--chalk);
   transition: all linear 0.3s;
@@ -4517,7 +4458,6 @@ tbody tr td:last-child {
 .intro-content h5 {
   font-size: 17px;
   margin-bottom: 8px;
-  text-transform: capitalize;
 }
 .intro-content p {
   font-size: 15px;
@@ -4586,7 +4526,6 @@ tbody tr td:last-child {
 .footer-title {
   margin-bottom: 25px;
   letter-spacing: -0.3px;
-  text-transform: capitalize;
 }
 .footer-widget.contact {
   margin-left: 30px;
@@ -4619,7 +4558,6 @@ tbody tr td:last-child {
 }
 .footer-links ul li a {
   color: var(--text);
-  text-transform: capitalize;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
@@ -4716,7 +4654,6 @@ tbody tr td:last-child {
   padding-bottom: 16px;
   margin-bottom: 20px;
   position: relative;
-  text-transform: capitalize;
   border-bottom: 1px solid var(--border);
 }
 .blog-widget-title::before {
@@ -4822,7 +4759,6 @@ tbody tr td:last-child {
   width: 100%;
   font-size: 17px;
   color: var(--text);
-  text-transform: capitalize;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
@@ -4855,7 +4791,6 @@ tbody tr td:last-child {
   border-radius: 3px;
   color: var(--text);
   background: var(--chalk);
-  text-transform: capitalize;
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
@@ -4969,7 +4904,6 @@ tbody tr td:last-child {
 }
 .shop-filter p {
   font-size: 15px;
-  text-transform: capitalize;
 }
 @media (max-width: 767px) {
   .shop-filter {
@@ -5040,7 +4974,6 @@ tbody tr td:last-child {
   margin-top: -1px;
 }
 .shop-widget-btn span {
-  text-transform: capitalize;
 }
 .shop-widget-group {
   display: grid;
@@ -5093,7 +5026,6 @@ tbody tr td:last-child {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-transform: capitalize;
 }
 .shop-widget-content label i {
   font-size: 15px;
@@ -5158,7 +5090,6 @@ tbody tr td:last-child {
   font-size: 38px;
   margin-bottom: 15px;
   color: var(--white);
-  text-transform: uppercase;
 }
 @media (max-width: 767px) {
   .single-banner {

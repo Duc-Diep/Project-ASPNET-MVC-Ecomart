@@ -54,29 +54,6 @@
         window.location = window.location.pathname;
     }
 
-    const onloadSelected = () => {
-        const {search} = window.location;
-        if (search.indexOf("order=asc") !== -1) {
-        document.getElementById("hdk-asc").selected = true;
-            document.getElementById("viewbag").value = "asc";
-        } else if (search.indexOf("order=desc") !== -1) {
-        document.getElementById("hdk-desc").selected = true;
-            document.getElementById("viewbag").value = "desc";
-        } else {
-        document.getElementById("hdk-default").selected = true;
-            document.getElementById("viewbag").value = "default";
-        }
-
-        const idsExists = document.getElementById("cate-hidden").value;
-        const ids = idsExists.split(",");
-
-        ids.map(id => {
-        document.getElementById(`cate-${id}`).checked = true
-    });
-    }
-
-    onloadSelected();
-
     const getSelectedCheckboxValues = (name) => {
         const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
         let values = [];
@@ -109,4 +86,26 @@
         window.location = url;
     });
 
+const onloadSelected = () => {
+    const { search } = window.location;
+    if (search.indexOf("order=asc") !== -1) {
+        document.getElementById("hdk-asc").selected = true;
+        document.getElementById("viewbag").value = "asc";
+    } else if (search.indexOf("order=desc") !== -1) {
+        document.getElementById("hdk-desc").selected = true;
+        document.getElementById("viewbag").value = "desc";
+    } else {
+        document.getElementById("hdk-default").selected = true;
+        document.getElementById("viewbag").value = "default";
+    }
+
+    const idsExists = document.getElementById("cate-hidden").value;
+    const ids = idsExists.split(",");
+
+    ids.map(id => {
+        document.getElementById(`cate-${id}`).checked = true
+    });
+}
+
+onloadSelected();
 

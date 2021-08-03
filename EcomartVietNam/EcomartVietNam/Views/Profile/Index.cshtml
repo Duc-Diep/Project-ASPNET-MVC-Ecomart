@@ -46,9 +46,9 @@
                                 <div class="form-group">
                                     <label class="form-label">tên</label>
                                     @*<input class="form-control"
-                                type="text"
-                                name="fullname"
-                                value="@Model.full_name" />*@
+                                        type="text"
+                                        name="fullname"
+                                        value="@Model.full_name" />*@
                                     @Html.EditorFor(model => model.full_name, new { htmlAttributes = new { @class = "form-control", value = Model.full_name } })
                                     @Html.ValidationMessageFor(model => model.full_name, "", new { @class = "text-danger" })
                                 </div>
@@ -72,9 +72,9 @@
                                 <div class="form-group">
                                     <label class="form-label">Số điện thoại</label>
                                     @*<input class="form-control"
-                                type="number"
-                                name="phone"
-                                value="@Model.phone_number" />*@
+                                        type="number"
+                                        name="phone"
+                                        value="@Model.phone_number" />*@
                                     @Html.EditorFor(model => model.phone_number, new { htmlAttributes = new { @class = "form-control", value = Model.phone_number } })
                                     @Html.ValidationMessageFor(model => model.phone_number, "", new { @class = "text-danger" })
                                 </div>
@@ -83,9 +83,9 @@
                                 <div class="form-group">
                                     <label class="form-label">Địa chỉ</label>
                                     @*<input class="form-control"
-                                type="text"
-                                name="address"
-                                value="@Model.address" />*@
+                                        type="text"
+                                        name="address"
+                                        value="@Model.address" />*@
                                     @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control", value = Model.address } })
                                     @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
                                 </div>
@@ -101,6 +101,7 @@
             </div>
         </div>
     </div>
+    @{ Html.RenderAction("_ListOrder", "Base"); }
 </section>
 
 @section Scripts {

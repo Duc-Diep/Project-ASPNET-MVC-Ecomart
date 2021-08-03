@@ -68,9 +68,9 @@
                                                  alt="" />
                                             @ViewBag.ProductInfo[i].product_name
                                         </td>
-                                        <td>@ViewBag.Products[i].price</td>
+                                        <td>@string.Format("{0:#,##}", ViewBag.Products[i].price) vnđ</td>
                                         <td>@ViewBag.Products[i].quantity</td>
-                                        <td>@(@ViewBag.Products[i].price*@ViewBag.Products[i].quantity)</td>
+                                        <td>@string.Format("{0:#,##}", ViewBag.Products[i].price * @ViewBag.Products[i].quantity) vnđ</td>
                                     </tr>
                                 }
 
