@@ -73,7 +73,7 @@ namespace EcomartVietNam.Controllers
                 status = e.Key.status,
                 created_at = e.Key.created_at,
                 amount = e.Sum(v => v.order_detail.quantity * v.order_detail.price)
-            });
+            }).OrderBy(o => o.created_at);
 
             List<Custom_order> list = new List<Custom_order>();
             foreach (var item in order)

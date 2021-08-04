@@ -336,7 +336,7 @@
     <Content Include="Areas\Admin\Views\Shared\DisplayTemplates\Active.cshtml" />
     <Content Include="Areas\Admin\Views\ManageProduct\Details.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\filterr.js" />
+    <Content Include="Scripts\filterrr.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
