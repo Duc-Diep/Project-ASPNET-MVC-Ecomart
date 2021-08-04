@@ -2,17 +2,17 @@
 @using PagedList.Mvc;
 
 @{
-    ViewBag.Title = "Search";
+    ViewBag.Title = "Tìm kiếm";
     Layout = "~/Views/Shared/_LayoutClient.cshtml";
 }
 
 <section class="inner-section single-banner">
     <div class="container">
-        <h2 id="hdk-category-name">tất cả sản phẩm</h2>
+        <h2 id="hdk-category-name">Tất cả sản phẩm</h2>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
             <li class="breadcrumb-item active" aria-current="page">
-                tất cả sản phẩm
+                Tất cả sản phẩm
             </li>
         </ol>
     </div>
@@ -33,12 +33,12 @@
                             <input value="@ViewBag.from" type="number" placeholder="Bắt đầu" id="fromPrice" /><input value="@ViewBag.to" id="toPrice" type="number" placeholder="Kết thúc" />
                         </div>
                         <button type="button" onclick="filterProduct()" class="shop-widget-btn">
-                            <i class="fas fa-search"></i><span>tìm</span>
+                            <i class="fas fa-search"></i><span>Tìm</span>
                         </button>
                     </form>
                 </div>
                 <div class="shop-widget">
-                    <h6 class="shop-widget-title">lọc theo danh mục</h6>
+                    <h6 class="shop-widget-title">Lọc theo danh mục</h6>
                     <form>
                         <ul class="shop-widget-list shop-widget-scroll">
                             @foreach (var item in ViewBag.Categories)
@@ -51,7 +51,7 @@
                             }
                         </ul>
                         <button type="button" id="cate-filter" class="shop-widget-btn">
-                            <i class="fas fa-search"></i><span>tìm</span>
+                            <i class="fas fa-search"></i><span>Tìm</span>
                         </button>
                     </form>
                 </div>
@@ -64,9 +64,9 @@
                                 <div class="filter-short">
                                     <label class="filter-label">Sắp xếp theo :</label>
                                     <select id="filter" onchange="onSort()" class="form-select filter-select">
-                                        <option id="hdk-default" value="default" selected>mặc định</option>
-                                        <option id="hdk-asc" value="asc">giá từ thấp tới cao</option>
-                                        <option id="hdk-desc" value="desc">giá từ cao tới thấp</option>
+                                        <option id="hdk-default" value="default" selected>Mặc định</option>
+                                        <option id="hdk-asc" value="asc">Giá từ thấp tới cao</option>
+                                        <option id="hdk-desc" value="desc">Giá từ cao tới thấp</option>
                                     </select>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
                                         <span>@string.Format("{0:#,##}", item.product_price) vnđ</span>
                                     </h6>
                                     <button class="product-add" onclick="addToCart(@item.product_id)" title="Thêm vào giỏ">
-                                        <i class="fas fa-shopping-basket"></i><span>thêm vào giỏ hàng</span>
+                                        <i class="fas fa-shopping-basket"></i><span>Thêm vào giỏ hàng</span>
                                     </button>
                                 </div>
                             </div>

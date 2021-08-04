@@ -11,7 +11,7 @@
         <div class="nav-btn">
             @if(ViewBag.User == null)
             {
-                <a href="@Url.Action("Login","Profile")" class="btn btn-inline"><i class="fa fa-unlock-alt"></i><span>đăng nhập</span></a>
+                <a href="@Url.Action("Login","Profile")" class="btn btn-inline"><i class="fa fa-unlock-alt"></i><span>Đăng nhập</span></a>
             }
             else
             {
@@ -24,7 +24,7 @@
                 <a class="nav-link" href="#"><i class="icofont-home"></i>Trang chủ</a>
             </li>
             <li>
-                <a class="nav-link dropdown-link" href="#"><i class="icofont-page"></i>danh mục sản phẩm</a>
+                <a class="nav-link dropdown-link" href="#"><i class="icofont-page"></i>Danh mục sản phẩm</a>
                 <ul class="dropdown-list">
                     @foreach (var item in Model)
                     {
@@ -34,24 +34,24 @@
             </li>
             <li>
                 <a class="nav-link cart-btn" href="/Checkout">
-                    <i class="fas fa-shopping-basket"></i><span>giỏ hàng</span><sup>9+</sup>
+                    <i class="fas fa-shopping-basket"></i><span>Giỏ hàng</span><sup>9+</sup>
                 </a>
             </li>
             <li>
-                <a class="nav-link" href="contact.html"><i class="icofont-contacts"></i>liên hệ</a>
+                <a class="nav-link" href="contact.html"><i class="icofont-contacts"></i>Liên hệ</a>
             </li>
             <li>
-                <a class="nav-link" href="@Url.Action("Login","Profile")"><i class="icofont-logout"></i>đăng xuất</a>
+                <a class="nav-link" href="@Url.Action("Login","Profile")"><i class="icofont-logout"></i>Đăng xuất</a>
             </li>
         </ul>
         <div class="nav-info-group">
             <div class="nav-info">
                 <i class="icofont-ui-touch-phone"></i>
-                <p><small>liên hệ</small><span>0976.658.183</span></p>
+                <p><small>Liên hệ</small><span>0976.658.183</span></p>
             </div>
             <div class="nav-info">
                 <i class="icofont-ui-email"></i>
-                <p><small>email</small><span>contact@ecomartvietnam.vn</span></p>
+                <p><small>Email</small><span>contact@ecomartvietnam.vn</span></p>
             </div>
         </div>
         <div class="nav-footer">

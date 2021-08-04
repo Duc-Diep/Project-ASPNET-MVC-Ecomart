@@ -180,6 +180,10 @@
                     fetchCart(data, 'minus')
                     fetchProduct();
                 }
+                if (Number(qty) - 1 === 0) {
+                    deleteInCart(id, data.price, 1);
+                    window.location = '/Checkout';
+                }
             }
         }
 

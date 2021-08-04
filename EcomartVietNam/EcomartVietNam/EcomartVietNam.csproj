@@ -363,13 +363,13 @@
     <Content Include="wwwroot\css\custom\home-standard.css" />
     <Content Include="wwwroot\css\custom\index.css" />
     <Content Include="wwwroot\css\custom\invoice.css" />
-    <Content Include="wwwroot\css\custom\mainn.css" />
+    <Content Include="wwwroot\css\custom\mainnnn.css" />
     <Content Include="wwwroot\css\custom\orderlist.css" />
     <Content Include="wwwroot\css\custom\privacy.css" />
     <Content Include="wwwroot\css\custom\product-details.css" />
     <Content Include="wwwroot\css\custom\product-grid.css" />
     <Content Include="wwwroot\css\custom\profile.css" />
-    <Content Include="wwwroot\css\custom\user-form.css" />
+    <Content Include="wwwroot\css\custom\user.css" />
     <Content Include="wwwroot\css\custom\wishlist.css" />
     <Content Include="wwwroot\css\vendor\bootstrap.min.css" />
     <Content Include="wwwroot\css\vendor\nice-select.min.css" />

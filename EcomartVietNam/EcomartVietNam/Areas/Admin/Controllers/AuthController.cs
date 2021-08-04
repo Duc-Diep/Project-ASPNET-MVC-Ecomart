@@ -32,7 +32,18 @@ namespace EcomartVietNam.Areas.Admin.Controllers
                 string password = frm["password"];
                 string currentPass = Helper.EncodePassword(password);
                 User user = db.Users.Where(s => s.email.Equals(email) && s.password.Equals(currentPass)).SingleOrDefault();
-                if (user != null && user.role == 1)
+
+                if(user != null && user.role != 1)
+                {
+                    ViewBag.error = "Bạn không có quyền truy cập";
+                    return View();
+                } 
+                else if( user != null && !user.is_active)
+                {
+                    ViewBag.error = "Tài khoản của bạn đã bị khoá";
+                    return View();
+                }
+                else if (user != null && user.role == 1 && user.is_active)
                 {
                     //add session
                     Session["admin"] = user;
@@ -40,8 +51,10 @@ namespace EcomartVietNam.Areas.Admin.Controllers
                 }
                 else
                 {
-                    ViewBag.error = "Đăng nhập thất bại";
-                    return View();
+                    {
+                        ViewBag.error = "Đăng nhập thất bại";
+                        return View();
+                    }
                 }
             }
             ViewBag.error = "Đăng nhập thất bại";

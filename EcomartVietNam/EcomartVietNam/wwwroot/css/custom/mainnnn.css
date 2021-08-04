@@ -254,7 +254,7 @@ button:focus {
   border: none;
   font-size: 15px;
   font-weight: 500;
-  text-transform: uppercase;
+   
   padding: 14px 32px;
   border-radius: 6px;
   border: 2px solid var(--primary);
@@ -289,7 +289,7 @@ button:focus {
   border-radius: 3px;
   letter-spacing: 0.3px;
   display: inline-block;
-  text-transform: uppercase;
+   
   color: var(--white);
   background: var(--red);
   text-shadow: var(--primary-tshadow);
@@ -603,7 +603,7 @@ button:focus {
   border-radius: 6px;
   letter-spacing: 0.5px;
   text-align: center;
-  text-transform: uppercase;
+   
   color: var(--white);
   background: var(--primary);
 }
@@ -639,7 +639,7 @@ button:focus {
   border-radius: 6px;
   letter-spacing: 0.5px;
   text-align: center;
-  text-transform: uppercase;
+   
   color: var(--white);
   background: var(--primary);
 }
@@ -667,7 +667,7 @@ button:focus {
 .tab-link {
   font-size: 15px;
   font-weight: 500;
-  text-transform: uppercase;
+   
   color: var(--heading);
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
@@ -1540,7 +1540,7 @@ tbody tr td:last-child {
   font-weight: 400;
   padding: 15px 0px;
   text-align: center;
-  text-transform: uppercase;
+   
   text-shadow: var(--primary-tshadow);
   transform: translate(-50%, -50%);
   color: var(--white);
@@ -1944,7 +1944,7 @@ tbody tr td:last-child {
 .standard-action-group .action-input {
   padding: 10px 0px;
   letter-spacing: 0.5px;
-  text-transform: uppercase;
+   
   color: var(--white);
   background: var(--primary);
 }
@@ -1972,7 +1972,7 @@ tbody tr td:last-child {
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  text-transform: uppercase;
+   
 }
 .standard-wish {
   color: var(--primary);
@@ -2324,7 +2324,7 @@ tbody tr td:last-child {
 .blog-month {
   font-size: 14px;
   letter-spacing: 0.3px;
-  text-transform: uppercase;
+   
 }
 .blog-img {
   overflow: hidden;
@@ -2367,7 +2367,7 @@ tbody tr td:last-child {
   font-size: 15px;
   font-weight: 400;
   white-space: nowrap;
-  text-transform: uppercase;
+   
 }
 .blog-meta li a {
   color: var(--text);
@@ -2406,7 +2406,7 @@ tbody tr td:last-child {
   font-size: 15px;
   font-weight: 500;
   color: var(--primary);
-  text-transform: uppercase;
+   
   transition: all linear 0.3s;
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
@@ -2464,7 +2464,7 @@ tbody tr td:last-child {
 .offer-div h5 {
   font-size: 15px;
   font-weight: 400;
-  text-transform: uppercase;
+   
 }
 .offer-div button,
 .offer-div span {
@@ -3765,7 +3765,7 @@ tbody tr td:last-child {
   border-radius: 8px;
   display: block;
   text-align: center;
-  text-transform: uppercase;
+   
   color: var(--white);
   background: var(--primary);
 }
@@ -3985,7 +3985,7 @@ tbody tr td:last-child {
   font-size: 10px;
   line-height: 12px;
   color: var(--text);
-  text-transform: uppercase;
+   
 }
 .mobile-menu a sup,
 .mobile-menu button sup {
@@ -4080,7 +4080,7 @@ tbody tr td:last-child {
 .view-meta p {
   font-size: 13px;
   margin-right: 20px;
-  text-transform: uppercase;
+   
   color: var(--placeholder);
 }
 .view-meta span,
@@ -4213,7 +4213,6 @@ tbody tr td:last-child {
   height: 46px;
   line-height: 46px;
   letter-spacing: 0.3px;
-  text-transform: uppercase;
   color: var(--white);
   background: var(--primary);
 }
@@ -4245,7 +4244,7 @@ tbody tr td:last-child {
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  text-transform: uppercase;
+   
 }
 .view-wish.active {
   color: var(--white);
@@ -4299,7 +4298,7 @@ tbody tr td:last-child {
   font-size: 40px;
   font-weight: 700;
   line-height: 48px;
-  text-transform: uppercase;
+   
   margin-bottom: 12px;
 }
 .countdown-content p {
@@ -4326,7 +4325,7 @@ tbody tr td:last-child {
 }
 .countdown-off span {
   display: block;
-  text-transform: uppercase;
+   
   font-size: 30px;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -4396,7 +4395,7 @@ tbody tr td:last-child {
   border-radius: 8px;
   text-align: center;
   display: inline-block;
-  text-transform: uppercase;
+   
   color: var(--white);
   background: var(--primary);
 }
@@ -4737,7 +4736,7 @@ tbody tr td:last-child {
   margin-top: 8px;
   font-size: 13px;
   font-weight: 400;
-  text-transform: uppercase;
+   
 }
 .blog-widget-category li {
   margin-bottom: 15px;
@@ -4946,7 +4945,7 @@ tbody tr td:last-child {
 }
 .shop-widget-title {
   padding-bottom: 12px;
-  text-transform: uppercase;
+   
   border-bottom: 1px solid var(--border);
 }
 .shop-widget-btn {
@@ -5122,7 +5121,7 @@ tbody tr td:last-child {
   font-weight: 500;
   margin-right: 8px;
   white-space: nowrap;
-  text-transform: uppercase;
+   
 }
 .filter-select {
   height: 40px;
