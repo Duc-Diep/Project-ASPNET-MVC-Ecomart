@@ -104,19 +104,19 @@ namespace EcomartVietNam.Areas.Admin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    string full_name = frm["full_name"];
-                    string phone = frm["phone_number"];
+                    //string full_name = frm["full_name"];
+                    //string phone = frm["phone_number"];
                     string email = frm["email"];
-                    string password = frm["password"];
-                    string address = frm["address"];
-                    string confirm_password = frm["confirm_password"];
+                    //string password = frm["password"];
+                    //string address = frm["address"];
+                    //string confirm_password = frm["confirm_password"];
                     string role = frm["role"];
                     string is_active = frm["is_active"];
-                    if (!password.Equals(confirm_password))
-                    {
-                        ViewBag.Error = "Mật khẩu không khớp.";
-                        return View();
-                    }
+                    //if (!password.Equals(confirm_password))
+                    //{
+                    //    ViewBag.Error = "Mật khẩu không khớp.";
+                    //    return View();
+                    //}
                     var user = db.Users.Where(u => u.email == email).SingleOrDefault();
 
                     if (user == null)
@@ -124,15 +124,15 @@ namespace EcomartVietNam.Areas.Admin.Controllers
                         ViewBag.Error = "tài khoản không tồn tại";
                         return View();
                     }
-                    user.full_name = full_name;
-                    user.phone_number = phone;
-                    user.email = email;
-                    user.password = Helper.EncodePassword(password);
-                    user.address = address;
+                    //user.full_name = full_name;
+                    //user.phone_number = phone;
+                    //user.email = email;
+                    //user.password = Helper.EncodePassword(password);
+                    //user.address = address;
                     user.role = role.Equals("Quản trị") ? 1 : 0;
                     user.is_active = is_active == null ? false : true;
-                    db.Configuration.ValidateOnSaveEnabled = false;
-                    db.Entry(user).State = EntityState.Modified;
+                    //db.Configuration.ValidateOnSaveEnabled = false;
+                    //db.Entry(user).State = EntityState.Modified;
                     db.SaveChanges();
                 }
                 return RedirectToAction("Index");

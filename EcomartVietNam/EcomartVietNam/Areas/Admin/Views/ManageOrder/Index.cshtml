@@ -96,7 +96,7 @@
     <script>
         const updateStatus = async (id) => {
 
-            const { value } = document.getElementById("1-status");
+            const { value } = document.getElementById(`${id}-status`);
             let status;
             if (value === "Đang giao") {
                 status = 1

@@ -3,6 +3,11 @@
         let fromPrice = document.getElementById("fromPrice").value;
         let toPrice = document.getElementById("toPrice").value;
 
+        if (!fromPrice && !toPrice) {
+            toastr.error('Vui lòng nhập giá trước khi lọc', 'Lỗi');
+            return;
+        }
+
         if (Number(fromPrice) < 0) {
         fromPrice *= -1;
         }
@@ -17,11 +22,11 @@
         url = `${pathname}?fromPrice=${fromPrice}&toPrice=${toPrice}`;
         } else {
             if (search.indexOf("order=asc") !== -1) {
-        url = `${pathname}?order=asc&fromPrice=${fromPrice}&toPrice=${toPrice}`;
+                url = `${pathname}?order=asc&fromPrice=${fromPrice}&toPrice=${toPrice}`;
             } else if (search.indexOf("order=desc") !== -1) {
-        url = `${pathname}?order=desc&fromPrice=${fromPrice}&toPrice=${toPrice}`;
+                url = `${pathname}?order=desc&fromPrice=${fromPrice}&toPrice=${toPrice}`;
             } else {
-        url = `${pathname}${search}&fromPrice=${fromPrice}&toPrice=${toPrice}`;
+                url = `${pathname}${search}&fromPrice=${fromPrice}&toPrice=${toPrice}`;
             }
         }
 
@@ -81,6 +86,11 @@
         url = `${pathname}?category=${categoryIds}`;
         } else {
         url = `${pathname}${search}&category=${categoryIds}`;
+        }
+
+        if (!categoryIds) {
+            search = search.replace(`?category=${idsExists}`, "");
+            url = `${pathname}${search}`;
         }
 
         window.location = url;

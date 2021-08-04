@@ -47,11 +47,11 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>Tên</th>
                                     <th>Email</th>
                                     <th>SĐT</th>
                                     @*<th>Mật khẩu</th>*@
                                     <th>Địa chỉ</th>
-                                    <th>Tên</th>
                                     <th>Trạng thái</th>
                                     <th>Quyền</th>
                                     @*<th>Ngày tạo</th>*@
@@ -64,11 +64,11 @@
 
                                 <tr>
                                     <td>@Html.DisplayFor(modelItem => item.user_id)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.full_name)</td>
                                     <td>@Html.DisplayFor(modelItem => item.email)</td>
                                     <td>@Html.DisplayFor(modelItem => item.phone_number)</td>
                                     @*<td>@Html.DisplayFor(modelItem => item.password)</td>*@
                                     <td>@Html.DisplayFor(modelItem => item.address)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.full_name)</td>
                                     <td>@Html.DisplayFor(modelItem => item.is_active)</td>
                                     <td>@Html.DisplayFor(modelItem => item.role)</td>
                                     @*<td>@Html.DisplayFor(modelItem => item.created_at)</td>*@

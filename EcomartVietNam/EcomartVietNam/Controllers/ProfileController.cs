@@ -111,7 +111,12 @@ namespace EcomartVietNam.Controllers
 
                 string currentPass = Helper.EncodePassword(password);
                 var user = db.Users.Where(s => s.email.Equals(email) && s.password.Equals(currentPass)).SingleOrDefault();
-                if (user != null)
+                if (user != null && !user.is_active)
+                {
+                    ViewBag.error = "Tài khoản của bạn đã bị khoá";
+                    return View();
+                }
+                else if(user != null && user.is_active)
                 {
                     //add session
                     Session["user"] = user;

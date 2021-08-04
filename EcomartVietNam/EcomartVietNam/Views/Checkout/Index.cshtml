@@ -24,6 +24,7 @@
                 <div class="account-card">
                     <div class="account-title">
                         <h4>Đơn hàng của bạn</h4>
+                        <a onclick="clearCart()" href="/Checkout">Xoá giỏ hàng</a>
                     </div>
                     <h1 id="noti">Không có sản phẩm trong giỏ hàng</h1>
                     <div class="account-content" style="display: none" id="cart">
@@ -107,7 +108,7 @@
                                         <button class="action-minus" onclick="minus(${product.id})" title="Giảm">
                                             <i class="icofont-minus"></i>
                                         </button>
-                                            <input class="action-input" title="Số lượng" id="qty${product.id}" type="text" name="quantity" value="${product.currentQuantity}">
+                                            <input class="action-input" style="text-align:right;" title="Số lượng" id="qty${product.id}" type="number" readonly name="quantity" value="${product.currentQuantity}">
                                         <button class="action-plus" onclick="plus(${product.id})" title="Tăng">
                                             <i class="icofont-plus"></i>
                                         </button>
@@ -157,6 +158,8 @@
                     localStorage.setItem("productIds", productIds);
                     fetchCart(data, 'plus');
                     fetchProduct();
+                } else {
+                    toastr.info('Số lượng đã đạt giới hạn', 'Thông báo');
                 }
             }
         }
@@ -177,8 +180,17 @@
                     fetchCart(data, 'minus')
                     fetchProduct();
                 }
+                if (Number(qty) - 1 === 0) {
+                    deleteInCart(id, data.price, 1);
+                    window.location = '/Checkout';
+                }
             }
         }
 
+        const clearCart = () => {
+            localStorage.removeItem("productIds");
+            localStorage.removeItem("amount");
+            window.location.reload();
+        }
     </script>
 }

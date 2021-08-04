@@ -23,7 +23,7 @@
                             <input value="@ViewBag.from" type="number" placeholder="Bắt đầu" id="fromPrice" /><input value="@ViewBag.to" id="toPrice" type="number" placeholder="Kết thúc" />
                         </div>
                         <button type="button" onclick="filterProduct()" class="shop-widget-btn">
-                            <i class="fas fa-search"></i><span>tìm</span>
+                            <i class="fas fa-search"></i><span>Tìm</span>
                         </button>
                     </form>
                 </div>
@@ -36,9 +36,9 @@
                                 <div class="filter-short">
                                     <label class="filter-label">Sắp xếp theo :</label>
                                     <select id="filter" onchange="onSort()" class="form-select filter-select">
-                                        <option id="hdk-default" value="default" selected>mặc định</option>
-                                        <option id="hdk-asc" value="asc">giá từ thấp tới cao</option>
-                                        <option id="hdk-desc" value="desc">giá từ cao tới thấp</option>
+                                        <option id="hdk-default" value="default" selected>Mặc định</option>
+                                        <option id="hdk-asc" value="asc">Giá từ thấp tới cao</option>
+                                        <option id="hdk-desc" value="desc">Giá từ cao tới thấp</option>
                                     </select>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                         <span>@string.Format("{0:#,##}", item.product_price) vnđ</span>
                                     </h6>
                                     <button class="product-add" onclick="addToCart(@item.product_id)" title="Thêm vào giỏ">
-                                        <i class="fas fa-shopping-basket"></i><span>thêm vào giỏ hàng</span>
+                                        <i class="fas fa-shopping-basket"></i><span>Thêm vào giỏ hàng</span>
                                     </button>
                                 </div>
                             </div>
