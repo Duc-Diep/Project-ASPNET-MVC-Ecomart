@@ -149,6 +149,8 @@ namespace EcomartVietNam.Controllers
                     string email = frm["email"];
                     string password = frm["password"];
                     string confirm_password = frm["confirm_password"];
+                    string phone = frm["phone_number"];
+                    string address = frm["address"];
 
                     if (!password.Equals(confirm_password))
                     {
@@ -168,6 +170,8 @@ namespace EcomartVietNam.Controllers
                     u.full_name = full_name;
                     u.email = email;
                     u.password = Helper.EncodePassword(password);
+                    u.address = address;
+                    u.phone_number = phone;
                     u.role = 0;
                     u.is_active = true;
                     db.Configuration.ValidateOnSaveEnabled = false;

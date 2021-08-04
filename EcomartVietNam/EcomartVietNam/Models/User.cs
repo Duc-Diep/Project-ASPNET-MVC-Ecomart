@@ -24,6 +24,7 @@
         public string email { get; set; }
 
         [StringLength(11)]
+        [MaxLength(11)]
         public string phone_number { get; set; }
 
         [Required(ErrorMessage = "Mật khẩu không được để trống!")]

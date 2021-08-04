@@ -15,7 +15,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
         // GET: Admin/ManageCategory
         public ActionResult Index()
         {
-            var categories = db.Categories.ToList();
+            var categories = db.Categories.OrderByDescending(c=>c.category_id).ToList();
             return View(categories);
         }
         // GET: Admin/ManageCategory/Create

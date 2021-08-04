@@ -17,7 +17,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
         // GET: Admin/Account
         public ActionResult Index()
         {
-            var account = db.Users.ToList();
+            var account = db.Users.OrderByDescending(a=>a.user_id).ToList();
             return View(account);
         }
         public ActionResult Create()

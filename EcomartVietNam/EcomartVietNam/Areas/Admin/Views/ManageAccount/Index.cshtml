@@ -49,11 +49,12 @@
                                     <th>#</th>
                                     <th>Email</th>
                                     <th>SĐT</th>
-                                    <th>Mật khẩu</th>
+                                    @*<th>Mật khẩu</th>*@
+                                    <th>Địa chỉ</th>
                                     <th>Tên</th>
                                     <th>Trạng thái</th>
                                     <th>Quyền</th>
-                                    <th>Ngày tạo</th>
+                                    @*<th>Ngày tạo</th>*@
                                     <th class="text-right">Hành động</th>
                                 </tr>
                             </thead>
@@ -61,34 +62,35 @@
                                 @foreach (var item in Model)
                                 {
 
-                                    <tr>
-                                        <td>@Html.DisplayFor(modelItem => item.user_id)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.email)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.phone_number)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.password)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.full_name)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.is_active)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.role)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.created_at)</td>
-                                        <td class="text-right">
-                                            <a href="@Url.Action("Update","ManageAccount",new { id=item.user_id })"
-                                               class="btn btn-sm bg-success-light mr-2">
-                                                <i class="far fa-edit mr-1"></i> Sửa
-                                            </a>
-                                            <a data-id="40"
-                                               href="javascript:void(0);"
-                                               class="
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => item.user_id)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.email)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.phone_number)</td>
+                                    @*<td>@Html.DisplayFor(modelItem => item.password)</td>*@
+                                    <td>@Html.DisplayFor(modelItem => item.address)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.full_name)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.is_active)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.role)</td>
+                                    @*<td>@Html.DisplayFor(modelItem => item.created_at)</td>*@
+                                    <td class="text-right">
+                                        <a href="@Url.Action("Update","ManageAccount",new { id=item.user_id })"
+                                           class="btn btn-sm bg-success-light mr-2">
+                                            <i class="far fa-edit mr-1"></i> Sửa
+                                        </a>
+                                        <a data-id="40"
+                                           href="javascript:void(0);"
+                                           class="
                                                     btn btn-sm
                                                     bg-danger-light
                                                     mr-2
                                                     delete_review_comment
                                                   "
-                                               data-toggle="modal"
-                                               data-target="#model-@item.user_id">
-                                                <i class="far fa-trash-alt mr-1"></i> Xoá
-                                            </a>
-                                        </td>
-                                    </tr>
+                                           data-toggle="modal"
+                                           data-target="#model-@item.user_id">
+                                            <i class="far fa-trash-alt mr-1"></i> Xoá
+                                        </a>
+                                    </td>
+                                </tr>
                                 }
 
                             </tbody>

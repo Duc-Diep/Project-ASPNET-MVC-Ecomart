@@ -334,6 +334,7 @@
       <Link>.editorconfig</Link>
     </Content>
     <Content Include="Areas\Admin\Views\Shared\DisplayTemplates\Active.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageProduct\Details.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\filterr.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

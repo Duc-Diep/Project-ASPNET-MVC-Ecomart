@@ -122,6 +122,10 @@
                                         <td>@Html.DisplayFor(modelItem => item.product_price) vnđ</td>
                                         <td>@Html.DisplayFor(modelItem => item.product_amount)</td>
                                         <td class="text-right">
+                                            <a href="@Url.Action("Details","ManageProduct",new {id = item.product_id})"
+                                               class="btn btn-sm bg-success-light mr-2">
+                                                <i class="far fa-eye mr-1"></i>Chi tiết
+                                            </a>
                                             <a href="@Url.Action("Update","ManageProduct",new {id = item.product_id})"
                                                class="btn btn-sm bg-success-light mr-2">
                                                 <i class="far fa-edit mr-1"></i>Sửa

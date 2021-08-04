@@ -45,7 +45,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
                 status = e.Key.status,
                 created_at = e.Key.created_at,
                 amount = e.Sum(v => v.order_detail.quantity * v.order_detail.price)
-            }).ToList();
+            }).OrderByDescending(o => o.order_id).ToList();
 
             List<string> status = new List<string>
             {

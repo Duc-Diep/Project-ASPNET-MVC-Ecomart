@@ -73,11 +73,11 @@
                                         </td>
                                         <td>
                                             <a onclick="updateStatus(@Model.ToList()[i].order_id)" class="btn btn-sm bg-success-light mr-2">
-                                                Cập nhật
+                                                <i class="far fa-edit mr-1"></i>Cập nhật
                                             </a>
                                             <a class="btn btn-sm bg-success-light mr-2"
                                                href="@Url.Action("Details","ManageOrder", new { id=Model.ToList()[i].order_id })">
-                                                Chi tiết
+                                                <i class="far fa-eye mr-1"></i>Chi tiết
                                             </a>
                                         </td>
                                     </tr>

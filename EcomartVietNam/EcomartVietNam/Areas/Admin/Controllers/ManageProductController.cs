@@ -22,8 +22,24 @@ namespace EcomartVietNam.Areas.Admin.Controllers
                 products = products.Where(p => p.product_name.Contains(searchString));
             }
             
-            return View(products.ToList());
+            return View(products.OrderByDescending(p=>p.product_id).ToList());
         }
+
+        public ActionResult Details(int id)
+        {
+            if (id == 0)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = db.Products.Find(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.category_id = new SelectList(db.Categories, "category_id", "category_name", product.category_id);
+            return View(product);
+        }
+
         // GET: Admin/ManageProduct/Create
         public ActionResult Create()
         {
