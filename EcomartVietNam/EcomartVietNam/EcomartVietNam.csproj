@@ -366,7 +366,7 @@
     <Content Include="wwwroot\css\custom\mainnnn.css" />
     <Content Include="wwwroot\css\custom\orderlist.css" />
     <Content Include="wwwroot\css\custom\privacy.css" />
-    <Content Include="wwwroot\css\custom\product-details.css" />
+    <Content Include="wwwroot\css\custom\product-detaill.css" />
     <Content Include="wwwroot\css\custom\product-grid.css" />
     <Content Include="wwwroot\css\custom\profile.css" />
     <Content Include="wwwroot\css\custom\user.css" />
