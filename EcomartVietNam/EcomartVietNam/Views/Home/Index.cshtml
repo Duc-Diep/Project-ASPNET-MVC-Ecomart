@@ -46,7 +46,7 @@
                             <h6 class="product-price">
                                 <span class="hdk-price">@string.Format("{0:#,##}", item.product_price) vnđ</span>
                             </h6>
-                            <button class="product-add" onclick="addToCart(@item.product_id)" title="Thêm vào giỏ">
+                            <button class="product-add" onclick="addToCart(@item.product_id, @item.product_amount)" title="Thêm vào giỏ">
                                 <i class="fas fa-shopping-basket"></i><span>Thêm vào giỏ hàng</span>
                             </button>
                         </div>

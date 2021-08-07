@@ -1,4 +1,4 @@
-namespace EcomartVietNam.Models
+﻿namespace EcomartVietNam.Models
 {
     using System;
     using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace EcomartVietNam.Models
         [Key]
         public int category_id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Tên danh mục không được để trống")]
         [StringLength(100)]
         public string category_name { get; set; }
 

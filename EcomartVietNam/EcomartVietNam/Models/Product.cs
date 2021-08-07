@@ -1,4 +1,4 @@
-namespace EcomartVietNam.Models
+﻿namespace EcomartVietNam.Models
 {
     using System;
     using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace EcomartVietNam.Models
 
         public int category_id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Tên sản phẩm không được để trống")]
         [StringLength(100)]
         public string product_name { get; set; }
 
@@ -31,10 +31,11 @@ namespace EcomartVietNam.Models
         public string product_weight { get; set; }
 
         [Column(TypeName = "ntext")]
-        [Required]
+        [Required(ErrorMessage = "Mô tả không được để trống")]
         public string product_description { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:#,###}")]
+        [Required(ErrorMessage = "Giá không được để trống")]
         public decimal product_price { get; set; }
 
         [StringLength(50)]
