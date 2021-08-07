@@ -15,11 +15,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 text-center">
-                <img height="100%" width="auto" src="@Url.Content("~/wwwroot/product/images/" + @Model.product_image)"
-                     alt="product" />
+                <div style="height: 400px" class="bg-white rounded">
+                    <img class="img-" style="height: 100%" src="@Url.Content("~/wwwroot/product/images/" + @Model.product_image)"
+                         alt="product" />
+                </div>
             </div>
             <div class="col-lg-6 col-md-6">
-                <div class="details-content">
+                <div class="details-content" style="height: 400px">
                     <h3 class="details-name">
                         <a>@Model.product_name</a>
                     </h3>
