@@ -40,7 +40,7 @@
 
         [StringLength(50)]
         public string product_image { get; set; }
-
+        [Required(ErrorMessage = "Số lượng sản phẩm không được để trống")]
         public int? product_amount { get; set; }
 
         public DateTime? created_at { get; set; }

@@ -20,11 +20,12 @@
 
         [Required(ErrorMessage = "Email không được để trống!")]
         [StringLength(100)]
-        [DataType(DataType.EmailAddress)]
+        [DataType(DataType.EmailAddress,ErrorMessage ="Email không đúng định dạng")]
         public string email { get; set; }
 
-        [StringLength(11)]
-        [MaxLength(11)]
+        [StringLength(11,ErrorMessage ="Số điện thoại không đúng định dạng")]
+        [MaxLength(11,ErrorMessage ="Số điện thoại không đúng định dạng")]
+        [Required(ErrorMessage = "Số điện thoại không được để trống!")]
         public string phone_number { get; set; }
 
         [Required(ErrorMessage = "Mật khẩu không được để trống!")]
@@ -47,6 +48,7 @@
         public string full_name { get; set; }
 
         [StringLength(100)]
+        [Required(ErrorMessage = "Địa chỉ không được để trống!")]
         public string address { get; set; }
         [UIHint("Role")]
         

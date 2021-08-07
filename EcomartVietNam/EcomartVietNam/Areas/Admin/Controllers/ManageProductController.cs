@@ -73,7 +73,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
             catch (Exception ex)
             {
                 ViewBag.category_id = new SelectList(db.Categories, "category_id", "category_name", product.category_id);
-                ViewBag.Error = "Lỗi nhập dữ liệu " + ex.Message;
+                ViewBag.Error = "Dữ liệu không hợp lệ!";
                 return View(product);
             }
         }
@@ -118,7 +118,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
             }
             catch (Exception ex)
             {
-                ViewBag.Error = "Lỗi nhập dữ liệu " + ex.Message;
+                ViewBag.Error = "Dữ liệu không hợp lệ!";
                 ViewBag.category_id = new SelectList(db.Categories, "category_id", "category_name", product.category_id);
                 return View(product);
             }

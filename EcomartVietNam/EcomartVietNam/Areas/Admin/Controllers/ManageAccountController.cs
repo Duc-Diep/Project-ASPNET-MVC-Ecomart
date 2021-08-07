@@ -77,7 +77,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
             catch (Exception ex)
             {
 
-                ViewBag.Error = "Lỗi nhập dữ liệu " + ex.Message;
+                ViewBag.Error = "Dữ liệu không hợp lệ!";
                 return View();
             }
         }
@@ -139,7 +139,7 @@ namespace EcomartVietNam.Areas.Admin.Controllers
             }
             catch (Exception ex)
             {
-                ViewBag.Error = "Lỗi nhập dữ liệu " + ex.Message;
+                ViewBag.Error = "Dữ liệu không hợp lệ!";
                 return View();
             }
 
