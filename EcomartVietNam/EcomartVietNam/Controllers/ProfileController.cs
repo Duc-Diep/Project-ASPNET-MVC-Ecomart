@@ -40,11 +40,11 @@ namespace EcomartVietNam.Controllers
                 db.Entry(user).State = EntityState.Modified;
                 db.Configuration.ValidateOnSaveEnabled = false;
                 db.SaveChanges();
-                ViewBag.Infor = "Cập nhật thành công";
+                ViewBag.Information = "Cập nhật thành công";
             }
             else
             {
-                ViewBag.Infor = "Có lỗi xảy ra khi cập nhật";
+                ViewBag.Information = "Có lỗi xảy ra khi cập nhật";
             }
             
             return View("Index",user);
@@ -74,7 +74,7 @@ namespace EcomartVietNam.Controllers
                 db.Entry(userEntity).State = EntityState.Modified;
                 db.Configuration.ValidateOnSaveEnabled = false;
                 db.SaveChanges();
-                ViewBag.Infor = "Đổi mật khẩu thành công";
+                ViewBag.Information = "Đổi mật khẩu thành công";
 
                 return View("Index",userEntity);
                     
